@@ -1,0 +1,15 @@
+{
+  "originHash" : "07e106ce71313fc7be65a9e43d5ffebf9eed5e9dd51e7fd0f8d0963fb7eda261",
+  "pins" : [
+    {
+      "identity" : "apimanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zeyrie/APIManager.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "83a0594595496ec09be6ad56bb693acc0da452c3"
+      }
+    }
+  ],
+  "version" : 3
+}

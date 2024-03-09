@@ -12,6 +12,7 @@
 		824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824414FF2B9C7A1800E0C624 /* LoginViewState.swift */; };
 		824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415022B9C7A6C00E0C624 /* LoginPresenter.swift */; };
 		824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415052B9C7AA800E0C624 /* LoginAssembler.swift */; };
+		8244150A2B9D262800E0C624 /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 824415092B9D262800E0C624 /* APIManager */; };
 		82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */; };
 		82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C359202B9C371A009A3294 /* LoginPageView.swift */; };
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8244150A2B9D262800E0C624 /* APIManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +175,9 @@
 			dependencies = (
 			);
 			name = Linkwarden;
+			packageProductDependencies = (
+				824415092B9D262800E0C624 /* APIManager */,
+			);
 			productName = Linkwarden;
 			productReference = 82C3591B2B9C371A009A3294 /* Linkwarden.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +206,9 @@
 				Base,
 			);
 			mainGroup = 82C359122B9C371A009A3294;
+			packageReferences = (
+				824415082B9D262800E0C624 /* XCRemoteSwiftPackageReference "APIManager" */,
+			);
 			productRefGroup = 82C3591C2B9C371A009A3294 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -371,11 +379,14 @@
 				DEVELOPMENT_TEAM = 5D5M67MDQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Linkwarden;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -400,11 +411,14 @@
 				DEVELOPMENT_TEAM = 5D5M67MDQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Linkwarden;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,6 +454,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		824415082B9D262800E0C624 /* XCRemoteSwiftPackageReference "APIManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zeyrie/APIManager.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		824415092B9D262800E0C624 /* APIManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 824415082B9D262800E0C624 /* XCRemoteSwiftPackageReference "APIManager" */;
+			productName = APIManager;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 82C359132B9C371A009A3294 /* Project object */;
 }
