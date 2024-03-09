@@ -86,6 +86,15 @@
 			path = Assembler;
 			sourceTree = "<group>";
 		};
+		8244150B2B9D28B900E0C624 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				824414F62B9C6D1E00E0C624 /* ImageManager */,
+				82C3592E2B9C3ACE009A3294 /* ThemeManager */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		82C359122B9C371A009A3294 = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +114,9 @@
 		82C3591D2B9C371A009A3294 /* Linkwarden */ = {
 			isa = PBXGroup;
 			children = (
+				8244150B2B9D28B900E0C624 /* Utils */,
 				824414FB2B9C715000E0C624 /* Localization */,
 				82C359312B9C47E6009A3294 /* Login */,
-				82C3592E2B9C3ACE009A3294 /* ThemeManager */,
-				824414F62B9C6D1E00E0C624 /* ImageManager */,
 				82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */,
 				82C359222B9C371B009A3294 /* Assets.xcassets */,
 				82C359242B9C371B009A3294 /* Preview Content */,
