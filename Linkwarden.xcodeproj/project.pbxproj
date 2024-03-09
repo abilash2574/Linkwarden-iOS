@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */; };
-		82C359212B9C371A009A3294 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C359202B9C371A009A3294 /* ContentView.swift */; };
+		82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C359202B9C371A009A3294 /* LoginPageView.swift */; };
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
 		82C359262B9C371B009A3294 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359252B9C371B009A3294 /* Preview Assets.xcassets */; };
+		82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		82C3591B2B9C371A009A3294 /* Linkwarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkwarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkwardenApp.swift; sourceTree = "<group>"; };
-		82C359202B9C371A009A3294 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		82C359202B9C371A009A3294 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		82C359222B9C371B009A3294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C359252B9C371B009A3294 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,9 @@
 		82C3591D2B9C371A009A3294 /* Linkwarden */ = {
 			isa = PBXGroup;
 			children = (
+				82C359312B9C47E6009A3294 /* Login */,
+				82C3592E2B9C3ACE009A3294 /* ThemeManager */,
 				82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */,
-				82C359202B9C371A009A3294 /* ContentView.swift */,
 				82C359222B9C371B009A3294 /* Assets.xcassets */,
 				82C359242B9C371B009A3294 /* Preview Content */,
 			);
@@ -65,6 +68,22 @@
 				82C359252B9C371B009A3294 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		82C3592E2B9C3ACE009A3294 /* ThemeManager */ = {
+			isa = PBXGroup;
+			children = (
+				82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */,
+			);
+			path = ThemeManager;
+			sourceTree = "<group>";
+		};
+		82C359312B9C47E6009A3294 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				82C359202B9C371A009A3294 /* LoginPageView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +156,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82C359212B9C371A009A3294 /* ContentView.swift in Sources */,
+				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
+				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

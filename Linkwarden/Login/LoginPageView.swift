@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LoginPageView.swift
 //  Linkwarden
 //
 //  Created by Abilash S on 09/03/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginPageView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    LoginPageView()
 }
