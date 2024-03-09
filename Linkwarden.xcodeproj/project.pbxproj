@@ -13,6 +13,8 @@
 		824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415022B9C7A6C00E0C624 /* LoginPresenter.swift */; };
 		824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415052B9C7AA800E0C624 /* LoginAssembler.swift */; };
 		8244150A2B9D262800E0C624 /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 824415092B9D262800E0C624 /* APIManager */; };
+		8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244150D2B9D290100E0C624 /* NetworkUtils.swift */; };
+		824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244150F2B9D29BA00E0C624 /* NetworkReachability.swift */; };
 		82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */; };
 		82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C359202B9C371A009A3294 /* LoginPageView.swift */; };
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		824414FF2B9C7A1800E0C624 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
 		824415022B9C7A6C00E0C624 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		824415052B9C7AA800E0C624 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		8244150D2B9D290100E0C624 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		8244150F2B9D29BA00E0C624 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		82C3591B2B9C371A009A3294 /* Linkwarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkwarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkwardenApp.swift; sourceTree = "<group>"; };
 		82C359202B9C371A009A3294 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -89,10 +93,20 @@
 		8244150B2B9D28B900E0C624 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8244150C2B9D28F100E0C624 /* Network */,
 				824414F62B9C6D1E00E0C624 /* ImageManager */,
 				82C3592E2B9C3ACE009A3294 /* ThemeManager */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8244150C2B9D28F100E0C624 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8244150D2B9D290100E0C624 /* NetworkUtils.swift */,
+				8244150F2B9D29BA00E0C624 /* NetworkReachability.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		82C359122B9C371A009A3294 = {
@@ -244,6 +258,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */,
+				824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */,
 				824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */,
 				824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
