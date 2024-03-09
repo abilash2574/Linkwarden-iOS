@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824414F72B9C6D3400E0C624 /* ImageConstants.swift */; };
+		824414FA2B9C6EF100E0C624 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 824414F92B9C6EF100E0C624 /* Localizable.xcstrings */; };
+		824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824414FF2B9C7A1800E0C624 /* LoginViewState.swift */; };
+		824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415022B9C7A6C00E0C624 /* LoginPresenter.swift */; };
+		824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415052B9C7AA800E0C624 /* LoginAssembler.swift */; };
 		82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */; };
 		82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C359202B9C371A009A3294 /* LoginPageView.swift */; };
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
@@ -15,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		824414F72B9C6D3400E0C624 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
+		824414F92B9C6EF100E0C624 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		824414FF2B9C7A1800E0C624 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
+		824415022B9C7A6C00E0C624 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		824415052B9C7AA800E0C624 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		82C3591B2B9C371A009A3294 /* Linkwarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkwarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkwardenApp.swift; sourceTree = "<group>"; };
 		82C359202B9C371A009A3294 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -34,6 +44,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		824414F62B9C6D1E00E0C624 /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				824414F72B9C6D3400E0C624 /* ImageConstants.swift */,
+			);
+			path = ImageManager;
+			sourceTree = "<group>";
+		};
+		824414FB2B9C715000E0C624 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				824414F92B9C6EF100E0C624 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		824414FE2B9C7A0300E0C624 /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+				824414FF2B9C7A1800E0C624 /* LoginViewState.swift */,
+			);
+			path = ViewState;
+			sourceTree = "<group>";
+		};
+		824415012B9C7A6000E0C624 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				824415022B9C7A6C00E0C624 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		824415042B9C7A9200E0C624 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				824415052B9C7AA800E0C624 /* LoginAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
 		82C359122B9C371A009A3294 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +103,10 @@
 		82C3591D2B9C371A009A3294 /* Linkwarden */ = {
 			isa = PBXGroup;
 			children = (
+				824414FB2B9C715000E0C624 /* Localization */,
 				82C359312B9C47E6009A3294 /* Login */,
 				82C3592E2B9C3ACE009A3294 /* ThemeManager */,
+				824414F62B9C6D1E00E0C624 /* ImageManager */,
 				82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */,
 				82C359222B9C371B009A3294 /* Assets.xcassets */,
 				82C359242B9C371B009A3294 /* Preview Content */,
@@ -81,9 +133,28 @@
 		82C359312B9C47E6009A3294 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				82C359202B9C371A009A3294 /* LoginPageView.swift */,
+				824415042B9C7A9200E0C624 /* Assembler */,
+				824415012B9C7A6000E0C624 /* Presenter */,
+				824414FE2B9C7A0300E0C624 /* ViewState */,
+				82C359342B9C481D009A3294 /* Domain */,
+				82C359332B9C4814009A3294 /* View */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		82C359332B9C4814009A3294 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82C359202B9C371A009A3294 /* LoginPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82C359342B9C481D009A3294 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +217,7 @@
 			files = (
 				82C359262B9C371B009A3294 /* Preview Assets.xcassets in Resources */,
 				82C359232B9C371B009A3294 /* Assets.xcassets in Resources */,
+				824414FA2B9C6EF100E0C624 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,9 +228,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */,
+				824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
+				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
+				824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

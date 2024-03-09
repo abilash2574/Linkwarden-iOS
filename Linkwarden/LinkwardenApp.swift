@@ -11,7 +11,8 @@ import SwiftUI
 struct LinkwardenApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginPageView()
+            let view = LoginAssembler.getLoginPageView()
+            return view
         }
     }
 }
