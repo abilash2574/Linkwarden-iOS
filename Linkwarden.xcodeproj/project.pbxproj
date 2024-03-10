@@ -15,6 +15,10 @@
 		8244150A2B9D262800E0C624 /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 824415092B9D262800E0C624 /* APIManager */; };
 		8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244150D2B9D290100E0C624 /* NetworkUtils.swift */; };
 		824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244150F2B9D29BA00E0C624 /* NetworkReachability.swift */; };
+		824415132B9D2B0A00E0C624 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415122B9D2B0A00E0C624 /* CommonUtils.swift */; };
+		824415162B9D2C1800E0C624 /* Logger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415152B9D2C1800E0C624 /* Logger+Extensions.swift */; };
+		8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415192B9DB9A800E0C624 /* Usecase.swift */; };
+		8244151C2B9DC11C00E0C624 /* LError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244151B2B9DC11C00E0C624 /* LError.swift */; };
 		82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */; };
 		82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C359202B9C371A009A3294 /* LoginPageView.swift */; };
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
@@ -30,6 +34,10 @@
 		824415052B9C7AA800E0C624 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		8244150D2B9D290100E0C624 /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
 		8244150F2B9D29BA00E0C624 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		824415122B9D2B0A00E0C624 /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
+		824415152B9D2C1800E0C624 /* Logger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Extensions.swift"; sourceTree = "<group>"; };
+		824415192B9DB9A800E0C624 /* Usecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usecase.swift; sourceTree = "<group>"; };
+		8244151B2B9DC11C00E0C624 /* LError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LError.swift; sourceTree = "<group>"; };
 		82C3591B2B9C371A009A3294 /* Linkwarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkwarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkwardenApp.swift; sourceTree = "<group>"; };
 		82C359202B9C371A009A3294 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -93,6 +101,7 @@
 		8244150B2B9D28B900E0C624 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				824415142B9D2BFB00E0C624 /* Logger */,
 				8244150C2B9D28F100E0C624 /* Network */,
 				824414F62B9C6D1E00E0C624 /* ImageManager */,
 				82C3592E2B9C3ACE009A3294 /* ThemeManager */,
@@ -105,8 +114,26 @@
 			children = (
 				8244150D2B9D290100E0C624 /* NetworkUtils.swift */,
 				8244150F2B9D29BA00E0C624 /* NetworkReachability.swift */,
+				824415192B9DB9A800E0C624 /* Usecase.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		824415112B9D2AFD00E0C624 /* CommonUtils */ = {
+			isa = PBXGroup;
+			children = (
+				824415122B9D2B0A00E0C624 /* CommonUtils.swift */,
+				8244151B2B9DC11C00E0C624 /* LError.swift */,
+			);
+			path = CommonUtils;
+			sourceTree = "<group>";
+		};
+		824415142B9D2BFB00E0C624 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				824415152B9D2C1800E0C624 /* Logger+Extensions.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 		82C359122B9C371A009A3294 = {
@@ -128,6 +155,7 @@
 		82C3591D2B9C371A009A3294 /* Linkwarden */ = {
 			isa = PBXGroup;
 			children = (
+				824415112B9D2AFD00E0C624 /* CommonUtils */,
 				8244150B2B9D28B900E0C624 /* Utils */,
 				824414FB2B9C715000E0C624 /* Localization */,
 				82C359312B9C47E6009A3294 /* Login */,
@@ -261,10 +289,14 @@
 				8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */,
 				824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */,
 				824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */,
+				8244151C2B9DC11C00E0C624 /* LError.swift in Sources */,
 				824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
+				824415132B9D2B0A00E0C624 /* CommonUtils.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
+				824415162B9D2C1800E0C624 /* Logger+Extensions.swift in Sources */,
+				8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
 				824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */,
 			);
