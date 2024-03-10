@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/zeyrie/APIManager.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "83a0594595496ec09be6ad56bb693acc0da452c3"
+        "revision" : "8945efbaea4ab3e31168715bc08be6d9db4cb489",
+        "version" : "1.0.0"
       }
     }
   ],

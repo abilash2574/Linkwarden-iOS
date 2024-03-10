@@ -19,6 +19,15 @@
 		824415162B9D2C1800E0C624 /* Logger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415152B9D2C1800E0C624 /* Logger+Extensions.swift */; };
 		8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415192B9DB9A800E0C624 /* Usecase.swift */; };
 		8244151C2B9DC11C00E0C624 /* LError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244151B2B9DC11C00E0C624 /* LError.swift */; };
+		8244151F2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244151E2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift */; };
+		824415222B9DC70100E0C624 /* GetCSRFTokenDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415212B9DC70100E0C624 /* GetCSRFTokenDataManager.swift */; };
+		824415242B9DC84B00E0C624 /* CSRFToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415232B9DC84B00E0C624 /* CSRFToken.swift */; };
+		824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415262B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift */; };
+		824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415282B9DC97700E0C624 /* NetworkServiceContract.swift */; };
+		8244152B2B9DCC3300E0C624 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152A2B9DCC3300E0C624 /* NetworkManager.swift */; };
+		8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */; };
+		824415302B9DD24D00E0C624 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */; };
+		824415322B9DD98F00E0C624 /* APIResponseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415312B9DD98F00E0C624 /* APIResponseConstants.swift */; };
 		82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */; };
 		82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C359202B9C371A009A3294 /* LoginPageView.swift */; };
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
@@ -38,6 +47,15 @@
 		824415152B9D2C1800E0C624 /* Logger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Extensions.swift"; sourceTree = "<group>"; };
 		824415192B9DB9A800E0C624 /* Usecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usecase.swift; sourceTree = "<group>"; };
 		8244151B2B9DC11C00E0C624 /* LError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LError.swift; sourceTree = "<group>"; };
+		8244151E2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCSRFTokenUsecase.swift; sourceTree = "<group>"; };
+		824415212B9DC70100E0C624 /* GetCSRFTokenDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCSRFTokenDataManager.swift; sourceTree = "<group>"; };
+		824415232B9DC84B00E0C624 /* CSRFToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSRFToken.swift; sourceTree = "<group>"; };
+		824415262B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCSRFTokenNetworkService.swift; sourceTree = "<group>"; };
+		824415282B9DC97700E0C624 /* NetworkServiceContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceContract.swift; sourceTree = "<group>"; };
+		8244152A2B9DCC3300E0C624 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		824415312B9DD98F00E0C624 /* APIResponseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseConstants.swift; sourceTree = "<group>"; };
 		82C3591B2B9C371A009A3294 /* Linkwarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkwarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkwardenApp.swift; sourceTree = "<group>"; };
 		82C359202B9C371A009A3294 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -101,6 +119,7 @@
 		8244150B2B9D28B900E0C624 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8244152C2B9DCC6E00E0C624 /* UserDefaultsManager */,
 				824415142B9D2BFB00E0C624 /* Logger */,
 				8244150C2B9D28F100E0C624 /* Network */,
 				824414F62B9C6D1E00E0C624 /* ImageManager */,
@@ -115,6 +134,9 @@
 				8244150D2B9D290100E0C624 /* NetworkUtils.swift */,
 				8244150F2B9D29BA00E0C624 /* NetworkReachability.swift */,
 				824415192B9DB9A800E0C624 /* Usecase.swift */,
+				824415282B9DC97700E0C624 /* NetworkServiceContract.swift */,
+				8244152A2B9DCC3300E0C624 /* NetworkManager.swift */,
+				824415312B9DD98F00E0C624 /* APIResponseConstants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -134,6 +156,39 @@
 				824415152B9D2C1800E0C624 /* Logger+Extensions.swift */,
 			);
 			path = Logger;
+			sourceTree = "<group>";
+		};
+		8244151D2B9DC47400E0C624 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				8244151E2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		824415202B9DC6EC00E0C624 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				824415212B9DC70100E0C624 /* GetCSRFTokenDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		824415252B9DC8C600E0C624 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				824415262B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		8244152C2B9DCC6E00E0C624 /* UserDefaultsManager */ = {
+			isa = PBXGroup;
+			children = (
+				8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */,
+				8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */,
+			);
+			path = UserDefaultsManager;
 			sourceTree = "<group>";
 		};
 		82C359122B9C371A009A3294 = {
@@ -185,6 +240,9 @@
 		82C359312B9C47E6009A3294 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				824415252B9DC8C600E0C624 /* NetworkService */,
+				824415202B9DC6EC00E0C624 /* DataManager */,
+				8244151D2B9DC47400E0C624 /* Usecase */,
 				824415042B9C7A9200E0C624 /* Assembler */,
 				824415012B9C7A6000E0C624 /* Presenter */,
 				824414FE2B9C7A0300E0C624 /* ViewState */,
@@ -205,6 +263,7 @@
 		82C359342B9C481D009A3294 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				824415232B9DC84B00E0C624 /* CSRFToken.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -286,15 +345,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8244152B2B9DCC3300E0C624 /* NetworkManager.swift in Sources */,
+				824415302B9DD24D00E0C624 /* UserDefaultsKeys.swift in Sources */,
 				8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */,
+				824415322B9DD98F00E0C624 /* APIResponseConstants.swift in Sources */,
 				824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */,
+				8244151F2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift in Sources */,
 				824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */,
 				8244151C2B9DC11C00E0C624 /* LError.swift in Sources */,
+				8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */,
 				824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */,
+				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
+				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
 				824415132B9D2B0A00E0C624 /* CommonUtils.swift in Sources */,
+				824415242B9DC84B00E0C624 /* CSRFToken.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
+				824415222B9DC70100E0C624 /* GetCSRFTokenDataManager.swift in Sources */,
 				824415162B9D2C1800E0C624 /* Logger+Extensions.swift in Sources */,
 				8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
@@ -357,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -414,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -440,8 +508,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -472,8 +540,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -516,8 +584,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zeyrie/APIManager.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
