@@ -94,6 +94,9 @@ struct LoginPageView: View {
         .onTapGesture {
             focusedField = .none
         }
+        .onAppear {
+            viewState.viewOnAppearing()
+        }
     }
     
     private func getBindingValueFor(field: LoginViewState.Field) -> Binding<String> {

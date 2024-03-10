@@ -49,3 +49,11 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
     }
     
 }
+
+extension LoginViewState {
+    
+    func viewOnAppearing() {
+        presenter.viewOnAppearing()
+    }
+    
+}

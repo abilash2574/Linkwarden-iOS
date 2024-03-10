@@ -10,10 +10,22 @@ import Foundation
 class LoginAssembler {
     
     class func getLoginPageView() -> LoginPageView {
-        let presenter = LoginPresenter()
+        
+        let getCSRFToken = getCSRFTokenUsecase()
+        
+        let presenter = LoginPresenter(getCSRFTokenUsecase: getCSRFToken)
+        
         let viewState = LoginViewState(presenter: presenter)
+        presenter.viewState = viewState
+        
         let loginView = LoginPageView(viewState: viewState)
         return loginView
     }
     
+    class func getCSRFTokenUsecase() -> GetCSRFTokenUsecase {
+        let networkService = GetCSRFTokenNetworkService()
+        let dataManager = GetCSRFTokenDataManager(networkService: networkService)
+        return GetCSRFTokenUsecase(dataManager: dataManager)
+    }
+     
 }

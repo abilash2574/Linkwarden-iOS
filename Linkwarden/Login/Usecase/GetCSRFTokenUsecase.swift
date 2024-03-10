@@ -9,14 +9,32 @@ import Foundation
 
 class GetCSRFTokenUsecase: Usecase<GetCSRFTokenUsecase.Request, GetCSRFTokenUsecase.Response> {
     
-    let dataManager: 
+    let dataManager: GetCSRFTokenDataManagerContract
     
-    class Request: UsecaseRequest {
+    init(dataManager: GetCSRFTokenDataManagerContract) {
+        self.dataManager = dataManager
+    }
+    
+    override func run(request: Request) async -> UsecaseResult<Response, any Error> {
+        switch await dataManager.getCSRFToken(request.type) {
+        case .success(let token):
+            return .success(.init(token: token))
+        case .failure(let error):
+            return .failure(error)
+        }
         
     }
     
+    class Request: UsecaseRequest {
+        let type: UsecaseRequestMethod = .remote
+    }
+    
     class Response: UsecaseResponse {
+        let token: CSRFToken
         
+        init(token: CSRFToken) {
+            self.token = token
+        }
     }
     
 }
