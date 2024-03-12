@@ -8,5 +8,5 @@
 import Foundation
 
 struct CSRFToken: Codable {
-    let id: String
+    let csrfToken: String
 }

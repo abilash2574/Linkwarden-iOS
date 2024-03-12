@@ -37,9 +37,25 @@ extension LoginPresenter {
             // TODO: ZVZV Show No Internet connection View
             
         }
+//        NetworkManager.setBaseURL("https://link.zeyrie.org")
+//        getCSRFToken()
     }
     
     private func getCSRFToken() {
+        Task(priority: .background, operation: {
+            let request = GetCSRFTokenUsecase.Request()
+            switch await self.getCSRFTokenUsecase.execute(request: request) {
+            case .success(let response):
+                NetworkManager.csrfToken = response.token.csrfToken
+                self.didSetCSRFToken()
+            case .failure(let error):
+                // TODO: ZVZV Handle this error
+                LLogger.shared.critical("CSRF Token failed \(error)")
+            }
+        })
+    }
+    
+    private func didSetCSRFToken() {
         
     }
     

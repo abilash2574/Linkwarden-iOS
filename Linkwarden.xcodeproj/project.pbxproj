@@ -28,6 +28,9 @@
 		8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */; };
 		824415302B9DD24D00E0C624 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */; };
 		824415322B9DD98F00E0C624 /* APIResponseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415312B9DD98F00E0C624 /* APIResponseConstants.swift */; };
+		82C23E202BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E1F2BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift */; };
+		82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E212BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift */; };
+		82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E232BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift */; };
 		82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */; };
 		82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C359202B9C371A009A3294 /* LoginPageView.swift */; };
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
@@ -56,6 +59,9 @@
 		8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		824415312B9DD98F00E0C624 /* APIResponseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseConstants.swift; sourceTree = "<group>"; };
+		82C23E1F2BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsUsecase.swift; sourceTree = "<group>"; };
+		82C23E212BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsNetworkService.swift; sourceTree = "<group>"; };
+		82C23E232BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsDataManager.swift; sourceTree = "<group>"; };
 		82C3591B2B9C371A009A3294 /* Linkwarden.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkwarden.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C3591E2B9C371A009A3294 /* LinkwardenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkwardenApp.swift; sourceTree = "<group>"; };
 		82C359202B9C371A009A3294 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				8244151E2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift */,
+				82C23E1F2BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				824415212B9DC70100E0C624 /* GetCSRFTokenDataManager.swift */,
+				82C23E232BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				824415262B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift */,
+				82C23E212BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -358,13 +367,16 @@
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
 				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
+				82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
+				82C23E202BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift in Sources */,
 				824415132B9D2B0A00E0C624 /* CommonUtils.swift in Sources */,
 				824415242B9DC84B00E0C624 /* CSRFToken.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
 				824415222B9DC70100E0C624 /* GetCSRFTokenDataManager.swift in Sources */,
 				824415162B9D2C1800E0C624 /* Logger+Extensions.swift in Sources */,
 				8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */,
+				82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
 				824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */,
 			);

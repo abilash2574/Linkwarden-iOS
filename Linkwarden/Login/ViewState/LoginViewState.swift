@@ -10,6 +10,9 @@ import SwiftUI
 
 protocol LoginViewStateContract: AnyObject {
     
+    // TODO: ZVZV Add a button state control here to disable the login button if there is no internet
+
+    
 }
 
 class LoginViewState: LoginViewStateContract, ObservableObject {

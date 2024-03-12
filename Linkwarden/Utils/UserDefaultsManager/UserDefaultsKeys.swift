@@ -10,5 +10,6 @@ import Foundation
 enum UserDefaultsKeys {
     
     static let baseURLKey = "network.baseURL"
+    static let csrfTokenKey = "network.csrftoken"
     
 }

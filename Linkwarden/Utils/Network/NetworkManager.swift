@@ -14,6 +14,10 @@ class NetworkManager {
     @UserDefault(UserDefaultsKeys.baseURLKey)
     private static var baseURL: String!
     
+    @UserDefault(UserDefaultsKeys.csrfTokenKey)
+    static var csrfToken: String!
+    
+    
     static var APIPath: String = "/api/v1"
     
 }
