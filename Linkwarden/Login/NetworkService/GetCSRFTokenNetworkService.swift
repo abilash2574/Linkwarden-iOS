@@ -16,7 +16,7 @@ protocol GetCSRFTokenNetworkServiceContract: NetworkServiceContract {
 
 class GetCSRFTokenNetworkService: NSObject, GetCSRFTokenNetworkServiceContract {
     
-    let urlString =  "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/auth/csrf"
+    lazy var urlString = "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/auth/csrf"
     
     func getCSRFToken() async -> UsecaseResult<CSRFToken, Error> {
         guard isOnline() else {
@@ -38,15 +38,22 @@ extension GetCSRFTokenNetworkService {
         
         switch await APIManager.makeRequest(.GET, withURL: url, headers: [:], requestBody: nil) {
         case .success(let data, let response):
-//            guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-//                return .failure(APINetworkError.processingError(status: APIErrorStatus.invalidJSONResponse, message: LErrorMessage.Invalid_JSON_Process, info: nil))
-//            }
             
             if response.statusCode == 200 {
-//                guard let csrfToken = (jsonData[APIResponseConstants.csrfToken]) as? String else {
-//                    return .failure(APINetworkError.processingError(status: APIErrorStatus.invalidJSONKey, message: LErrorMessage.Invalid_JSON_Key, info: nil))
-//                }
-                return NetworkManager.decode(CSRFToken.self, from: data)
+                
+                let responseCookies = HTTPCookie.cookies(withResponseHeaderFields: response.allHeaderFields as! [String: String], for: url)
+                
+                guard let key = responseCookies.first?.name, key == "__Host-next-auth.csrf-token" else {
+                    return .failure(APINetworkError.apiManagerError(status: APIErrorStatus.internalError, message: "Cookie Not found", info: nil))
+                }
+                
+                guard let jsonObject = try? JSONSerialization.jsonObject(with: data) as? [String : Any], let csrfToken = jsonObject["csrfToken"] as? String else {
+                    return .failure(APINetworkError.processingError(status: APIErrorStatus.invalidOperation, message: "Parsing failed", info: nil))
+                }
+                
+                let token = CSRFToken(csrfToken: csrfToken, cookieKey: responseCookies[0].name, cookieValue: responseCookies[0].value)
+                
+                return .success(token)
             } else {
                 return .failure(APINetworkError.apiManagerError(status: APIErrorStatus.invalidResponseCode, message: LErrorMessage.Invalid_Response_Code, info: nil))
             }

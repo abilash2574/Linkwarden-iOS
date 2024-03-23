@@ -17,6 +17,12 @@ class NetworkManager {
     @UserDefault(UserDefaultsKeys.csrfTokenKey)
     static var csrfToken: String!
     
+    @UserDefault(UserDefaultsKeys.csrfTokenCookie)
+    static var csrfTokenCookie: String!
+    
+    @UserDefault(UserDefaultsKeys.sessionTokenKey)
+    static var sessionTokenCookie: [String: Any]!
+    
     
     static var APIPath: String = "/api/v1"
     
@@ -28,7 +34,8 @@ extension NetworkManager {
         let base = Self.baseURL
         guard let base else {
             // TODO: ZVZV Handle this in a different way
-            return ""
+            // Logout the user
+            fatalError("Base URL Not found")
         }
         return base
     }
