@@ -10,6 +10,8 @@ import Foundation
 protocol LoginPresenterContract: AnyObject {
     
     func viewOnAppearing()
+    
+    func didTapLogin(url: String, username: String, password: String)
 }
 
 class LoginPresenter: LoginPresenterContract {
@@ -26,6 +28,33 @@ class LoginPresenter: LoginPresenterContract {
     
     func viewOnAppearing() {
         loadInitialSetup()
+    }
+    
+    func didTapLogin(url: String, username: String, password: String) {
+        
+        viewState?.showLoading()
+        
+        Task(priority: .userInitiated) { [weak self] in
+            guard let self else {
+                // TODO: ZVZV Handle guard
+                return
+            }
+            NetworkManager.setBaseURL(url)
+            
+            if await getCSRFToken() {
+                if await authenticateUser(username, with: password) {
+                    print("Logged in")
+                } else {
+                    print("Something went wrong")
+                }
+            } else {
+                print("Something Went wrong")
+            }
+            await MainActor.run(body: {
+                self.viewState?.hideLoading()
+            })
+        }
+        
     }
     
 }

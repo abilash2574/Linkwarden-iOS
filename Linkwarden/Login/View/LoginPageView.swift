@@ -62,6 +62,7 @@ struct LoginPageView: View {
                     
                     Button {
                         focusedField = .none
+                        viewState.didTapLogin()
                     } label: {
                         Text("Login")
                             .font(.title3)
@@ -90,6 +91,15 @@ struct LoginPageView: View {
                     .controlSize(.regular)
                 }
             }
+            
+            if viewState.showLoadingView {
+                ProgressView()
+                    .controlSize(.large)
+                    .frame(width: 60, height: 60, alignment: .center)
+                    .background(.ultraThinMaterial)
+                    .clipShape(.rect(cornerRadius: 12))
+            }
+            
         }
         .onTapGesture {
             focusedField = .none

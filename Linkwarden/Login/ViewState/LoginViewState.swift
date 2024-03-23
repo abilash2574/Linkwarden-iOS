@@ -12,6 +12,9 @@ protocol LoginViewStateContract: AnyObject {
     
     // TODO: ZVZV Add a button state control here to disable the login button if there is no internet
 
+    func showLoading()
+    func hideLoading()
+    
     
 }
 
@@ -41,6 +44,8 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
     
     @Published var enableScrollView = false
     
+    @Published var showLoadingView: Bool = false
+    
     var textFieldConfig: [LoginTextFieldConfig] = [
         LoginTextFieldConfig(id: UUID(), image: Image(systemName: "cloud.fill"), placeholder: "Server URL", keyboardType: .URL, contentType: .URL, isSecure: false, focusedField: .serverURL),
         LoginTextFieldConfig(id: UUID(), image: Image(systemName: "person.fill"), placeholder: "Username", keyboardType: .default, contentType: .username, isSecure: false, focusedField: .userName),
@@ -57,6 +62,22 @@ extension LoginViewState {
     
     func viewOnAppearing() {
         presenter.viewOnAppearing()
+    }
+    
+    func didTapLogin() {
+        presenter.didTapLogin(url: serverURL, username: userName, password: password)
+    }
+    
+}
+
+extension LoginViewState {
+    
+    func showLoading() {
+        showLoadingView = true
+    }
+    
+    func hideLoading() {
+        showLoadingView = false
     }
     
 }
