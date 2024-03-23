@@ -15,11 +15,13 @@ protocol LoginPresenterContract: AnyObject {
 class LoginPresenter: LoginPresenterContract {
     
     let getCSRFTokenUsecase: GetCSRFTokenUsecase
+    let authenticateUserUsecase: AuthenticateUserCredentialsUsecase
     
     public weak var viewState: LoginViewStateContract?
     
-    init(getCSRFTokenUsecase: GetCSRFTokenUsecase) {
+    init(getCSRFTokenUsecase: GetCSRFTokenUsecase, authenticateUserUsecase: AuthenticateUserCredentialsUsecase) {
         self.getCSRFTokenUsecase = getCSRFTokenUsecase
+        self.authenticateUserUsecase = authenticateUserUsecase
     }
     
     func viewOnAppearing() {
@@ -55,8 +57,24 @@ extension LoginPresenter {
         }
     }
     
-    private func didSetCSRFToken() {
-        
+    private func authenticateUser(_ username: String, with password: String) async -> Bool {
+        let request = AuthenticateUserCredentialsUsecase.Request(username: username, password: password)
+        switch await self.authenticateUserUsecase.execute(request: request) {
+        case .success(let token):
+            let cookie = [token.sessionTokenCookie.cookieKey:token.sessionTokenCookie.cookieToken, "ExpiryDate":token.sessionTokenCookie.expiryDate] as [String : Any]
+            NetworkManager.sessionTokenCookie = cookie
+            
+            print("Successful Login")
+            
+            return true
+            
+        case .failure(let error):
+            // TODO: ZVZV Handle this error
+            LLogger.shared.critical("Not authenticated user \(error)")
+            print("Incorrect Message")
+            
+            return false
+        }
     }
     
 }

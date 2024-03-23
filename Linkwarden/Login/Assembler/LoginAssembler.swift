@@ -12,8 +12,9 @@ class LoginAssembler {
     class func getLoginPageView() -> LoginPageView {
         
         let getCSRFToken = getCSRFTokenUsecase()
+        let authenticateUserUsecase =  getAuthenticateUserUsecase()
         
-        let presenter = LoginPresenter(getCSRFTokenUsecase: getCSRFToken)
+        let presenter = LoginPresenter(getCSRFTokenUsecase: getCSRFToken, authenticateUserUsecase: authenticateUserUsecase)
         
         let viewState = LoginViewState(presenter: presenter)
         presenter.viewState = viewState
@@ -26,6 +27,12 @@ class LoginAssembler {
         let networkService = GetCSRFTokenNetworkService()
         let dataManager = GetCSRFTokenDataManager(networkService: networkService)
         return GetCSRFTokenUsecase(dataManager: dataManager)
+    }
+    
+    class func getAuthenticateUserUsecase() -> AuthenticateUserCredentialsUsecase {
+        let networkService = AuthenticateUserCredentialsNetworkService()
+        let dataManager = AuthenticateUserCredentialsDataManager(networkService: networkService)
+        return AuthenticateUserCredentialsUsecase(dataManager: dataManager)
     }
      
 }
