@@ -44,6 +44,10 @@ extension NetworkManager {
         baseURL = url
     }
     
+}
+
+extension NetworkManager {
+   
     static func decode<T: Decodable>(_ type: T.Type, from data: Data, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> UsecaseResult<T, Error> {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = dateDecodingStrategy

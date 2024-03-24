@@ -40,7 +40,7 @@ struct ContainerView: View {
                 } else {
                     appState.showLogin = true
                 }
-                appState.showLoading = false
+                appState.showLoading = false 
             }
         })
     }

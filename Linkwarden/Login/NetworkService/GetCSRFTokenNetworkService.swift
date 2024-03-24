@@ -23,15 +23,6 @@ class GetCSRFTokenNetworkService: NSObject, GetCSRFTokenNetworkServiceContract {
             return .failure(No_Network_API_Error)
         }
         
-        return await fetchCSRFToken()
-    }
-    
-}
-
-extension GetCSRFTokenNetworkService {
-    
-    private func fetchCSRFToken() async -> UsecaseResult<CSRFToken, Error> {
-        
         guard let url = URL(string: urlString) else {
             return .failure(APINetworkError.apiManagerError(status: APIErrorStatus.invalidURLString, message: LErrorMessage.Invalid_URL_String, info: nil))
         }
@@ -61,8 +52,6 @@ extension GetCSRFTokenNetworkService {
         case .failure(let error):
             return .failure(error)
         }
-        
-        
         
     }
     
