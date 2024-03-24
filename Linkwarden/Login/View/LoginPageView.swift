@@ -50,8 +50,8 @@ struct LoginPageView: View {
                     case .none:
                         focusedField = .none
                     default:
+                        break
                         // TODO: ZVZV Most Likely this will the like the user has entered values in all the fields.
-                        print("Submit \(viewState.serverURL) - \(viewState.userName) - \(viewState.password)")
                     }
                 }
                 

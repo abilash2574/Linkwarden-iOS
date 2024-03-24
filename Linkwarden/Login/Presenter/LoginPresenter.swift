@@ -36,14 +36,13 @@ class LoginPresenter: LoginPresenterContract {
         
         Task(priority: .userInitiated) { [weak self] in
             guard let self else {
-                // TODO: ZVZV Handle guard
+                LLogger.shared.critical("Self found to be nil")
                 return
             }
             NetworkManager.setBaseURL(url)
             
             if await getCSRFToken() {
                 if await authenticateUser(username, with: password) {
-                    print("Logged in")
                     if await LinkwardenAppState.shared.isSessionValid {
                         await MainActor.run {
                             LinkwardenAppState.shared.showLogin = false
@@ -84,14 +83,16 @@ extension LoginPresenter {
         switch await self.getCSRFTokenUsecase.execute(request: request) {
         case .success(let response):
             guard let key = response.token.cookieKey, let value = response.token.cookieValue else {
-                // TODO: ZVZV Handle a terminal error
+                // TODO: ZVZV Handle With a toast
+                // Toast Message Something went wrong. Please send feedback
                 return false
             }
             NetworkManager.csrfToken = response.token.csrfToken
             NetworkManager.csrfTokenCookie = "\(key)=\(value)"
             return true
         case .failure(let error):
-            // TODO: ZVZV Handle this error
+            // TODO: ZVZV Handle with a Toast
+            // Toast Message,
             LLogger.shared.critical("CSRF Token failed \(error)")
             return false
         }
@@ -103,16 +104,11 @@ extension LoginPresenter {
         case .success(let token):
             let cookie = ["SessionToken":"\(token.sessionTokenCookie.cookieKey)=\(token.sessionTokenCookie.cookieToken)", "ExpiryDate":token.sessionTokenCookie.expiryDate] as [String : Any]
             NetworkManager.sessionTokenCookie = cookie
-            
             print("Successful Login")
-            
             return true
-            
         case .failure(let error):
-            // TODO: ZVZV Handle this error
-            LLogger.shared.critical("Not authenticated user \(error)")
-            print("Incorrect Message")
-            
+            // TODO: ZVZV Handle with a toast message.
+            LLogger.shared.critical("Not authenticated user \(error)")            
             return false
         }
     }
