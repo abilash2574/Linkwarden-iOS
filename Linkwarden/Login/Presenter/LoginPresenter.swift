@@ -90,7 +90,7 @@ extension LoginPresenter {
         let request = AuthenticateUserCredentialsUsecase.Request(username: username, password: password)
         switch await self.authenticateUserUsecase.execute(request: request) {
         case .success(let token):
-            let cookie = [token.sessionTokenCookie.cookieKey:token.sessionTokenCookie.cookieToken, "ExpiryDate":token.sessionTokenCookie.expiryDate] as [String : Any]
+            let cookie = ["SessionToken":"\(token.sessionTokenCookie.cookieKey)=\(token.sessionTokenCookie.cookieToken)", "ExpiryDate":token.sessionTokenCookie.expiryDate] as [String : Any]
             NetworkManager.sessionTokenCookie = cookie
             
             print("Successful Login")
