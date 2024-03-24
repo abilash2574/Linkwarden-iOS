@@ -12,17 +12,16 @@ import APIManager
 class NetworkManager {
     
     @UserDefault(UserDefaultsKeys.baseURLKey)
-    private static var baseURL: String!
+    private static var baseURL: String?
     
     @UserDefault(UserDefaultsKeys.csrfTokenKey)
-    static var csrfToken: String!
+    static var csrfToken: String?
     
     @UserDefault(UserDefaultsKeys.csrfTokenCookie)
-    static var csrfTokenCookie: String!
+    static var csrfTokenCookie: String?
     
     @UserDefault(UserDefaultsKeys.sessionTokenKey)
-    static var sessionTokenCookie: [String: Any]!
-    
+    static var sessionTokenCookie: [String: Any]?
     
     static var APIPath: String = "/api/v1"
     
@@ -31,13 +30,14 @@ class NetworkManager {
 extension NetworkManager {
     
     static func getBaseURL() -> String {
-        let base = Self.baseURL
-        guard let base else {
-            // TODO: ZVZV Handle this in a different way
-            // Logout the user
-            fatalError("Base URL Not found")
+        guard let baseURL, !baseURL.isEmpty else {
+            DispatchQueue.main.async {
+                LinkwardenAppState.shared.showHomepage = false
+                LinkwardenAppState.shared.showLogin = true
+            }
+            return ""
         }
-        return base
+        return baseURL
     }
     
     static func setBaseURL(_ url: String) {
