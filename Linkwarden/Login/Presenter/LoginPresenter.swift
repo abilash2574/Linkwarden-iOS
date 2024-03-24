@@ -69,7 +69,9 @@ extension LoginPresenter {
     private func loadInitialSetup() {
         if !NetworkUtils.isNetworkAccessible {
             // TODO: ZVZV Show No Internet connection View
-            
+            // Toast manager
+            // Disable the login & create account button
+            viewState?.enableLogin = false
         }
         
         HTTPCookieStorage.shared.removeCookies(since: .distantPast)

@@ -70,6 +70,7 @@ struct LoginPageView: View {
                             .frame(minWidth: 180, maxWidth: 300)
                             .foregroundStyle(.themeABackground)
                     }
+                    .disabled(!viewState.enableLogin)
                     .buttonStyle(.borderedProminent)
                     .controlSize(.regular)
                     

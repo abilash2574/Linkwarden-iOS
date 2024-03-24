@@ -10,8 +10,8 @@ import SwiftUI
 
 protocol LoginViewStateContract: AnyObject {
     
-    // TODO: ZVZV Add a button state control here to disable the login button if there is no internet
-
+    var enableLogin: Bool { get set }
+    
     func showLoading()
     func hideLoading()
     
@@ -43,6 +43,7 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
     @Published var password = ""
     
     @Published var enableScrollView = false
+    @Published var enableLogin = true
     
     @Published var showLoadingView: Bool = false
     
