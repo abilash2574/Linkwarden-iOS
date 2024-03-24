@@ -14,4 +14,6 @@ enum UserDefaultsKeys {
     static let csrfTokenCookie = "network.csrftokencookie"
     static let sessionTokenKey = "network.sessiontoken"
     
+    static let currentThemeKey = "theme.currenttheme"
+    
 }

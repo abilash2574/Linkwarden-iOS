@@ -313,11 +313,11 @@
 		82C3591D2B9C371A009A3294 /* Linkwarden */ = {
 			isa = PBXGroup;
 			children = (
-				829581242BB02DA4003162CE /* Homepage */,
 				824415112B9D2AFD00E0C624 /* CommonUtils */,
 				8244150B2B9D28B900E0C624 /* Utils */,
 				824414FB2B9C715000E0C624 /* Localization */,
 				82C359312B9C47E6009A3294 /* Login */,
+				829581242BB02DA4003162CE /* Homepage */,
 				8295811C2BB01ECC003162CE /* Linkwarden */,
 				82C359222B9C371B009A3294 /* Assets.xcassets */,
 				82C359242B9C371B009A3294 /* Preview Content */,

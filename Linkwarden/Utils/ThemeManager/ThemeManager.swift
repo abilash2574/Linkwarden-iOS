@@ -10,15 +10,26 @@ import SwiftUI
 
 class ThemeManager {
     
-    enum Theme {
+    @UserDefault(UserDefaultsKeys.currentThemeKey)
+    private static var theme: String?
+    
+    enum Theme: String {
         case theme1
     }
     
-    private static var currentTheme: Theme = getCurrentTheme()
+    private static var currentTheme = getCurrentTheme()
     
     static func getCurrentTheme() -> Theme {
-        // TODO: ZVZV Use a Userdefault to store the current selected theme
-        return Theme.theme1
+        guard let theme = theme, let _currentTheme = Theme.init(rawValue: theme) else {
+            return Theme.theme1
+        }
+        
+        return _currentTheme
+    }
+    
+    static func setCurrentTheme(_ theme: Theme) {
+        // TODO: Check if theme get changed on calling this function.
+        ThemeManager.theme = theme.rawValue
     }
     
     // MARK: - Label
