@@ -44,6 +44,12 @@ class LoginPresenter: LoginPresenterContract {
             if await getCSRFToken() {
                 if await authenticateUser(username, with: password) {
                     print("Logged in")
+                    if await LinkwardenAppState.shared.isSessionValid {
+                        await MainActor.run {
+                            LinkwardenAppState.shared.showLogin = false
+                            LinkwardenAppState.shared.showHomepage = true
+                        }
+                    }
                 } else {
                     print("Something went wrong")
                 }
@@ -66,6 +72,11 @@ extension LoginPresenter {
             // TODO: ZVZV Show No Internet connection View
             
         }
+        
+        HTTPCookieStorage.shared.removeCookies(since: .distantPast)
+        NetworkManager.csrfToken = nil
+        NetworkManager.csrfTokenCookie = nil
+        NetworkManager.sessionTokenCookie = nil
     }
     
     private func getCSRFToken() async -> Bool {
