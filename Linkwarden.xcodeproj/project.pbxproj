@@ -51,6 +51,7 @@
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
 		82C359262B9C371B009A3294 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359252B9C371B009A3294 /* Preview Assets.xcassets */; };
 		82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */; };
+		82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3D4182BB9DBA9000722BF /* Validator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		82C359222B9C371B009A3294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C359252B9C371B009A3294 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		82D3D4182BB9DBA9000722BF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		8244150B2B9D28B900E0C624 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				82D3D4172BB9DB9E000722BF /* Validator */,
 				82A85A6C2BB96BC700F4FFA6 /* DateTimeManager */,
 				8244152C2B9DCC6E00E0C624 /* UserDefaultsManager */,
 				824415142B9D2BFB00E0C624 /* Logger */,
@@ -427,6 +430,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		82D3D4172BB9DB9E000722BF /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				82D3D4182BB9DBA9000722BF /* Validator.swift */,
+			);
+			path = Validator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -538,6 +549,7 @@
 				829581342BB045D7003162CE /* GetSessionDetailUsecase.swift in Sources */,
 				8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */,
 				8295811B2BAF6FF7003162CE /* SessionToken.swift in Sources */,
+				82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */,
 				82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */,
 				82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */,
 				82A85A762BB9756300F4FFA6 /* DataManager.swift in Sources */,

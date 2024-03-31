@@ -17,6 +17,7 @@ struct LoginPageView: View {
         ZStack {
             RadialGradient(colors: [ThemeManager.gradientAStartPoint, ThemeManager.gradientAEndPoint], center: .top, startRadius: -200, endRadius: 1000)
                 .ignoresSafeArea()
+            
             VStack {
                 Spacer()
                 
@@ -26,26 +27,38 @@ struct LoginPageView: View {
                 
                 VStack(spacing: 15) {
                     ForEach(viewState.textFieldConfig) { field in
-                        LoginTextField(
-                            image: field.image,
-                            placeholder: field.placeholder,
-                            keyboardType: field.keyboardType,
-                            contentType: field.contentType,
-                            isSecure: field.isSecure,
-                            textFieldValue: getBindingValueFor(field: field.focusedField),
-                            focused: $focusedField,
-                            focusedField: field.focusedField)
-                        .padding([.leading, .trailing, .bottom], 8)
-                        .onTapGesture {
-                            focusedField = field.focusedField
+                        VStack(alignment: .trailing) {
+                            LoginTextField(
+                                image: field.image,
+                                placeholder: field.placeholder,
+                                keyboardType: field.keyboardType,
+                                contentType: field.contentType,
+                                characterLimit: field.characterLimit,
+                                isSecure: field.isSecure,
+                                textFieldValue: getBindingValueFor(field: field.focusedField),
+                                focused: $focusedField,
+                                focusedField: field.focusedField, validation: field.validation)
+                            .padding([.leading, .trailing], 8)
+                            .onTapGesture {
+                                focusedField = field.focusedField
+                            }
+                            
+                            switch field.focusedField {
+                            case .serverURL:
+                                LoginTextFieldWarningView(text: viewState.serverError)
+                            case .username:
+                                LoginTextFieldWarningView(text: viewState.usernameError)
+                            case .password:
+                                LoginTextFieldWarningView(text: viewState.passwordError)
+                            }
                         }
                     }
                 }
                 .onSubmit {
                     switch focusedField {
                     case .serverURL:
-                        focusedField = .userName
-                    case .userName:
+                        focusedField = .username
+                    case .username:
                         focusedField = .password
                     case .none:
                         focusedField = .none
@@ -56,10 +69,8 @@ struct LoginPageView: View {
                 }
                 
                 Spacer()
-                Spacer()
                 
                 VStack(spacing: 15) {
-                    
                     Button {
                         focusedField = .none
                         viewState.didTapLogin()
@@ -74,24 +85,30 @@ struct LoginPageView: View {
                     .buttonStyle(.borderedProminent)
                     .controlSize(.regular)
                     
-                    LoginButtonSeparator()
-                    
-                    Button {
-                        focusedField = .none
-                    } label: {
-                        Text("Create Account")
-                            .font(.body)
-                            .fontWeight(.bold)
-                            .frame(minWidth: 180, maxWidth: 300)
-                            .padding(8)
-                            .background(
-                                RoundedRectangle(cornerRadius: 10, style: .circular)
-                                    .stroke(lineWidth: 1.0)
-                            )
+                    if viewState.showCreateAccount {
+                        LoginButtonSeparator()
+                        
+                        Button {
+                            focusedField = .none
+                        } label: {
+                            Text("Create Account")
+                                .font(.body)
+                                .fontWeight(.bold)
+                                .frame(minWidth: 180, maxWidth: 300)
+                                .padding(8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10, style: .circular)
+                                        .stroke(lineWidth: 1.0)
+                                )
+                        }
+                        .controlSize(.regular)
                     }
-                    .controlSize(.regular)
+                }
+                if !viewState.showCreateAccount {
+                    Spacer()
                 }
             }
+            .scrollDisabled(false)
             
             if viewState.showLoadingView {
                 ProgressView()
@@ -114,8 +131,8 @@ struct LoginPageView: View {
         switch field {
         case .serverURL:
             $viewState.serverURL
-        case .userName:
-            $viewState.userName
+        case .username:
+            $viewState.username
         case .password:
             $viewState.password
         }
@@ -151,6 +168,7 @@ private struct LoginTextField: View {
     
     let keyboardType: UIKeyboardType
     let contentType: UITextContentType
+    let characterLimit: Int
     
     let isSecure: Bool
     
@@ -158,17 +176,17 @@ private struct LoginTextField: View {
     var focused: FocusState<LoginViewState.Field?>.Binding
     var focusedField: LoginViewState.Field
     
+    var validation: (String) -> ()
     
     var body: some View {
         HStack {
             Spacer()
             HStack {
                 image
-                    .resizable()
                     .aspectRatio(contentMode: .fit)
                     .imageScale(.large)
                     .foregroundStyle(.primary)
-                    .frame(width: 30, height: 30)
+                    .frame(height: 30)
                 if isSecure {
                     SecureField(
                         "",
@@ -187,11 +205,35 @@ private struct LoginTextField: View {
                     .modifier(LoginTextFieldModifier(keyboardType: keyboardType, contentType: contentType, focused: focused, focusedField: focusedField))
                 }
             }
+            .onChange(of: textFieldValue) { value in
+                if value.count > characterLimit {
+                    textFieldValue = String(textFieldValue.prefix(characterLimit))
+                    validation(textFieldValue)
+                }
+                
+            }
             .padding(8)
             .background(ThemeManager.secondaryBackground)
             .clipShape(.rect(cornerRadius: 15))
+            .shadow(radius: 5)
             Spacer()
         }
+    }
+}
+
+private struct LoginTextFieldWarningView: View {
+    var text: String
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            Text(text)
+                .lineLimit(2)
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundStyle(ThemeManager.warning)
+                .padding(.trailing)
+        }
+        .padding([.leading, .trailing, .bottom], 8)
     }
 }
 
@@ -224,6 +266,7 @@ private struct LoginTextFieldModifier: ViewModifier {
     
     func body(content: Content) -> some View {
         content
+            .submitLabel( focusedField != .password ? .next : .return)
             .focused(focused, equals: focusedField)
             .keyboardType(keyboardType)
             .textContentType(contentType)

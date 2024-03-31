@@ -15,6 +15,10 @@ protocol LoginViewStateContract: AnyObject {
     func showLoading()
     func hideLoading()
     
+    func showWarningForField(_ field: LoginViewState.Field, warning: String)
+    func hideWarningForField(_ field: LoginViewState.Field)
+    
+    func getValue(for field: LoginViewState.Field) -> String
     
 }
 
@@ -26,35 +30,53 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
         var placeholder: String
         var keyboardType: UIKeyboardType
         var contentType: UITextContentType
+        var characterLimit: Int
         var isSecure: Bool
         var focusedField: Field
+        var validation: (String) -> ()
     }
 
-    enum Field {
+    enum Field: CaseIterable {
         case serverURL
-        case userName
+        case username
         case password
     }
     
     var presenter: LoginPresenterContract
     
     @Published var serverURL = ""
-    @Published var userName = ""
+    @Published var username = ""
     @Published var password = ""
     
-    @Published var enableScrollView = false
+    @Published var serverError = ""
+    @Published var usernameError = ""
+    @Published var passwordError = ""
+    
     @Published var enableLogin = true
     
     @Published var showLoadingView: Bool = false
     
-    var textFieldConfig: [LoginTextFieldConfig] = [
-        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "cloud.fill"), placeholder: "Server URL", keyboardType: .URL, contentType: .URL, isSecure: false, focusedField: .serverURL),
-        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "person.fill"), placeholder: "Username", keyboardType: .default, contentType: .username, isSecure: false, focusedField: .userName),
-        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "lock.fill"), placeholder: "Password", keyboardType: .default, contentType: .password, isSecure: true, focusedField: .password)
+    @Published var showCreateAccount: Bool = false
+    
+    lazy var textFieldConfig: [LoginTextFieldConfig] = [
+        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "cloud.fill"), placeholder: "Server URL", keyboardType: .URL, contentType: .URL, characterLimit: presenter.serverURLCharacterLimit, isSecure: false, focusedField: .serverURL, validation: { [weak self] in self?.presenter.validateField(.serverURL, value: $0) }),
+        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "person.fill"), placeholder: "Username", keyboardType: .default, contentType: .username, characterLimit: presenter.usernameCharacterLimit, isSecure: false, focusedField: .username, validation: { [weak self] in self?.presenter.validateField(.username, value: $0) }),
+        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "lock.fill"), placeholder: "Password", keyboardType: .default, contentType: .password, characterLimit: presenter.passwordCharacterLimit, isSecure: true, focusedField: .password, validation: { [weak self] in self?.presenter.validateField(.password, value: $0) })
     ]
     
     init(presenter: LoginPresenterContract) {
         self.presenter = presenter
+    }
+    
+    func getValue(for field: Field) -> String {
+        switch field {
+        case .serverURL:
+            serverURL
+        case .username:
+            username
+        case .password:
+            password
+        }
     }
     
 }
@@ -66,7 +88,18 @@ extension LoginViewState {
     }
     
     func didTapLogin() {
-        presenter.didTapLogin(url: serverURL, username: userName, password: password)
+        presenter.didTapLogin(url: serverURL, username: username, password: password)
+    }
+    
+    func validate(_ field: Field) {
+        switch field {
+        case .serverURL:
+            presenter.validateField(field, value: serverURL)
+        case .username:
+            presenter.validateField(field, value: username)
+        case .password:
+            presenter.validateField(field, value: password)
+        }
     }
     
 }
@@ -79,6 +112,28 @@ extension LoginViewState {
     
     func hideLoading() {
         showLoadingView = false
+    }
+    
+    func showWarningForField(_ field: Field, warning: String) {
+        switch field {
+        case .serverURL:
+            serverError = warning
+        case .username:
+            usernameError = warning
+        case .password:
+            passwordError = warning
+        }
+    }
+    
+    func hideWarningForField(_ field: LoginViewState.Field) {
+        switch field {
+        case .serverURL:
+            serverError = ""
+        case .username:
+            usernameError = ""
+        case .password:
+            passwordError = ""
+        }
     }
     
 }

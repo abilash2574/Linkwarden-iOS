@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct HomepageView: View {
+    
+    @EnvironmentObject var appState: LinkwardenAppState
+    
     var body: some View {
-        ZStack {
+        VStack {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Button{
+                appState.showHomepage = false
+                appState.showLogin = true
+            } label: {
+                Text("Logout")
+            }
         }
     }
 }

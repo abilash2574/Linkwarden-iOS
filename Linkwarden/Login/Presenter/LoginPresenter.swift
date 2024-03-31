@@ -9,15 +9,26 @@ import Foundation
 
 protocol LoginPresenterContract: AnyObject {
     
+    var serverURLCharacterLimit: Int { get }
+    var usernameCharacterLimit: Int { get }
+    var passwordCharacterLimit: Int { get }
+    
     func viewOnAppearing()
     
     func didTapLogin(url: String, username: String, password: String)
+    
+    @discardableResult
+    func validateField(_ type: LoginViewState.Field, value: String) -> Bool
 }
 
 class LoginPresenter: LoginPresenterContract {
     
     let getCSRFTokenUsecase: GetCSRFTokenUsecase
     let authenticateUserUsecase: AuthenticateUserCredentialsUsecase
+    
+    let serverURLCharacterLimit = 255
+    let usernameCharacterLimit = 35
+    let passwordCharacterLimit = 34
     
     var session: Session?
     
@@ -35,6 +46,19 @@ class LoginPresenter: LoginPresenterContract {
     func didTapLogin(url: String, username: String, password: String) {
         
         viewState?.showLoading()
+        
+        var isValid = true
+        
+        for field in LoginViewState.Field.allCases {
+            if !validateField(field, value: viewState?.getValue(for: field) ?? "") {
+                isValid = false
+            }
+        }
+        
+        guard isValid else { 
+            viewState?.hideLoading()
+            return
+        }
         
         Task(priority: .userInitiated) { [weak self] in
             guard let self else {
@@ -61,7 +85,34 @@ class LoginPresenter: LoginPresenterContract {
                 self.viewState?.hideLoading()
             })
         }
-        
+    }
+    
+    @discardableResult
+    func validateField(_ type: LoginViewState.Field, value: String) -> Bool {
+        var warning = ""
+        switch type {
+        case .serverURL:
+            if value.isEmpty {
+                warning = "Server URL can't be empty"
+            } else if !(Validator.isValidDomainURL(value) || Validator.isValidIPv4Address(value) || Validator.isValidIPv6Address(value)) {
+                warning = "Please enter a valid domain/IP Address"
+            }
+        case .username:
+            if value.isEmpty {
+                warning = "Username can't be empty"
+            }
+        case .password:
+            if value.isEmpty {
+                warning = "Password can't be empty"
+            }
+        }
+        if warning.isEmpty {
+            viewState?.hideWarningForField(type)
+            return true
+        } else {
+            viewState?.showWarningForField(type, warning: warning)
+            return false
+        }
     }
     
     private func saveCoreDateChanges() -> Bool {

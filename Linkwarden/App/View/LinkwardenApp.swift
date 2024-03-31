@@ -37,6 +37,7 @@ struct ContainerView: View {
                 HomepageView()
             }
         }
+        .environmentObject(appState)
         .onAppear {
             Task {
                 /// Check if the session is valid when the container is starts to appear.

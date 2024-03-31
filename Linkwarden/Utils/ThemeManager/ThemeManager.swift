@@ -39,6 +39,10 @@ class ThemeManager {
     
     static var tertiaryLabel: Color { currentTheme.tertiaryLabel }
     
+    // MARK: - Common
+    
+    static var warning: Color { currentTheme.warning }
+    
     // MARK: - Background
     static var background: Color { currentTheme.background }
     
@@ -80,6 +84,15 @@ extension ThemeManager.Theme {
         switch self {
         default:
             Color(UIColor.tertiaryLabel)
+        }
+    }
+    
+    // MARK: - Common
+    
+    var warning: Color {
+        switch self {
+        default:
+            Color.warning
         }
     }
     
