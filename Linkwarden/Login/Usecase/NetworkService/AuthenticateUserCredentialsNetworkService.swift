@@ -16,7 +16,6 @@ protocol AuthenticateUserCredentialsNetworkServiceContract: NetworkServiceContra
 
 class AuthenticateUserCredentialsNetworkService: AuthenticateUserCredentialsNetworkServiceContract {
     
-    
     lazy var urlString =  "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/auth/callback/credentials"
     
     func authenticateUser(username: String, password: String) async -> UsecaseResult<SessionToken, Error> {

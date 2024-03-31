@@ -10,9 +10,12 @@ import SwiftUI
 @main
 struct LinkwardenApp: App {
     
+    @StateObject private var dataManager = DataManager.shared
+    
     var body: some Scene {
         WindowGroup {
             ContainerView()
+                .environment(\.managedObjectContext, dataManager.container.viewContext)
         }
     }
 }
@@ -42,6 +45,11 @@ struct ContainerView: View {
                     /// On the valid session, we will show the HomePage container view.
                     appState.showHomepage = true
                 } else {
+                    if !AppState.appLaunchFirstTime {
+                        AppState.appLaunchFirstTime = true
+                    } else {
+                        // TODO: ZVZV Show Toast saying session in invalid, please loign again.
+                    }
                     /// Otherwise will show the login page.
                     appState.showLogin = true
                 }

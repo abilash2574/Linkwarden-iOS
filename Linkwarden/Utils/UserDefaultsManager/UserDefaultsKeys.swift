@@ -16,4 +16,6 @@ enum UserDefaultsKeys {
     
     static let currentThemeKey = "theme.currenttheme"
     
+    static let appFirstOnboardingKey = "onboarding.isfirstlaunch"
+    
 }

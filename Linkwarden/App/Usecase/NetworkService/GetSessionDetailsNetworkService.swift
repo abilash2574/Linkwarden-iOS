@@ -27,7 +27,7 @@ class GetSessionDetailsNetworkService: NSObject, GetSessionDetailsNetworkService
             return .failure(APINetworkError.apiManagerError(status: APIErrorStatus.invalidURLString, message: LErrorMessage.Invalid_URL_String, info: nil))
         }
         
-        guard let session = NetworkManager.sessionTokenCookie, let sessionToken = session["SessionToken"] as? String else {
+        guard let sessionToken = NetworkManager.sessionCookie else {
             return .failure(APINetworkError.apiManagerError(status: APIErrorStatus.invalidOperation, message: "Something went wrong", info: nil))
         }
         

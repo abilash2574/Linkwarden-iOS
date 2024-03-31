@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class AppState {
     
@@ -26,6 +27,9 @@ class AppState {
     static var userID: Int?
     
     static var sessionExpiryDate: Date?
+    
+    @AppStorage(UserDefaultsKeys.appFirstOnboardingKey)
+    static var appLaunchFirstTime: Bool = false
     
 }
 

@@ -11,17 +11,44 @@ import APIManager
 
 class NetworkManager {
     
-    @UserDefault(UserDefaultsKeys.baseURLKey)
-    private static var baseURL: String?
+    private static var session: Session? {
+        get {
+            Session.getSession()
+        }
+    }
     
-    @UserDefault(UserDefaultsKeys.csrfTokenKey)
-    static var csrfToken: String?
+    //    @UserDefault(UserDefaultsKeys.baseURLKey)
+    private static var baseURL: String? {
+        get { session?.baseURL }
+        set { session?.baseURL = newValue }
+    }
+
+    //    @UserDefault(UserDefaultsKeys.csrfTokenKey)
+    static var csrfToken: String? {
+        get {
+            session?.csrfToken
+        }
+    }
     
-    @UserDefault(UserDefaultsKeys.csrfTokenCookie)
-    static var csrfTokenCookie: String?
+    //    @UserDefault(UserDefaultsKeys.csrfTokenCookie)
+    static var csrfTokenCookie: String? {
+        get {
+            session?.csrfCookie
+        }
+    }
     
-    @UserDefault(UserDefaultsKeys.sessionTokenKey)
-    static var sessionTokenCookie: [String: Any]?
+    //    @UserDefault(UserDefaultsKeys.sessionTokenKey)
+    static var sessionCookie: String? {
+        get {
+            session?.sessionCookie
+        }
+    }
+    
+    static var sessionExpiry: Date? {
+        get {
+            session?.sessionExpiry
+        }
+    }
     
     static var APIPath: String = "/api/v1"
     
@@ -32,6 +59,7 @@ extension NetworkManager {
     static func getBaseURL() -> String {
         guard let baseURL, !baseURL.isEmpty else {
             DispatchQueue.main.async {
+                // TODO: ZVZV Show a toast saying something went wrong.
                 LinkwardenAppState.shared.showHomepage = false
                 LinkwardenAppState.shared.showLogin = true
             }

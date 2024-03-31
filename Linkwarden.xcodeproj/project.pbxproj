@@ -40,6 +40,9 @@
 		82A85A6B2BB96B5A00F4FFA6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A6A2BB96B5A00F4FFA6 /* AppState.swift */; };
 		82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A6D2BB96BDA00F4FFA6 /* DateTimeManager.swift */; };
 		82A85A702BB96D6200F4FFA6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A6F2BB96D6200F4FFA6 /* AppConstants.swift */; };
+		82A85A742BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A722BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld */; };
+		82A85A762BB9756300F4FFA6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A752BB9756300F4FFA6 /* DataManager.swift */; };
+		82A85A792BB98BFD00F4FFA6 /* Session+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A782BB98BFD00F4FFA6 /* Session+Extension.swift */; };
 		82C23E202BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E1F2BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift */; };
 		82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E212BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift */; };
 		82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E232BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift */; };
@@ -83,6 +86,9 @@
 		82A85A6A2BB96B5A00F4FFA6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		82A85A6D2BB96BDA00F4FFA6 /* DateTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeManager.swift; sourceTree = "<group>"; };
 		82A85A6F2BB96D6200F4FFA6 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		82A85A732BB9744F00F4FFA6 /* UserDetails.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserDetails.xcdatamodel; sourceTree = "<group>"; };
+		82A85A752BB9756300F4FFA6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		82A85A782BB98BFD00F4FFA6 /* Session+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session+Extension.swift"; sourceTree = "<group>"; };
 		82C23E1F2BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsUsecase.swift; sourceTree = "<group>"; };
 		82C23E212BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsNetworkService.swift; sourceTree = "<group>"; };
 		82C23E232BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsDataManager.swift; sourceTree = "<group>"; };
@@ -228,7 +234,7 @@
 			path = UserDefaultsManager;
 			sourceTree = "<group>";
 		};
-		8295811C2BB01ECC003162CE /* Linkwarden */ = {
+		8295811C2BB01ECC003162CE /* App */ = {
 			isa = PBXGroup;
 			children = (
 				829581352BB04738003162CE /* Assembler */,
@@ -237,7 +243,7 @@
 				829581212BB01F00003162CE /* ViewState */,
 				8295811D2BB01EDB003162CE /* View */,
 			);
-			path = Linkwarden;
+			path = App;
 			sourceTree = "<group>";
 		};
 		8295811D2BB01EDB003162CE /* View */ = {
@@ -323,6 +329,24 @@
 			path = DateTimeManager;
 			sourceTree = "<group>";
 		};
+		82A85A712BB9743D00F4FFA6 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				82A85A772BB98BEF00F4FFA6 /* Session */,
+				82A85A722BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld */,
+				82A85A752BB9756300F4FFA6 /* DataManager.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		82A85A772BB98BEF00F4FFA6 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				82A85A782BB98BFD00F4FFA6 /* Session+Extension.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
 		82C359122B9C371A009A3294 = {
 			isa = PBXGroup;
 			children = (
@@ -342,16 +366,17 @@
 		82C3591D2B9C371A009A3294 /* Linkwarden */ = {
 			isa = PBXGroup;
 			children = (
+				8295811C2BB01ECC003162CE /* App */,
 				82A85A692BB96B3A00F4FFA6 /* AppState */,
-				82A85A682BB960FF00F4FFA6 /* Info.plist */,
+				82C359222B9C371B009A3294 /* Assets.xcassets */,
 				824415112B9D2AFD00E0C624 /* CommonUtils */,
-				8244150B2B9D28B900E0C624 /* Utils */,
+				82A85A712BB9743D00F4FFA6 /* DataModel */,
+				829581242BB02DA4003162CE /* Homepage */,
+				82A85A682BB960FF00F4FFA6 /* Info.plist */,
 				824414FB2B9C715000E0C624 /* Localization */,
 				82C359312B9C47E6009A3294 /* Login */,
-				829581242BB02DA4003162CE /* Homepage */,
-				8295811C2BB01ECC003162CE /* Linkwarden */,
-				82C359222B9C371B009A3294 /* Assets.xcassets */,
 				82C359242B9C371B009A3294 /* Preview Content */,
+				8244150B2B9D28B900E0C624 /* Utils */,
 			);
 			path = Linkwarden;
 			sourceTree = "<group>";
@@ -493,9 +518,11 @@
 				829581372BB04744003162CE /* LinkwardenAssembler.swift in Sources */,
 				829581232BB01F0D003162CE /* LinkwardenAppState.swift in Sources */,
 				8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */,
+				82A85A792BB98BFD00F4FFA6 /* Session+Extension.swift in Sources */,
 				824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */,
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
 				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
+				82A85A742BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
 				82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
@@ -513,6 +540,7 @@
 				8295811B2BAF6FF7003162CE /* SessionToken.swift in Sources */,
 				82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */,
 				82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */,
+				82A85A762BB9756300F4FFA6 /* DataManager.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
 				829581282BB02DF6003162CE /* HomepageView.swift in Sources */,
 				824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */,
@@ -762,6 +790,19 @@
 			productName = ToastManager;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		82A85A722BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				82A85A732BB9744F00F4FFA6 /* UserDetails.xcdatamodel */,
+			);
+			currentVersion = 82A85A732BB9744F00F4FFA6 /* UserDetails.xcdatamodel */;
+			path = Linkwarden.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 82C359132B9C371A009A3294 /* Project object */;
 }

@@ -19,6 +19,8 @@ class LoginPresenter: LoginPresenterContract {
     let getCSRFTokenUsecase: GetCSRFTokenUsecase
     let authenticateUserUsecase: AuthenticateUserCredentialsUsecase
     
+    var session: Session?
+    
     public weak var viewState: LoginViewStateContract?
     
     init(getCSRFTokenUsecase: GetCSRFTokenUsecase, authenticateUserUsecase: AuthenticateUserCredentialsUsecase) {
@@ -43,7 +45,7 @@ class LoginPresenter: LoginPresenterContract {
             
             if await getCSRFToken() {
                 if await authenticateUser(username, with: password) {
-                    if await LinkwardenAppState.shared.isSessionValid {
+                    if await LinkwardenAppState.shared.isSessionValid && self.saveCoreDateChanges() {
                         await MainActor.run {
                             LinkwardenAppState.shared.showLogin = false
                             LinkwardenAppState.shared.showHomepage = true
@@ -62,6 +64,16 @@ class LoginPresenter: LoginPresenterContract {
         
     }
     
+    private func saveCoreDateChanges() -> Bool {
+        do {
+            try DataManager.shared.context.save()
+            return true
+        } catch {
+            LLogger.shared.critical("Couldn't save the login credentials \(error)")
+            return false
+        }
+    }
+    
 }
 
 extension LoginPresenter {
@@ -75,9 +87,9 @@ extension LoginPresenter {
         }
         
         HTTPCookieStorage.shared.removeCookies(since: .distantPast)
-        NetworkManager.csrfToken = nil
-        NetworkManager.csrfTokenCookie = nil
-        NetworkManager.sessionTokenCookie = nil
+        Session.deleteSession()
+        
+        session = Session(context: DataManager.shared.context)
     }
     
     private func getCSRFToken() async -> Bool {
@@ -89,8 +101,8 @@ extension LoginPresenter {
                 // Toast Message Something went wrong. Please send feedback
                 return false
             }
-            NetworkManager.csrfToken = response.token.csrfToken
-            NetworkManager.csrfTokenCookie = "\(key)=\(value)"
+            session?.csrfToken = response.token.csrfToken
+            session?.csrfCookie = "\(key)=\(value)"
             return true
         case .failure(let error):
             // TODO: ZVZV Handle with a Toast
@@ -104,9 +116,9 @@ extension LoginPresenter {
         let request = AuthenticateUserCredentialsUsecase.Request(username: username, password: password)
         switch await self.authenticateUserUsecase.execute(request: request) {
         case .success(let token):
-            let cookie = ["SessionToken":"\(token.sessionTokenCookie.cookieKey)=\(token.sessionTokenCookie.cookieToken)", "ExpiryDate":token.sessionTokenCookie.expiryDate] as [String : Any]
-            NetworkManager.sessionTokenCookie = cookie
-            print("Successful Login")
+            session?.sessionCookie = "\(token.sessionTokenCookie.cookieKey)=\(token.sessionTokenCookie.cookieToken)"
+            session?.sessionExpiry = token.sessionTokenCookie.expiryDate
+            LLogger.shared.info("User logged in successfully")
             return true
         case .failure(let error):
             // TODO: ZVZV Handle with a toast message.
