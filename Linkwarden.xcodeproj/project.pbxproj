@@ -36,6 +36,7 @@
 		829581322BB04544003162CE /* GetSessionDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829581312BB04544003162CE /* GetSessionDetailDataManager.swift */; };
 		829581342BB045D7003162CE /* GetSessionDetailUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829581332BB045D7003162CE /* GetSessionDetailUsecase.swift */; };
 		829581372BB04744003162CE /* LinkwardenAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829581362BB04744003162CE /* LinkwardenAssembler.swift */; };
+		82A85A672BB8980600F4FFA6 /* ToastManager in Frameworks */ = {isa = PBXBuildFile; productRef = 82A85A662BB8980600F4FFA6 /* ToastManager */; };
 		82C23E202BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E1F2BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift */; };
 		82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E212BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift */; };
 		82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C23E232BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift */; };
@@ -75,6 +76,7 @@
 		829581312BB04544003162CE /* GetSessionDetailDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionDetailDataManager.swift; sourceTree = "<group>"; };
 		829581332BB045D7003162CE /* GetSessionDetailUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSessionDetailUsecase.swift; sourceTree = "<group>"; };
 		829581362BB04744003162CE /* LinkwardenAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkwardenAssembler.swift; sourceTree = "<group>"; };
+		82A85A682BB960FF00F4FFA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		82C23E1F2BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsUsecase.swift; sourceTree = "<group>"; };
 		82C23E212BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsNetworkService.swift; sourceTree = "<group>"; };
 		82C23E232BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateUserCredentialsDataManager.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A85A672BB8980600F4FFA6 /* ToastManager in Frameworks */,
 				8244150A2B9D262800E0C624 /* APIManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +186,8 @@
 		8244151D2B9DC47400E0C624 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				824415252B9DC8C600E0C624 /* NetworkService */,
+				824415202B9DC6EC00E0C624 /* DataManager */,
 				8244151E2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift */,
 				82C23E1F2BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift */,
 			);
@@ -221,8 +226,6 @@
 			children = (
 				829581352BB04738003162CE /* Assembler */,
 				8295812E2BB042F2003162CE /* Domain */,
-				8295812B2BB0427E003162CE /* NetworkService */,
-				8295812A2BB04278003162CE /* DataManager */,
 				829581292BB04270003162CE /* Usecase */,
 				829581212BB01F00003162CE /* ViewState */,
 				8295811D2BB01EDB003162CE /* View */,
@@ -257,6 +260,8 @@
 		829581292BB04270003162CE /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				8295812B2BB0427E003162CE /* NetworkService */,
+				8295812A2BB04278003162CE /* DataManager */,
 				829581332BB045D7003162CE /* GetSessionDetailUsecase.swift */,
 			);
 			path = Usecase;
@@ -313,6 +318,7 @@
 		82C3591D2B9C371A009A3294 /* Linkwarden */ = {
 			isa = PBXGroup;
 			children = (
+				82A85A682BB960FF00F4FFA6 /* Info.plist */,
 				824415112B9D2AFD00E0C624 /* CommonUtils */,
 				8244150B2B9D28B900E0C624 /* Utils */,
 				824414FB2B9C715000E0C624 /* Localization */,
@@ -344,8 +350,6 @@
 		82C359312B9C47E6009A3294 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				824415252B9DC8C600E0C624 /* NetworkService */,
-				824415202B9DC6EC00E0C624 /* DataManager */,
 				8244151D2B9DC47400E0C624 /* Usecase */,
 				824415042B9C7A9200E0C624 /* Assembler */,
 				824415012B9C7A6000E0C624 /* Presenter */,
@@ -391,6 +395,7 @@
 			name = Linkwarden;
 			packageProductDependencies = (
 				824415092B9D262800E0C624 /* APIManager */,
+				82A85A662BB8980600F4FFA6 /* ToastManager */,
 			);
 			productName = Linkwarden;
 			productReference = 82C3591B2B9C371A009A3294 /* Linkwarden.app */;
@@ -422,6 +427,7 @@
 			mainGroup = 82C359122B9C371A009A3294;
 			packageReferences = (
 				824415082B9D262800E0C624 /* XCRemoteSwiftPackageReference "APIManager" */,
+				82A85A652BB8980600F4FFA6 /* XCRemoteSwiftPackageReference "ToastManager" */,
 			);
 			productRefGroup = 82C3591C2B9C371A009A3294 /* Products */;
 			projectDirPath = "";
@@ -541,6 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -598,6 +605,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -619,11 +627,11 @@
 				DEVELOPMENT_TEAM = 5D5M67MDQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Linkwarden/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Linkwarden;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -651,11 +659,11 @@
 				DEVELOPMENT_TEAM = 5D5M67MDQ8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Linkwarden/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Linkwarden;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -704,6 +712,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		82A85A652BB8980600F4FFA6 /* XCRemoteSwiftPackageReference "ToastManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zeyrie/ToastManager";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -711,6 +727,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 824415082B9D262800E0C624 /* XCRemoteSwiftPackageReference "APIManager" */;
 			productName = APIManager;
+		};
+		82A85A662BB8980600F4FFA6 /* ToastManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82A85A652BB8980600F4FFA6 /* XCRemoteSwiftPackageReference "ToastManager" */;
+			productName = ToastManager;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

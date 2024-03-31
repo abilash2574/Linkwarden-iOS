@@ -1,5 +1,5 @@
 {
-  "originHash" : "07e106ce71313fc7be65a9e43d5ffebf9eed5e9dd51e7fd0f8d0963fb7eda261",
+  "originHash" : "bda3919d8e645c5fed7c35bff55ec97a301784bdb01f02d65b0c8f89c458ea62",
   "pins" : [
     {
       "identity" : "apimanager",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "61634250e937976c5a27495c697074941ae1be19",
         "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "toastmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zeyrie/ToastManager",
+      "state" : {
+        "branch" : "main",
+        "revision" : "86cb61901e359d5a0ed9d466bd635ad3bf0e6a32"
       }
     }
   ],
