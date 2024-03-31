@@ -11,11 +11,9 @@ class LinkwardenAppState: ObservableObject {
     
     static let shared = LinkwardenAppState()
     
-    
     @Published var showLogin = false
     @Published var showHomepage = false
     @Published var showLoading = true
-    
     
     var getSessionUsecase = LinkwardenAssembler.getSessionDetailUsecase()
     
@@ -24,7 +22,6 @@ class LinkwardenAppState: ObservableObject {
             guard let sessionToken = NetworkManager.sessionTokenCookie,  let expiryDate = sessionToken["ExpiryDate"] as? Date, expiryDate > Date() else {
                 return false
             }
-            
             return await validateSession()
         }
     }
@@ -33,14 +30,16 @@ class LinkwardenAppState: ObservableObject {
         let request = GetSessionDetailUsecase.Request()
         switch await getSessionUsecase.execute(request: request) {
         case .success(let session):
-            print("User Id: \(session.sessionDetail.user.id)")
-            print("Expires on: \(session.sessionDetail.expires)")
+            AppState.userID = Int(session.sessionDetail.user.id)
+            AppState.sessionExpiryDate = DateTimeManager.defaultDateFormatter.dateFormatter.date(from: session.sessionDetail.expires)
+            if AppState.userID == nil || AppState.sessionExpiryDate == nil {
+                LLogger.shared.critical("Session in valid with missing userID or session expiry")
+            }
             return true
         case .failure(let error):
-            print("\(error)")
+            LLogger.shared.critical("Session is invalid")
             return false
         }
     }
-    
     
 }
