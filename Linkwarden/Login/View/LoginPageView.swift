@@ -208,9 +208,8 @@ private struct LoginTextField: View {
             .onChange(of: textFieldValue) { value in
                 if value.count > characterLimit {
                     textFieldValue = String(textFieldValue.prefix(characterLimit))
-                    validation(textFieldValue)
                 }
-                
+                validation(textFieldValue)
             }
             .padding(8)
             .background(ThemeManager.secondaryBackground)
