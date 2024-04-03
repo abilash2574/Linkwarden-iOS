@@ -59,9 +59,9 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
     @Published var showCreateAccount: Bool = false
     
     lazy var textFieldConfig: [LoginTextFieldConfig] = [
-        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "cloud.fill"), placeholder: "Server URL", keyboardType: .URL, contentType: .URL, characterLimit: presenter.serverURLCharacterLimit, isSecure: false, focusedField: .serverURL, validation: { [weak self] in self?.presenter.validateField(.serverURL, value: $0) }),
-        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "person.fill"), placeholder: "Username", keyboardType: .default, contentType: .username, characterLimit: presenter.usernameCharacterLimit, isSecure: false, focusedField: .username, validation: { [weak self] in self?.presenter.validateField(.username, value: $0) }),
-        LoginTextFieldConfig(id: UUID(), image: Image(systemName: "lock.fill"), placeholder: "Password", keyboardType: .default, contentType: .password, characterLimit: presenter.passwordCharacterLimit, isSecure: true, focusedField: .password, validation: { [weak self] in self?.presenter.validateField(.password, value: $0) })
+        LoginTextFieldConfig(id: UUID(), image: ImageConstants.serverFieldIcon, placeholder: "Server URL", keyboardType: .URL, contentType: .URL, characterLimit: presenter.serverURLCharacterLimit, isSecure: false, focusedField: .serverURL, validation: { [weak self] in self?.presenter.validateField(.serverURL, value: $0) }),
+        LoginTextFieldConfig(id: UUID(), image: ImageConstants.userFieldIcon, placeholder: "Username", keyboardType: .default, contentType: .username, characterLimit: presenter.usernameCharacterLimit, isSecure: false, focusedField: .username, validation: { [weak self] in self?.presenter.validateField(.username, value: $0) }),
+        LoginTextFieldConfig(id: UUID(), image: ImageConstants.passwordFieldIcon, placeholder: "Password", keyboardType: .default, contentType: .password, characterLimit: presenter.passwordCharacterLimit, isSecure: true, focusedField: .password, validation: { [weak self] in self?.presenter.validateField(.password, value: $0) })
     ]
     
     init(presenter: LoginPresenterContract) {

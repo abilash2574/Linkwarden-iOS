@@ -34,7 +34,7 @@ struct ContainerView: View {
                 LoginAssembler.getLoginPageView()
             }
             if appState.showHomepage {
-                HomepageView()
+                TabBarAssembler.getTabBar()
             }
         }
         .environmentObject(appState)

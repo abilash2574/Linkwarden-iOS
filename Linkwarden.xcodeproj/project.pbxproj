@@ -52,6 +52,16 @@
 		82C359262B9C371B009A3294 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359252B9C371B009A3294 /* Preview Assets.xcassets */; };
 		82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */; };
 		82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3D4182BB9DBA9000722BF /* Validator.swift */; };
+		82F78E8E2BBB1BDB000E73D3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78E8D2BBB1BDB000E73D3 /* TabBarView.swift */; };
+		82F78E952BBB305E000E73D3 /* TabViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78E942BBB305E000E73D3 /* TabViewState.swift */; };
+		82F78E972BBB3079000E73D3 /* TabViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78E962BBB3079000E73D3 /* TabViewPresenter.swift */; };
+		82F78E992BBB3126000E73D3 /* TabBarAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78E982BBB3126000E73D3 /* TabBarAssembler.swift */; };
+		82F78E9C2BBB31FC000E73D3 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78E9B2BBB31FC000E73D3 /* Module.swift */; };
+		82F78EA32BBB3892000E73D3 /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78EA22BBB3892000E73D3 /* CollectionsView.swift */; };
+		82F78EA52BBB389B000E73D3 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78EA42BBB389B000E73D3 /* BookmarksView.swift */; };
+		82F78EA72BBB38A2000E73D3 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78EA62BBB38A2000E73D3 /* TagsView.swift */; };
+		82F78EA92BBB38AA000E73D3 /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78EA82BBB38AA000E73D3 /* FavouritesView.swift */; };
+		82F78EAB2BBB38B1000E73D3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78EAA2BBB38B1000E73D3 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +110,16 @@
 		82C359252B9C371B009A3294 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		82D3D4182BB9DBA9000722BF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		82F78E8D2BBB1BDB000E73D3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		82F78E942BBB305E000E73D3 /* TabViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewState.swift; sourceTree = "<group>"; };
+		82F78E962BBB3079000E73D3 /* TabViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewPresenter.swift; sourceTree = "<group>"; };
+		82F78E982BBB3126000E73D3 /* TabBarAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAssembler.swift; sourceTree = "<group>"; };
+		82F78E9B2BBB31FC000E73D3 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		82F78EA22BBB3892000E73D3 /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
+		82F78EA42BBB389B000E73D3 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+		82F78EA62BBB38A2000E73D3 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		82F78EA82BBB38AA000E73D3 /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		82F78EAA2BBB38B1000E73D3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +178,7 @@
 		8244150B2B9D28B900E0C624 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				82F78E9A2BBB31EB000E73D3 /* ModulesList */,
 				82D3D4172BB9DB9E000722BF /* Validator */,
 				82A85A6C2BB96BC700F4FFA6 /* DateTimeManager */,
 				8244152C2B9DCC6E00E0C624 /* UserDefaultsManager */,
@@ -372,13 +393,19 @@
 				8295811C2BB01ECC003162CE /* App */,
 				82A85A692BB96B3A00F4FFA6 /* AppState */,
 				82C359222B9C371B009A3294 /* Assets.xcassets */,
+				82F78EA02BBB3863000E73D3 /* Bookmarks */,
+				82F78EA12BBB3881000E73D3 /* Collections */,
 				824415112B9D2AFD00E0C624 /* CommonUtils */,
 				82A85A712BB9743D00F4FFA6 /* DataModel */,
+				82F78E9E2BBB3853000E73D3 /* Favourites */,
 				829581242BB02DA4003162CE /* Homepage */,
 				82A85A682BB960FF00F4FFA6 /* Info.plist */,
 				824414FB2B9C715000E0C624 /* Localization */,
 				82C359312B9C47E6009A3294 /* Login */,
 				82C359242B9C371B009A3294 /* Preview Content */,
+				82F78E9D2BBB384B000E73D3 /* Settings */,
+				82F78E8C2BBB1BB8000E73D3 /* TabView */,
+				82F78E9F2BBB385C000E73D3 /* Tags */,
 				8244150B2B9D28B900E0C624 /* Utils */,
 			);
 			path = Linkwarden;
@@ -436,6 +463,97 @@
 				82D3D4182BB9DBA9000722BF /* Validator.swift */,
 			);
 			path = Validator;
+			sourceTree = "<group>";
+		};
+		82F78E8C2BBB1BB8000E73D3 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				82F78E932BBB304D000E73D3 /* ViewState */,
+				82F78E922BBB2F45000E73D3 /* Presenter */,
+				82F78E912BBB1CB4000E73D3 /* View */,
+				82F78E902BBB1CA7000E73D3 /* Assembler */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		82F78E902BBB1CA7000E73D3 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				82F78E982BBB3126000E73D3 /* TabBarAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		82F78E912BBB1CB4000E73D3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F78E8D2BBB1BDB000E73D3 /* TabBarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82F78E922BBB2F45000E73D3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				82F78E962BBB3079000E73D3 /* TabViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		82F78E932BBB304D000E73D3 /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+				82F78E942BBB305E000E73D3 /* TabViewState.swift */,
+			);
+			path = ViewState;
+			sourceTree = "<group>";
+		};
+		82F78E9A2BBB31EB000E73D3 /* ModulesList */ = {
+			isa = PBXGroup;
+			children = (
+				82F78E9B2BBB31FC000E73D3 /* Module.swift */,
+			);
+			path = ModulesList;
+			sourceTree = "<group>";
+		};
+		82F78E9D2BBB384B000E73D3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				82F78EAA2BBB38B1000E73D3 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		82F78E9E2BBB3853000E73D3 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				82F78EA82BBB38AA000E73D3 /* FavouritesView.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		82F78E9F2BBB385C000E73D3 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				82F78EA62BBB38A2000E73D3 /* TagsView.swift */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		82F78EA02BBB3863000E73D3 /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				82F78EA42BBB389B000E73D3 /* BookmarksView.swift */,
+			);
+			path = Bookmarks;
+			sourceTree = "<group>";
+		};
+		82F78EA12BBB3881000E73D3 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				82F78EA22BBB3892000E73D3 /* CollectionsView.swift */,
+			);
+			path = Collections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +640,7 @@
 				8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */,
 				824415322B9DD98F00E0C624 /* APIResponseConstants.swift in Sources */,
 				824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */,
+				82F78EA92BBB38AA000E73D3 /* FavouritesView.swift in Sources */,
 				8244151F2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift in Sources */,
 				824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */,
 				8295812D2BB042A0003162CE /* GetSessionDetailsNetworkService.swift in Sources */,
@@ -531,24 +650,33 @@
 				8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */,
 				82A85A792BB98BFD00F4FFA6 /* Session+Extension.swift in Sources */,
 				824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */,
+				82F78EAB2BBB38B1000E73D3 /* SettingsView.swift in Sources */,
+				82F78E9C2BBB31FC000E73D3 /* Module.swift in Sources */,
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
 				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
 				82A85A742BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
+				82F78E972BBB3079000E73D3 /* TabViewPresenter.swift in Sources */,
 				82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
 				82C23E202BA0E00C00280ADC /* AuthenticateUserCredentialsUsecase.swift in Sources */,
 				82A85A702BB96D6200F4FFA6 /* AppConstants.swift in Sources */,
 				824415132B9D2B0A00E0C624 /* CommonUtils.swift in Sources */,
 				824415242B9DC84B00E0C624 /* CSRFToken.swift in Sources */,
+				82F78E992BBB3126000E73D3 /* TabBarAssembler.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
+				82F78EA32BBB3892000E73D3 /* CollectionsView.swift in Sources */,
 				829581302BB042FF003162CE /* SessionDetail.swift in Sources */,
+				82F78E8E2BBB1BDB000E73D3 /* TabBarView.swift in Sources */,
 				82A85A6B2BB96B5A00F4FFA6 /* AppState.swift in Sources */,
+				82F78E952BBB305E000E73D3 /* TabViewState.swift in Sources */,
 				824415222B9DC70100E0C624 /* GetCSRFTokenDataManager.swift in Sources */,
 				824415162B9D2C1800E0C624 /* Logger+Extensions.swift in Sources */,
+				82F78EA72BBB38A2000E73D3 /* TagsView.swift in Sources */,
 				829581342BB045D7003162CE /* GetSessionDetailUsecase.swift in Sources */,
 				8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */,
 				8295811B2BAF6FF7003162CE /* SessionToken.swift in Sources */,
+				82F78EA52BBB389B000E73D3 /* BookmarksView.swift in Sources */,
 				82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */,
 				82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */,
 				82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */,

@@ -4,7 +4,16 @@
     "" : {
 
     },
+    "Bookmarks Page" : {
+
+    },
+    "Collections Page" : {
+
+    },
     "Create Account" : {
+
+    },
+    "Favourites Page" : {
 
     },
     "Hello, World!" : {
@@ -20,6 +29,12 @@
 
     },
     "OR" : {
+
+    },
+    "Settings Page" : {
+
+    },
+    "Tags Page" : {
 
     }
   },

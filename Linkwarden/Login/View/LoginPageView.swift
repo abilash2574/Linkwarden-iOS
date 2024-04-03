@@ -147,7 +147,7 @@ struct LoginPageView: View {
 private struct LinkwardenLogo: View {
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
-            Image(ImageConstants.linkwardenIcon)
+            ImageConstants.linkwardenIcon
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
