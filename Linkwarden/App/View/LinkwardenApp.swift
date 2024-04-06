@@ -39,6 +39,7 @@ struct ContainerView: View {
         }
         .environmentObject(appState)
         .onAppear {
+            NetworkUtils.startObserving()
             Task {
                 /// Check if the session is valid when the container is starts to appear.
                 /// A valid session could be identified by hitting the API to get the user ID for the current session token that is stored in the cookie.

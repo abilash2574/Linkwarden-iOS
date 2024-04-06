@@ -28,6 +28,8 @@
 		8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */; };
 		824415302B9DD24D00E0C624 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */; };
 		824415322B9DD98F00E0C624 /* APIResponseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415312B9DD98F00E0C624 /* APIResponseConstants.swift */; };
+		829101242BBDC7E600AA25F1 /* LoginErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829101232BBDC7E600AA25F1 /* LoginErrorMessages.swift */; };
+		829101262BBDCD8000AA25F1 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829101252BBDCD8000AA25F1 /* OfflineView.swift */; };
 		8295811B2BAF6FF7003162CE /* SessionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295811A2BAF6FF7003162CE /* SessionToken.swift */; };
 		829581232BB01F0D003162CE /* LinkwardenAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829581222BB01F0D003162CE /* LinkwardenAppState.swift */; };
 		829581282BB02DF6003162CE /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829581272BB02DF6003162CE /* HomepageView.swift */; };
@@ -85,6 +87,8 @@
 		8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		824415312B9DD98F00E0C624 /* APIResponseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseConstants.swift; sourceTree = "<group>"; };
+		829101232BBDC7E600AA25F1 /* LoginErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginErrorMessages.swift; sourceTree = "<group>"; };
+		829101252BBDCD8000AA25F1 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		8295811A2BAF6FF7003162CE /* SessionToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionToken.swift; sourceTree = "<group>"; };
 		829581222BB01F0D003162CE /* LinkwardenAppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkwardenAppState.swift; sourceTree = "<group>"; };
 		829581272BB02DF6003162CE /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
@@ -444,6 +448,7 @@
 			isa = PBXGroup;
 			children = (
 				82C359202B9C371A009A3294 /* LoginPageView.swift */,
+				829101252BBDCD8000AA25F1 /* OfflineView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 			children = (
 				824415232B9DC84B00E0C624 /* CSRFToken.swift */,
 				8295811A2BAF6FF7003162CE /* SessionToken.swift */,
+				829101232BBDC7E600AA25F1 /* LoginErrorMessages.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -645,6 +651,7 @@
 				824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */,
 				8295812D2BB042A0003162CE /* GetSessionDetailsNetworkService.swift in Sources */,
 				8244151C2B9DC11C00E0C624 /* LError.swift in Sources */,
+				829101262BBDCD8000AA25F1 /* OfflineView.swift in Sources */,
 				829581372BB04744003162CE /* LinkwardenAssembler.swift in Sources */,
 				829581232BB01F0D003162CE /* LinkwardenAppState.swift in Sources */,
 				8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */,
@@ -653,6 +660,7 @@
 				82F78EAB2BBB38B1000E73D3 /* SettingsView.swift in Sources */,
 				82F78E9C2BBB31FC000E73D3 /* Module.swift in Sources */,
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
+				829101242BBDC7E600AA25F1 /* LoginErrorMessages.swift in Sources */,
 				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
 				82A85A742BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,

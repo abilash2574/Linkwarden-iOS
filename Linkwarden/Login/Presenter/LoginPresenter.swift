@@ -44,8 +44,11 @@ class LoginPresenter: LoginPresenterContract {
     }
     
     func didTapLogin(url: String, username: String, password: String) {
-        
         viewState?.showLoading()
+        guard checkAndHandleNetworkConnectivity() else {
+            viewState?.hideLoading()
+            return
+        }
         
         var isValid = true
         
@@ -130,17 +133,26 @@ class LoginPresenter: LoginPresenterContract {
 extension LoginPresenter {
     
     private func loadInitialSetup() {
-        if !NetworkUtils.isNetworkAccessible {
-            // TODO: ZVZV Show No Internet connection View
-            // Toast manager
-            // Disable the login & create account button
-            viewState?.enableLogin = false
+        guard checkAndHandleNetworkConnectivity() else {
+            return
         }
         
         HTTPCookieStorage.shared.removeCookies(since: .distantPast)
         Session.deleteSession()
         
         session = Session(context: DataManager.shared.context)
+    }
+    
+    private func checkAndHandleNetworkConnectivity() -> Bool {
+        guard NetworkUtils.isNetworkAccessible else {
+            // TODO: ZVZV Show No Internet connection View
+            viewState?.isOnline = false
+            LLogger.shared.critical("\(LoginErrorMessages.NoInternetConnection.logMessage)")
+            return false
+        }
+        viewState?.isOnline = true
+        return true
+        
     }
     
     private func getCSRFToken() async -> Bool {

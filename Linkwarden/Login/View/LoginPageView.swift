@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ToastManager
 
 struct LoginPageView: View {
     
@@ -23,88 +24,94 @@ struct LoginPageView: View {
                 
                 LinkwardenLogo()
                 
-                Spacer()
-                
-                VStack(spacing: 15) {
-                    ForEach(viewState.textFieldConfig) { field in
-                        VStack(alignment: .trailing) {
-                            LoginTextField(
-                                image: field.image,
-                                placeholder: field.placeholder,
-                                keyboardType: field.keyboardType,
-                                contentType: field.contentType,
-                                characterLimit: field.characterLimit,
-                                isSecure: field.isSecure,
-                                textFieldValue: getBindingValueFor(field: field.focusedField),
-                                focused: $focusedField,
-                                focusedField: field.focusedField, validation: field.validation)
-                            .padding([.leading, .trailing], 8)
-                            .onTapGesture {
-                                focusedField = field.focusedField
-                            }
-                            
-                            switch field.focusedField {
-                            case .serverURL:
-                                LoginTextFieldWarningView(text: viewState.serverError)
-                            case .username:
-                                LoginTextFieldWarningView(text: viewState.usernameError)
-                            case .password:
-                                LoginTextFieldWarningView(text: viewState.passwordError)
+                if viewState.isOnline {
+                    
+                    Spacer()
+                    
+                    VStack(spacing: 15) {
+                        ForEach(viewState.textFieldConfig) { field in
+                            VStack(alignment: .trailing) {
+                                LoginTextField(
+                                    image: field.image,
+                                    placeholder: field.placeholder,
+                                    keyboardType: field.keyboardType,
+                                    contentType: field.contentType,
+                                    characterLimit: field.characterLimit,
+                                    isSecure: field.isSecure,
+                                    textFieldValue: getBindingValueFor(field: field.focusedField),
+                                    focused: $focusedField,
+                                    focusedField: field.focusedField, validation: field.validation)
+                                .padding([.leading, .trailing], 8)
+                                .onTapGesture {
+                                    focusedField = field.focusedField
+                                }
+                                
+                                switch field.focusedField {
+                                case .serverURL:
+                                    LoginTextFieldWarningView(text: viewState.serverError)
+                                case .username:
+                                    LoginTextFieldWarningView(text: viewState.usernameError)
+                                case .password:
+                                    LoginTextFieldWarningView(text: viewState.passwordError)
+                                }
                             }
                         }
                     }
-                }
-                .onSubmit {
-                    switch focusedField {
-                    case .serverURL:
-                        focusedField = .username
-                    case .username:
-                        focusedField = .password
-                    case .none:
-                        focusedField = .none
-                    default:
-                        break
-                        // TODO: ZVZV Most Likely this will the like the user has entered values in all the fields.
+                    .onSubmit {
+                        switch focusedField {
+                        case .serverURL:
+                            focusedField = .username
+                        case .username:
+                            focusedField = .password
+                        case .none:
+                            focusedField = .none
+                        default:
+                            break
+                            // TODO: ZVZV Most Likely this will the like the user has entered values in all the fields.
+                        }
                     }
-                }
-                
-                Spacer()
-                
-                VStack(spacing: 15) {
-                    Button {
-                        focusedField = .none
-                        viewState.didTapLogin()
-                    } label: {
-                        Text("Login")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .frame(minWidth: 180, maxWidth: 300)
-                            .foregroundStyle(.themeABackground)
-                    }
-                    .disabled(!viewState.enableLogin)
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.regular)
                     
-                    if viewState.showCreateAccount {
-                        LoginButtonSeparator()
-                        
+                    Spacer()
+                    
+                    VStack(spacing: 15) {
                         Button {
                             focusedField = .none
+                            viewState.didTapLogin()
                         } label: {
-                            Text("Create Account")
-                                .font(.body)
+                            Text("Login")
+                                .font(.title3)
                                 .fontWeight(.bold)
                                 .frame(minWidth: 180, maxWidth: 300)
-                                .padding(8)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10, style: .circular)
-                                        .stroke(lineWidth: 1.0)
-                                )
+                                .foregroundStyle(.themeABackground)
                         }
+                        .disabled(!viewState.enableLogin)
+                        .buttonStyle(.borderedProminent)
                         .controlSize(.regular)
+                        
+                        if viewState.showCreateAccount {
+                            LoginButtonSeparator()
+                            
+                            Button {
+                                focusedField = .none
+                            } label: {
+                                Text("Create Account")
+                                    .font(.body)
+                                    .fontWeight(.bold)
+                                    .frame(minWidth: 180, maxWidth: 300)
+                                    .padding(8)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10, style: .circular)
+                                            .stroke(lineWidth: 1.0)
+                                    )
+                            }
+                            .controlSize(.regular)
+                        }
                     }
-                }
-                if !viewState.showCreateAccount {
+                    if !viewState.showCreateAccount {
+                        Spacer()
+                    }
+                } else {
+                    OfflineView(buttonAction: viewState.didTapRetry)
                     Spacer()
                 }
             }
@@ -119,6 +126,11 @@ struct LoginPageView: View {
             }
             
         }
+        .toast(isPresenting: $viewState.showToast, duration: 3, animateFromSide: false, backgroundColor: ThemeManager.toastBackground, content: {
+            Text(viewState.toastMessage)
+                .font(.callout)
+                .foregroundStyle(.white)
+        })
         .onTapGesture {
             focusedField = .none
         }

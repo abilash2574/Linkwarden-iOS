@@ -39,6 +39,9 @@ class ThemeManager {
     
     static var tertiaryLabel: Color { currentTheme.tertiaryLabel }
     
+    // MARK: - Toast
+    static var toastBackground: Color { currentTheme.toastBackground }
+    
     // MARK: - Common
     
     static var warning: Color { currentTheme.warning }
@@ -84,6 +87,14 @@ extension ThemeManager.Theme {
         switch self {
         default:
             Color(UIColor.tertiaryLabel)
+        }
+    }
+    
+    // MARK: - Toast
+    var toastBackground: Color {
+        switch self {
+        case .theme1:
+            Color.themeAToastBackground
         }
     }
     

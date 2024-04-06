@@ -9,7 +9,6 @@ import Foundation
 
 class NetworkUtils {
     
-//    private static let hostAccessibility = Reachability(hostname: "")
     private static let accessibility = try? Reachability()
     private static var isConnectionAvailable = true
     
@@ -22,7 +21,6 @@ class NetworkUtils {
         accessibility?.whenUnreachable = { accessibility in
             LLogger.shared.warning("Network Connection Unreachable")
             self.isConnectionAvailable = false
-            
         }
         
         do {

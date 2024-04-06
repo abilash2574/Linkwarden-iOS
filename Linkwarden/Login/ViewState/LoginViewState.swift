@@ -11,6 +11,7 @@ import SwiftUI
 protocol LoginViewStateContract: AnyObject {
     
     var enableLogin: Bool { get set }
+    var isOnline: Bool { get set }
     
     func showLoading()
     func hideLoading()
@@ -19,6 +20,8 @@ protocol LoginViewStateContract: AnyObject {
     func hideWarningForField(_ field: LoginViewState.Field)
     
     func getValue(for field: LoginViewState.Field) -> String
+    
+    func showToast(with message: String)
     
 }
 
@@ -54,9 +57,14 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
     
     @Published var enableLogin = true
     
+    @Published var isOnline = true
+    
     @Published var showLoadingView: Bool = false
     
     @Published var showCreateAccount: Bool = false
+    
+    @Published var showToast: Bool = false
+    @Published var toastMessage: String = ""
     
     lazy var textFieldConfig: [LoginTextFieldConfig] = [
         LoginTextFieldConfig(id: UUID(), image: ImageConstants.serverFieldIcon, placeholder: "Server URL", keyboardType: .URL, contentType: .URL, characterLimit: presenter.serverURLCharacterLimit, isSecure: false, focusedField: .serverURL, validation: { [weak self] in self?.presenter.validateField(.serverURL, value: $0) }),
@@ -88,7 +96,15 @@ extension LoginViewState {
     }
     
     func didTapLogin() {
+        let urlString = serverURL
+        if !(urlString.hasPrefix("http://") || urlString.hasPrefix("https://")) {
+            serverURL = "https://" + urlString
+        }
         presenter.didTapLogin(url: serverURL, username: username, password: password)
+    }
+    
+    func didTapRetry() {
+        presenter.viewOnAppearing()
     }
     
     func validate(_ field: Field) {
@@ -134,6 +150,11 @@ extension LoginViewState {
         case .password:
             passwordError = ""
         }
+    }
+    
+    func showToast(with message: String) {
+        toastMessage = message
+        showToast = true
     }
     
 }
