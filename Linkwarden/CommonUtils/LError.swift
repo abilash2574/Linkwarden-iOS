@@ -41,6 +41,7 @@ struct LErrorMessage {
     public static let Invalid_JSON_Key = "Tried to retrive a JSON value with invalid JSON key"
     public static let Invalid_JSON_Process = "Couldn't covert the received response data to JSON"
     public static let Invalid_Response_Code = "Received response code other than 200"
+    public static let UnknownError = "Somthing went wrong"
 }
 
 extension APIErrorStatus {

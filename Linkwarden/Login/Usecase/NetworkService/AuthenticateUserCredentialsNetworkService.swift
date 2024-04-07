@@ -16,7 +16,9 @@ protocol AuthenticateUserCredentialsNetworkServiceContract: NetworkServiceContra
 
 class AuthenticateUserCredentialsNetworkService: AuthenticateUserCredentialsNetworkServiceContract {
     
-    lazy var urlString =  "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/auth/callback/credentials"
+    var urlString: String { "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/auth/callback/credentials" }
+    
+    lazy var headers = ["Content-Type" : "application/json; charset=utf-8"]
     
     func authenticateUser(username: String, password: String) async -> UsecaseResult<SessionToken, Error> {
         guard isOnline() else {
@@ -29,7 +31,7 @@ class AuthenticateUserCredentialsNetworkService: AuthenticateUserCredentialsNetw
         
         let requestBody: [String: Any] = ["username": username, "password": password, "csrfToken": NetworkManager.csrfToken ?? "",  "json": true]
 
-        let headers = ["Content-Type" : "application/json; charset=utf-8", "Cookie": "\(NetworkManager.csrfTokenCookie!);"]
+        headers["Cookie"] = "\(NetworkManager.csrfTokenCookie!);"
         
         switch await APIManager.makeRequest(.POST, withURL: url, headers: headers, requestBody: requestBody) {
         case .success(_, let response):

@@ -4,13 +4,22 @@
     "" : {
 
     },
+    "Bookmarks" : {
+
+    },
     "Bookmarks Page" : {
+
+    },
+    "Collections" : {
 
     },
     "Collections Page" : {
 
     },
     "Create Account" : {
+
+    },
+    "Favourites" : {
 
     },
     "Favourites Page" : {
@@ -25,10 +34,34 @@
     "Login" : {
 
     },
+    "Login failed. Please check your credentials and try again." : {
+
+    },
+    "Login failed. Please check your credentials and try login again." : {
+
+    },
     "Logout" : {
 
     },
+    "Oh no! We encountered an error while you were trying to log in." : {
+
+    },
+    "Oops! Something unexpected occurred. Please check the server URL and try again." : {
+
+    },
+    "Oops! Something unexpected occurred. You have been logged out. Please login again." : {
+
+    },
     "OR" : {
+
+    },
+    "Password" : {
+
+    },
+    "Password can't be empty" : {
+
+    },
+    "Please enter a valid domain/IP Address" : {
 
     },
     "Retry" : {
@@ -37,10 +70,34 @@
     "Seems you are offline" : {
 
     },
+    "Server URL" : {
+
+    },
+    "Server URL can't be empty" : {
+
+    },
+    "Settings" : {
+
+    },
     "Settings Page" : {
 
     },
+    "Tags" : {
+
+    },
     "Tags Page" : {
+
+    },
+    "Uh-oh! Something went wrong. Please contact the developer by sending feedback from the app." : {
+
+    },
+    "Username" : {
+
+    },
+    "Username can't be empty" : {
+
+    },
+    "Your last login session has expired. Please login again." : {
 
     }
   },

@@ -16,7 +16,7 @@ protocol GetCSRFTokenNetworkServiceContract: NetworkServiceContract {
 
 class GetCSRFTokenNetworkService: NSObject, GetCSRFTokenNetworkServiceContract {
     
-    lazy var urlString = "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/auth/csrf"
+    var urlString: String { "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/auth/csrf" }
     
     func getCSRFToken() async -> UsecaseResult<CSRFToken, Error> {
         guard isOnline() else {

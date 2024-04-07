@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ToastManager
 
 @main
 struct LinkwardenApp: App {
@@ -14,7 +15,7 @@ struct LinkwardenApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContainerView()
+            LinkwardenAssembler.getContainerView()
                 .environment(\.managedObjectContext, dataManager.container.viewContext)
         }
     }
@@ -22,7 +23,7 @@ struct LinkwardenApp: App {
 
 struct ContainerView: View {
     
-    @ObservedObject var appState = LinkwardenAppState.shared
+    @ObservedObject var appState: LinkwardenAppState
     
     var body: some View {
         ZStack {
@@ -37,6 +38,11 @@ struct ContainerView: View {
                 TabBarAssembler.getTabBar()
             }
         }
+        .toast(isPresenting: $appState.showToast, duration: 3, animateFromSide: false, backgroundColor: ThemeManager.toastBackground, content: {
+            Text(appState.toastMessage)
+                .font(.callout)
+                .foregroundStyle(.white)
+        })
         .environmentObject(appState)
         .onAppear {
             NetworkUtils.startObserving()
@@ -49,8 +55,8 @@ struct ContainerView: View {
                 } else {
                     if !AppState.appLaunchFirstTime {
                         AppState.appLaunchFirstTime = true
-                    } else {
-                        // TODO: ZVZV Show Toast saying session in invalid, please loign again.
+                    } else if let _ = Session.getSession() {
+                        appState.showToast(with: "Your last login session has expired. Please login again.")
                     }
                     /// Otherwise will show the login page.
                     appState.showLogin = true

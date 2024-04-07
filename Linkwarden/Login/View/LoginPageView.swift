@@ -66,8 +66,7 @@ struct LoginPageView: View {
                         case .none:
                             focusedField = .none
                         default:
-                            break
-                            // TODO: ZVZV Most Likely this will the like the user has entered values in all the fields.
+                            viewState.didTapLogin()
                         }
                     }
                     
@@ -176,7 +175,7 @@ private struct LinkwardenLogo: View {
 private struct LoginTextField: View {
     
     let image: Image
-    let placeholder: String
+    let placeholder: LocalizedStringResource
     
     let keyboardType: UIKeyboardType
     let contentType: UITextContentType
@@ -205,7 +204,7 @@ private struct LoginTextField: View {
                         text: $textFieldValue,
                         prompt:
                             Text(placeholder)
-                            .foregroundColor(ThemeManager.label))
+                            .foregroundColor(ThemeManager.secondaryLabel))
                     .modifier(LoginTextFieldModifier(keyboardType: keyboardType, contentType: contentType, focused: focused, focusedField: focusedField))
                 } else {
                     TextField(
@@ -213,7 +212,7 @@ private struct LoginTextField: View {
                         text: $textFieldValue,
                         prompt:
                             Text(placeholder)
-                            .foregroundColor(ThemeManager.label))
+                            .foregroundColor(ThemeManager.secondaryLabel))
                     .modifier(LoginTextFieldModifier(keyboardType: keyboardType, contentType: contentType, focused: focused, focusedField: focusedField))
                 }
             }
@@ -233,7 +232,7 @@ private struct LoginTextField: View {
 }
 
 private struct LoginTextFieldWarningView: View {
-    var text: String
+    var text: LocalizedStringResource
     
     var body: some View {
         HStack(alignment: .center) {

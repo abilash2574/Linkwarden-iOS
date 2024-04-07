@@ -9,11 +9,6 @@ import Foundation
 
 enum UserDefaultsKeys {
     
-    static let baseURLKey = "network.baseURL"
-    static let csrfTokenKey = "network.csrftoken"
-    static let csrfTokenCookie = "network.csrftokencookie"
-    static let sessionTokenKey = "network.sessiontoken"
-    
     static let currentThemeKey = "theme.currenttheme"
     
     static let appFirstOnboardingKey = "onboarding.isfirstlaunch"

@@ -17,27 +17,22 @@ class NetworkManager {
         }
     }
     
-    //    @UserDefault(UserDefaultsKeys.baseURLKey)
     private static var baseURL: String? {
         get { session?.baseURL }
-        set { session?.baseURL = newValue }
     }
 
-    //    @UserDefault(UserDefaultsKeys.csrfTokenKey)
     static var csrfToken: String? {
         get {
             session?.csrfToken
         }
     }
     
-    //    @UserDefault(UserDefaultsKeys.csrfTokenCookie)
     static var csrfTokenCookie: String? {
         get {
             session?.csrfCookie
         }
     }
     
-    //    @UserDefault(UserDefaultsKeys.sessionTokenKey)
     static var sessionCookie: String? {
         get {
             session?.sessionCookie
@@ -59,17 +54,18 @@ extension NetworkManager {
     static func getBaseURL() -> String {
         guard let baseURL, !baseURL.isEmpty else {
             DispatchQueue.main.async {
-                // TODO: ZVZV Show a toast saying something went wrong.
-                LinkwardenAppState.shared.showHomepage = false
-                LinkwardenAppState.shared.showLogin = true
+                LinkwardenAppState.shared.didLoginFailed()
+                LinkwardenAppState.shared.showToast(with: "Oops! Something unexpected occurred. You have been logged out. Please login again.")
             }
+            LLogger.shared.critical("Base URL found to be empty or nil")
             return ""
         }
         return baseURL
     }
     
-    static func setBaseURL(_ url: String) {
-        baseURL = url
+    static func setBaseURL(_ url: String) throws {
+        session?.baseURL = url
+        try DataManager.shared.context.save()
     }
     
 }

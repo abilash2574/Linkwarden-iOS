@@ -14,7 +14,7 @@ struct OfflineView: View {
     var body: some View {
         VStack(spacing: 60) {
             VStack {
-                Image(systemName: "wifi.slash")
+                ImageConstants.offlineIcon
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 100, maxHeight: 100)

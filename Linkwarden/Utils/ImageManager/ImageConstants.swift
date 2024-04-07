@@ -23,4 +23,7 @@ enum ImageConstants {
     static let tagsIcon = Image(systemName: "tag")
     static let favouriteIcon = Image(systemName: "heart")
     
+    // MARK: - Common
+    static let offlineIcon = Image(systemName: "wifi.slash")
+    
 }

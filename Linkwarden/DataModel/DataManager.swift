@@ -10,9 +10,11 @@ import CoreData
 
 class DataManager: ObservableObject {
     
+    static let containerName =  "Linkwarden"
+    
     static let shared = DataManager()
     
-    let container = NSPersistentContainer(name: "Linkwarden")
+    let container = NSPersistentContainer(name: DataManager.containerName)
     
     var context: NSManagedObjectContext {
         container.viewContext

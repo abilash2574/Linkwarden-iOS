@@ -22,7 +22,6 @@ class GetSessionDetailUsecase: Usecase<GetSessionDetailUsecase.Request, GetSessi
         case .failure(let error):
             return .failure(error)
         }
-        
     }
     
     class Request: UsecaseRequest {

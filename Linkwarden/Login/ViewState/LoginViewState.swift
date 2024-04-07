@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-protocol LoginViewStateContract: AnyObject {
+protocol LoginViewStateContract: ToastSupport, AnyObject {
     
     var enableLogin: Bool { get set }
     var isOnline: Bool { get set }
@@ -16,12 +16,10 @@ protocol LoginViewStateContract: AnyObject {
     func showLoading()
     func hideLoading()
     
-    func showWarningForField(_ field: LoginViewState.Field, warning: String)
+    func showWarningForField(_ field: LoginViewState.Field, warning: LocalizedStringResource)
     func hideWarningForField(_ field: LoginViewState.Field)
     
     func getValue(for field: LoginViewState.Field) -> String
-    
-    func showToast(with message: String)
     
 }
 
@@ -30,7 +28,7 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
     struct LoginTextFieldConfig: Identifiable {
         var id: UUID
         var image: Image
-        var placeholder: String
+        var placeholder: LocalizedStringResource
         var keyboardType: UIKeyboardType
         var contentType: UITextContentType
         var characterLimit: Int
@@ -51,9 +49,9 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
     @Published var username = ""
     @Published var password = ""
     
-    @Published var serverError = ""
-    @Published var usernameError = ""
-    @Published var passwordError = ""
+    @Published var serverError: LocalizedStringResource = ""
+    @Published var usernameError: LocalizedStringResource = ""
+    @Published var passwordError: LocalizedStringResource = ""
     
     @Published var enableLogin = true
     
@@ -64,7 +62,7 @@ class LoginViewState: LoginViewStateContract, ObservableObject {
     @Published var showCreateAccount: Bool = false
     
     @Published var showToast: Bool = false
-    @Published var toastMessage: String = ""
+    @Published var toastMessage: LocalizedStringResource = ""
     
     lazy var textFieldConfig: [LoginTextFieldConfig] = [
         LoginTextFieldConfig(id: UUID(), image: ImageConstants.serverFieldIcon, placeholder: "Server URL", keyboardType: .URL, contentType: .URL, characterLimit: presenter.serverURLCharacterLimit, isSecure: false, focusedField: .serverURL, validation: { [weak self] in self?.presenter.validateField(.serverURL, value: $0) }),
@@ -130,7 +128,7 @@ extension LoginViewState {
         showLoadingView = false
     }
     
-    func showWarningForField(_ field: Field, warning: String) {
+    func showWarningForField(_ field: Field, warning: LocalizedStringResource) {
         switch field {
         case .serverURL:
             serverError = warning
@@ -151,10 +149,4 @@ extension LoginViewState {
             passwordError = ""
         }
     }
-    
-    func showToast(with message: String) {
-        toastMessage = message
-        showToast = true
-    }
-    
 }

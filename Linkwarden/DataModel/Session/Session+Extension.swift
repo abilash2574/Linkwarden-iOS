@@ -13,6 +13,8 @@ extension Session {
     private static var context: NSManagedObjectContext { DataManager.shared.context }
     private static var entityName = "Session"
     
+    /// Retrives the session information from the database if they are available
+    /// - Returns: Session information if available, or returns `nil`
     static func getSession() -> Session? {
         do {
             guard let sessions = try context.fetch(.init(entityName: entityName)) as? [Session] else { return nil }
@@ -23,16 +25,21 @@ extension Session {
         }
     }
     
-    static func deleteSession() {
-        do {
-            guard let sessions = try context.fetch(.init(entityName: entityName)) as? [Session] else { return }
-            for session in sessions {
-                context.delete(session)
+    /// Deletes the session information that have been stored in the DB
+    static func deleteSession() async -> Bool {
+        await context.perform {
+            do {
+                guard let sessions = try context.fetch(.init(entityName: entityName)) as? [Session] else { return false }
+                for session in sessions {
+                    context.delete(session)
+                }
+                try context.save()
+                return true
+            } catch {
+                LLogger.shared.error("Couldn't fetch sessions")
+                return false
             }
-            try context.save()
-        } catch {
-            LLogger.shared.error("Couldn't fetch sessions")
         }
     }
-    
+        
 }

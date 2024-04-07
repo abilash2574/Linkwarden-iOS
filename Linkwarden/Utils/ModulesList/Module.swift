@@ -31,7 +31,7 @@ enum Module: Identifiable {
         }
     }
     
-    var displayName: String {
+    var displayName: LocalizedStringResource {
         switch self {
         case .Favourites:
             "Favourites"
