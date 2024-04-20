@@ -1,5 +1,5 @@
 //
-//  GetBookmarksNetworkManager.swift
+//  GetBookmarksNetworkService.swift
 //  Linkwarden
 //
 //  Created by Abilash S on 19/04/24.
@@ -8,13 +8,13 @@
 import Foundation
 import APIManager
 
-protocol GetBookmarksNetworkManagerContract: NetworkServiceContract {
+protocol GetBookmarksNetworkServiceContract: NetworkServiceContract {
     
     func getBookmarks(sortID: Int) async -> UsecaseResult<BookmarksJsonBody, Error>
     
 }
 
-class GetBookmarksNetworkManager: NSObject, GetBookmarksNetworkManagerContract {
+class GetBookmarksNetworkService: NSObject, GetBookmarksNetworkServiceContract {
     
     var urlString: String { "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/links"}
     lazy var headers = ["Content-Type" : "application/json; charset=utf-8"]

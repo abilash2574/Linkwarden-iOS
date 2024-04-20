@@ -15,9 +15,9 @@ protocol GetBookmarksDataManagerContract {
 
 class GetBookmarksDataManager: GetBookmarksDataManagerContract {
     
-    let networkService: GetBookmarksNetworkManagerContract
+    let networkService: GetBookmarksNetworkServiceContract
     
-    init(networkService: GetBookmarksNetworkManagerContract) {
+    init(networkService: GetBookmarksNetworkServiceContract) {
         self.networkService = networkService
     }
     

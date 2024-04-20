@@ -54,7 +54,7 @@
 		82D1360F2BD2880500A48CD2 /* BookmarksViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1360E2BD2880500A48CD2 /* BookmarksViewState.swift */; };
 		82D136112BD2886500A48CD2 /* BookmarksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136102BD2886500A48CD2 /* BookmarksPresenter.swift */; };
 		82D136142BD2897200A48CD2 /* GetBookmarksUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136132BD2897200A48CD2 /* GetBookmarksUsecase.swift */; };
-		82D136162BD2898000A48CD2 /* GetBookmarksNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136152BD2898000A48CD2 /* GetBookmarksNetworkManager.swift */; };
+		82D136162BD2898000A48CD2 /* GetBookmarksNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136152BD2898000A48CD2 /* GetBookmarksNetworkService.swift */; };
 		82D136182BD2898C00A48CD2 /* GetBookmarksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136172BD2898C00A48CD2 /* GetBookmarksDataManager.swift */; };
 		82D1361B2BD28A1900A48CD2 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1361A2BD28A1900A48CD2 /* BookmarksModel.swift */; };
 		82D1361E2BD28C2100A48CD2 /* TagsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1361D2BD28C2100A48CD2 /* TagsModel.swift */; };
@@ -62,7 +62,7 @@
 		82D136222BD294E800A48CD2 /* BookmarksAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136212BD294E800A48CD2 /* BookmarksAssembler.swift */; };
 		82D136252BD2989300A48CD2 /* BookmarksConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136242BD2989300A48CD2 /* BookmarksConvertor.swift */; };
 		82D136272BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136262BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift */; };
-		82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift */; };
+		82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift */; };
 		82D1362B2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */; };
 		82D1362D2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */; };
 		82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3D4182BB9DBA9000722BF /* Validator.swift */; };
@@ -130,7 +130,7 @@
 		82D1360E2BD2880500A48CD2 /* BookmarksViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewState.swift; sourceTree = "<group>"; };
 		82D136102BD2886500A48CD2 /* BookmarksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksPresenter.swift; sourceTree = "<group>"; };
 		82D136132BD2897200A48CD2 /* GetBookmarksUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksUsecase.swift; sourceTree = "<group>"; };
-		82D136152BD2898000A48CD2 /* GetBookmarksNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksNetworkManager.swift; sourceTree = "<group>"; };
+		82D136152BD2898000A48CD2 /* GetBookmarksNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksNetworkService.swift; sourceTree = "<group>"; };
 		82D136172BD2898C00A48CD2 /* GetBookmarksDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksDataManager.swift; sourceTree = "<group>"; };
 		82D1361A2BD28A1900A48CD2 /* BookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModel.swift; sourceTree = "<group>"; };
 		82D1361D2BD28C2100A48CD2 /* TagsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsModel.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		82D136212BD294E800A48CD2 /* BookmarksAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksAssembler.swift; sourceTree = "<group>"; };
 		82D136242BD2989300A48CD2 /* BookmarksConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksConvertor.swift; sourceTree = "<group>"; };
 		82D136262BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllBookmarksPreviewUsecase.swift; sourceTree = "<group>"; };
-		82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewNetworkManager.swift; sourceTree = "<group>"; };
+		82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewNetworkService.swift; sourceTree = "<group>"; };
 		82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewDataManager.swift; sourceTree = "<group>"; };
 		82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewUsecase.swift; sourceTree = "<group>"; };
 		82D3D4182BB9DBA9000722BF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
@@ -501,8 +501,8 @@
 		82D136092BD2862900A48CD2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				82D136152BD2898000A48CD2 /* GetBookmarksNetworkManager.swift */,
-				82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift */,
+				82D136152BD2898000A48CD2 /* GetBookmarksNetworkService.swift */,
+				82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -791,7 +791,7 @@
 				82F78EAB2BBB38B1000E73D3 /* SettingsView.swift in Sources */,
 				82F78E9C2BBB31FC000E73D3 /* Module.swift in Sources */,
 				82D1361E2BD28C2100A48CD2 /* TagsModel.swift in Sources */,
-				82D136162BD2898000A48CD2 /* GetBookmarksNetworkManager.swift in Sources */,
+				82D136162BD2898000A48CD2 /* GetBookmarksNetworkService.swift in Sources */,
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
 				82D136272BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift in Sources */,
 				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
@@ -831,7 +831,7 @@
 				82D1360F2BD2880500A48CD2 /* BookmarksViewState.swift in Sources */,
 				82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */,
 				82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */,
-				82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift in Sources */,
+				82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift in Sources */,
 				82A85A762BB9756300F4FFA6 /* DataManager.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
 				829581282BB02DF6003162CE /* HomepageView.swift in Sources */,

@@ -15,9 +15,9 @@ protocol GetBookmarkPreviewDataManagerContract {
 
 class GetBookmarkPreviewDataManager: GetBookmarkPreviewDataManagerContract {
     
-    let networkService: GetBookmarkPreviewNetworkManagerContract
+    let networkService: GetBookmarkPreviewNetworkServiceContract
     
-    init(networkService: GetBookmarkPreviewNetworkManagerContract) {
+    init(networkService: GetBookmarkPreviewNetworkServiceContract) {
         self.networkService = networkService
     }
     

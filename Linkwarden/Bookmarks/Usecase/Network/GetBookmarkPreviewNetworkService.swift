@@ -1,5 +1,5 @@
 //
-//  GetBookmarkPreviewNetworkManager.swift
+//  GetBookmarkPreviewNetworkService.swift
 //  Linkwarden
 //
 //  Created by Abilash S on 19/04/24.
@@ -8,13 +8,13 @@
 import UIKit
 import APIManager
 
-protocol GetBookmarkPreviewNetworkManagerContract: NetworkServiceContract {
+protocol GetBookmarkPreviewNetworkServiceContract: NetworkServiceContract {
     
     func getBookmarkPreview(from previewURL: String) async -> UsecaseResult<UIImage, Error>
     
 }
 
-class GetBookmarkPreviewNetworkManager: GetBookmarkPreviewNetworkManagerContract {
+class GetBookmarkPreviewNetworkService: GetBookmarkPreviewNetworkServiceContract {
     
     var urlString: String { "https://icons.duckduckgo.com/ip3" }
     

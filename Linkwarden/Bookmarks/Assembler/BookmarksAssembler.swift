@@ -10,7 +10,7 @@ import Foundation
 struct BookmarksAssembler {
     
     static func getBookmarkPreviewUsecase() -> GetBookmarkPreviewUsecase {
-        let networkService = GetBookmarkPreviewNetworkManager()
+        let networkService = GetBookmarkPreviewNetworkService()
         let dataManager = GetBookmarkPreviewDataManager(networkService: networkService)
         return GetBookmarkPreviewUsecase(dataManager: dataManager)
     }
@@ -26,7 +26,7 @@ struct BookmarksAssembler {
     }
     
     static func getBookmarksUsecase() -> GetBookmarksUsecase {
-        let networkService = GetBookmarksNetworkManager()
+        let networkService = GetBookmarksNetworkService()
         let dataManager = GetBookmarksDataManager(networkService: networkService)
         let convertor = Self.getBookmarkConvertor()
         return GetBookmarksUsecase(dataManager: dataManager, convertor: convertor)
