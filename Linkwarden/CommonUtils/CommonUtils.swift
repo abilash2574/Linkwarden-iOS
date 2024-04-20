@@ -19,11 +19,9 @@ extension ToastSupport {
             LLogger.shared.debug("Toast has been skipped as another toast is already being shown")
             return
         }
-        Task {
-            await MainActor.run { [weak self] in
-                self?.toastMessage = message
-                self?.showToast = true
-            }
+        DispatchQueue.main.async { [weak self] in
+            self?.toastMessage = message
+            self?.showToast = true
         }
     }
     

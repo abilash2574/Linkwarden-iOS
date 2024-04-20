@@ -16,7 +16,7 @@ struct TabBarView: View {
             ForEach(viewState.modulesList, id: \.id) { module in
                 switch module {
                 case .Bookmarks:
-                    BookmarksView()
+                    BookmarksAssembler.getBookmarksView()
                         .tabItem {
                                 module.tabIcon
                                 Text(module.displayName)
@@ -48,7 +48,6 @@ struct TabBarView: View {
                 }
             }
         }
-        .background(.red)
         .onAppear {
             viewState.viewOnAppearing()
         }

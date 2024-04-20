@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822D4C7D2BCEEB590077EF49 /* BookmarkCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822D4C7C2BCEEB590077EF49 /* BookmarkCellView.swift */; };
 		824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824414F72B9C6D3400E0C624 /* ImageConstants.swift */; };
 		824414FA2B9C6EF100E0C624 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 824414F92B9C6EF100E0C624 /* Localizable.xcstrings */; };
 		824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824414FF2B9C7A1800E0C624 /* LoginViewState.swift */; };
 		824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415022B9C7A6C00E0C624 /* LoginPresenter.swift */; };
 		824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415052B9C7AA800E0C624 /* LoginAssembler.swift */; };
-		8244150A2B9D262800E0C624 /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 824415092B9D262800E0C624 /* APIManager */; };
 		8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244150D2B9D290100E0C624 /* NetworkUtils.swift */; };
 		824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244150F2B9D29BA00E0C624 /* NetworkReachability.swift */; };
 		824415132B9D2B0A00E0C624 /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415122B9D2B0A00E0C624 /* CommonUtils.swift */; };
@@ -37,7 +37,6 @@
 		829581322BB04544003162CE /* GetSessionDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829581312BB04544003162CE /* GetSessionDetailDataManager.swift */; };
 		829581342BB045D7003162CE /* GetSessionDetailUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829581332BB045D7003162CE /* GetSessionDetailUsecase.swift */; };
 		829581372BB04744003162CE /* LinkwardenAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829581362BB04744003162CE /* LinkwardenAssembler.swift */; };
-		82A85A672BB8980600F4FFA6 /* ToastManager in Frameworks */ = {isa = PBXBuildFile; productRef = 82A85A662BB8980600F4FFA6 /* ToastManager */; };
 		82A85A6B2BB96B5A00F4FFA6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A6A2BB96B5A00F4FFA6 /* AppState.swift */; };
 		82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A6D2BB96BDA00F4FFA6 /* DateTimeManager.swift */; };
 		82A85A702BB96D6200F4FFA6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A85A6F2BB96D6200F4FFA6 /* AppConstants.swift */; };
@@ -52,7 +51,23 @@
 		82C359232B9C371B009A3294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359222B9C371B009A3294 /* Assets.xcassets */; };
 		82C359262B9C371B009A3294 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C359252B9C371B009A3294 /* Preview Assets.xcassets */; };
 		82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */; };
+		82D1360F2BD2880500A48CD2 /* BookmarksViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1360E2BD2880500A48CD2 /* BookmarksViewState.swift */; };
+		82D136112BD2886500A48CD2 /* BookmarksPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136102BD2886500A48CD2 /* BookmarksPresenter.swift */; };
+		82D136142BD2897200A48CD2 /* GetBookmarksUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136132BD2897200A48CD2 /* GetBookmarksUsecase.swift */; };
+		82D136162BD2898000A48CD2 /* GetBookmarksNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136152BD2898000A48CD2 /* GetBookmarksNetworkManager.swift */; };
+		82D136182BD2898C00A48CD2 /* GetBookmarksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136172BD2898C00A48CD2 /* GetBookmarksDataManager.swift */; };
+		82D1361B2BD28A1900A48CD2 /* BookmarksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1361A2BD28A1900A48CD2 /* BookmarksModel.swift */; };
+		82D1361E2BD28C2100A48CD2 /* TagsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1361D2BD28C2100A48CD2 /* TagsModel.swift */; };
+		82D136202BD2914F00A48CD2 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1361F2BD2914F00A48CD2 /* Bookmark.swift */; };
+		82D136222BD294E800A48CD2 /* BookmarksAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136212BD294E800A48CD2 /* BookmarksAssembler.swift */; };
+		82D136252BD2989300A48CD2 /* BookmarksConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136242BD2989300A48CD2 /* BookmarksConvertor.swift */; };
+		82D136272BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136262BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift */; };
+		82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift */; };
+		82D1362B2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */; };
+		82D1362D2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */; };
 		82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3D4182BB9DBA9000722BF /* Validator.swift */; };
+		82DECC3E2BC3E6D2000ABBF2 /* ToastManager in Frameworks */ = {isa = PBXBuildFile; productRef = 82DECC3D2BC3E6D2000ABBF2 /* ToastManager */; };
+		82DECC412BC3E6DA000ABBF2 /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 82DECC402BC3E6DA000ABBF2 /* APIManager */; };
 		82F78E8E2BBB1BDB000E73D3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78E8D2BBB1BDB000E73D3 /* TabBarView.swift */; };
 		82F78E952BBB305E000E73D3 /* TabViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78E942BBB305E000E73D3 /* TabViewState.swift */; };
 		82F78E972BBB3079000E73D3 /* TabViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F78E962BBB3079000E73D3 /* TabViewPresenter.swift */; };
@@ -66,6 +81,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		822D4C7C2BCEEB590077EF49 /* BookmarkCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellView.swift; sourceTree = "<group>"; };
 		824414F72B9C6D3400E0C624 /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
 		824414F92B9C6EF100E0C624 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		824414FF2B9C7A1800E0C624 /* LoginViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewState.swift; sourceTree = "<group>"; };
@@ -111,6 +127,20 @@
 		82C359222B9C371B009A3294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C359252B9C371B009A3294 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		82C3592F2B9C3ADC009A3294 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		82D1360E2BD2880500A48CD2 /* BookmarksViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewState.swift; sourceTree = "<group>"; };
+		82D136102BD2886500A48CD2 /* BookmarksPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksPresenter.swift; sourceTree = "<group>"; };
+		82D136132BD2897200A48CD2 /* GetBookmarksUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksUsecase.swift; sourceTree = "<group>"; };
+		82D136152BD2898000A48CD2 /* GetBookmarksNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksNetworkManager.swift; sourceTree = "<group>"; };
+		82D136172BD2898C00A48CD2 /* GetBookmarksDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarksDataManager.swift; sourceTree = "<group>"; };
+		82D1361A2BD28A1900A48CD2 /* BookmarksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksModel.swift; sourceTree = "<group>"; };
+		82D1361D2BD28C2100A48CD2 /* TagsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsModel.swift; sourceTree = "<group>"; };
+		82D1361F2BD2914F00A48CD2 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		82D136212BD294E800A48CD2 /* BookmarksAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksAssembler.swift; sourceTree = "<group>"; };
+		82D136242BD2989300A48CD2 /* BookmarksConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksConvertor.swift; sourceTree = "<group>"; };
+		82D136262BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllBookmarksPreviewUsecase.swift; sourceTree = "<group>"; };
+		82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewNetworkManager.swift; sourceTree = "<group>"; };
+		82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewDataManager.swift; sourceTree = "<group>"; };
+		82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewUsecase.swift; sourceTree = "<group>"; };
 		82D3D4182BB9DBA9000722BF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		82F78E8D2BBB1BDB000E73D3 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		82F78E942BBB305E000E73D3 /* TabViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewState.swift; sourceTree = "<group>"; };
@@ -129,8 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82A85A672BB8980600F4FFA6 /* ToastManager in Frameworks */,
-				8244150A2B9D262800E0C624 /* APIManager in Frameworks */,
+				82DECC3E2BC3E6D2000ABBF2 /* ToastManager in Frameworks */,
+				82DECC412BC3E6DA000ABBF2 /* APIManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +490,95 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		82D136082BD2862400A48CD2 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				82D136212BD294E800A48CD2 /* BookmarksAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		82D136092BD2862900A48CD2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				82D136152BD2898000A48CD2 /* GetBookmarksNetworkManager.swift */,
+				82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		82D1360A2BD2862E00A48CD2 /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				82D136232BD2987C00A48CD2 /* Convertor */,
+				82D136122BD2895800A48CD2 /* DataManager */,
+				82D136262BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift */,
+				82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */,
+				82D136132BD2897200A48CD2 /* GetBookmarksUsecase.swift */,
+				82D136092BD2862900A48CD2 /* Network */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		82D1360B2BD2864100A48CD2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				82D136102BD2886500A48CD2 /* BookmarksPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		82D1360C2BD286CB00A48CD2 /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+				82D1360E2BD2880500A48CD2 /* BookmarksViewState.swift */,
+			);
+			path = ViewState;
+			sourceTree = "<group>";
+		};
+		82D1360D2BD286D100A48CD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F78EA42BBB389B000E73D3 /* BookmarksView.swift */,
+				822D4C7C2BCEEB590077EF49 /* BookmarkCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82D136122BD2895800A48CD2 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				82D136172BD2898C00A48CD2 /* GetBookmarksDataManager.swift */,
+				82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		82D136192BD28A0800A48CD2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				82D1361A2BD28A1900A48CD2 /* BookmarksModel.swift */,
+				82D1361F2BD2914F00A48CD2 /* Bookmark.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		82D1361C2BD28C1100A48CD2 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				82D1361D2BD28C2100A48CD2 /* TagsModel.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		82D136232BD2987C00A48CD2 /* Convertor */ = {
+			isa = PBXGroup;
+			children = (
+				82D136242BD2989300A48CD2 /* BookmarksConvertor.swift */,
+			);
+			path = Convertor;
+			sourceTree = "<group>";
+		};
 		82D3D4172BB9DB9E000722BF /* Validator */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,6 +665,7 @@
 		82F78E9F2BBB385C000E73D3 /* Tags */ = {
 			isa = PBXGroup;
 			children = (
+				82D1361C2BD28C1100A48CD2 /* Domain */,
 				82F78EA62BBB38A2000E73D3 /* TagsView.swift */,
 			);
 			path = Tags;
@@ -554,7 +674,12 @@
 		82F78EA02BBB3863000E73D3 /* Bookmarks */ = {
 			isa = PBXGroup;
 			children = (
-				82F78EA42BBB389B000E73D3 /* BookmarksView.swift */,
+				82D136082BD2862400A48CD2 /* Assembler */,
+				82D136192BD28A0800A48CD2 /* Domain */,
+				82D1360B2BD2864100A48CD2 /* Presenter */,
+				82D1360A2BD2862E00A48CD2 /* Usecase */,
+				82D1360D2BD286D100A48CD2 /* View */,
+				82D1360C2BD286CB00A48CD2 /* ViewState */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -584,8 +709,8 @@
 			);
 			name = Linkwarden;
 			packageProductDependencies = (
-				824415092B9D262800E0C624 /* APIManager */,
-				82A85A662BB8980600F4FFA6 /* ToastManager */,
+				82DECC3D2BC3E6D2000ABBF2 /* ToastManager */,
+				82DECC402BC3E6DA000ABBF2 /* APIManager */,
 			);
 			productName = Linkwarden;
 			productReference = 82C3591B2B9C371A009A3294 /* Linkwarden.app */;
@@ -616,8 +741,8 @@
 			);
 			mainGroup = 82C359122B9C371A009A3294;
 			packageReferences = (
-				824415082B9D262800E0C624 /* XCRemoteSwiftPackageReference "APIManager" */,
-				82A85A652BB8980600F4FFA6 /* XCRemoteSwiftPackageReference "ToastManager" */,
+				82DECC3C2BC3E6D2000ABBF2 /* XCRemoteSwiftPackageReference "ToastManager" */,
+				82DECC3F2BC3E6DA000ABBF2 /* XCRemoteSwiftPackageReference "APIManager" */,
 			);
 			productRefGroup = 82C3591C2B9C371A009A3294 /* Products */;
 			projectDirPath = "";
@@ -657,6 +782,7 @@
 				8295812D2BB042A0003162CE /* GetSessionDetailsNetworkService.swift in Sources */,
 				8244151C2B9DC11C00E0C624 /* LError.swift in Sources */,
 				829101262BBDCD8000AA25F1 /* OfflineView.swift in Sources */,
+				82D136202BD2914F00A48CD2 /* Bookmark.swift in Sources */,
 				829581372BB04744003162CE /* LinkwardenAssembler.swift in Sources */,
 				829581232BB01F0D003162CE /* LinkwardenAppState.swift in Sources */,
 				8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */,
@@ -664,10 +790,14 @@
 				824415062B9C7AA800E0C624 /* LoginAssembler.swift in Sources */,
 				82F78EAB2BBB38B1000E73D3 /* SettingsView.swift in Sources */,
 				82F78E9C2BBB31FC000E73D3 /* Module.swift in Sources */,
+				82D1361E2BD28C2100A48CD2 /* TagsModel.swift in Sources */,
+				82D136162BD2898000A48CD2 /* GetBookmarksNetworkManager.swift in Sources */,
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
+				82D136272BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift in Sources */,
 				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
 				82A85A742BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
+				82D136112BD2886500A48CD2 /* BookmarksPresenter.swift in Sources */,
 				82F78E972BBB3079000E73D3 /* TabViewPresenter.swift in Sources */,
 				82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
@@ -676,22 +806,32 @@
 				824415132B9D2B0A00E0C624 /* CommonUtils.swift in Sources */,
 				824415242B9DC84B00E0C624 /* CSRFToken.swift in Sources */,
 				82F78E992BBB3126000E73D3 /* TabBarAssembler.swift in Sources */,
+				822D4C7D2BCEEB590077EF49 /* BookmarkCellView.swift in Sources */,
+				82D1362B2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift in Sources */,
+				82D136252BD2989300A48CD2 /* BookmarksConvertor.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
 				82F78EA32BBB3892000E73D3 /* CollectionsView.swift in Sources */,
+				82D136182BD2898C00A48CD2 /* GetBookmarksDataManager.swift in Sources */,
 				829581302BB042FF003162CE /* SessionDetail.swift in Sources */,
 				82F78E8E2BBB1BDB000E73D3 /* TabBarView.swift in Sources */,
+				82D136222BD294E800A48CD2 /* BookmarksAssembler.swift in Sources */,
 				82A85A6B2BB96B5A00F4FFA6 /* AppState.swift in Sources */,
 				82F78E952BBB305E000E73D3 /* TabViewState.swift in Sources */,
 				824415222B9DC70100E0C624 /* GetCSRFTokenDataManager.swift in Sources */,
 				824415162B9D2C1800E0C624 /* Logger+Extensions.swift in Sources */,
+				82D136142BD2897200A48CD2 /* GetBookmarksUsecase.swift in Sources */,
 				82F78EA72BBB38A2000E73D3 /* TagsView.swift in Sources */,
 				829581342BB045D7003162CE /* GetSessionDetailUsecase.swift in Sources */,
 				8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */,
 				8295811B2BAF6FF7003162CE /* SessionToken.swift in Sources */,
+				82D1362D2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift in Sources */,
 				82F78EA52BBB389B000E73D3 /* BookmarksView.swift in Sources */,
+				82D1361B2BD28A1900A48CD2 /* BookmarksModel.swift in Sources */,
 				82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */,
+				82D1360F2BD2880500A48CD2 /* BookmarksViewState.swift in Sources */,
 				82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */,
 				82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */,
+				82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkManager.swift in Sources */,
 				82A85A762BB9756300F4FFA6 /* DataManager.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
 				829581282BB02DF6003162CE /* HomepageView.swift in Sources */,
@@ -912,17 +1052,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		824415082B9D262800E0C624 /* XCRemoteSwiftPackageReference "APIManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/zeyrie/APIManager.git";
-			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		82A85A652BB8980600F4FFA6 /* XCRemoteSwiftPackageReference "ToastManager" */ = {
+		82DECC3C2BC3E6D2000ABBF2 /* XCRemoteSwiftPackageReference "ToastManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zeyrie/ToastManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+		82DECC3F2BC3E6DA000ABBF2 /* XCRemoteSwiftPackageReference "APIManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zeyrie/APIManager.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -931,15 +1071,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		824415092B9D262800E0C624 /* APIManager */ = {
+		82DECC3D2BC3E6D2000ABBF2 /* ToastManager */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 824415082B9D262800E0C624 /* XCRemoteSwiftPackageReference "APIManager" */;
-			productName = APIManager;
-		};
-		82A85A662BB8980600F4FFA6 /* ToastManager */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82A85A652BB8980600F4FFA6 /* XCRemoteSwiftPackageReference "ToastManager" */;
+			package = 82DECC3C2BC3E6D2000ABBF2 /* XCRemoteSwiftPackageReference "ToastManager" */;
 			productName = ToastManager;
+		};
+		82DECC402BC3E6DA000ABBF2 /* APIManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 82DECC3F2BC3E6DA000ABBF2 /* XCRemoteSwiftPackageReference "APIManager" */;
+			productName = APIManager;
 		};
 /* End XCSwiftPackageProductDependency section */
 

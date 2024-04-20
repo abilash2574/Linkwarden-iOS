@@ -5,7 +5,7 @@
 //  Created by Abilash S on 10/03/24.
 //
 
-import Foundation
+import UIKit
 import APIManager
 
 
@@ -46,6 +46,8 @@ class NetworkManager {
     }
     
     static var APIPath: String = "/api/v1"
+    
+    static let imageCache = NSCache<NSString, UIImage>()
     
 }
 

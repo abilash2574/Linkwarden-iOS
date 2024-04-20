@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/zeyrie/APIManager.git",
       "state" : {
-        "revision" : "61634250e937976c5a27495c697074941ae1be19",
-        "version" : "1.0.1"
+        "branch" : "main",
+        "revision" : "bd233bbdfb530adb5ed06b0ca0d237594888af96"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/zeyrie/ToastManager",
       "state" : {
-        "branch" : "main",
-        "revision" : "86cb61901e359d5a0ed9d466bd635ad3bf0e6a32"
+        "revision" : "86cb61901e359d5a0ed9d466bd635ad3bf0e6a32",
+        "version" : "0.0.1"
       }
     }
   ],
