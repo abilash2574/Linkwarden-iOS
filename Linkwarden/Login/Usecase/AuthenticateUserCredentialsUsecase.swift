@@ -16,7 +16,7 @@ class AuthenticateUserCredentialsUsecase: Usecase<AuthenticateUserCredentialsUse
     }
     
     override func run(request: Request) async -> UsecaseResult<Response, any Error> {
-        switch await dataManager.authenticateUserCredentials(.remote, username: request.username, password: request.password) {
+        switch await dataManager.authenticateUserCredentials(request.type, username: request.username, password: request.password) {
         case .success(let sessionToken):
             return .success(.init(sessionToken: sessionToken))
         case .failure(let error):

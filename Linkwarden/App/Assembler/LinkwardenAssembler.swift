@@ -20,7 +20,7 @@ struct LinkwardenAssembler {
     /// Returns the Container View for the app.
     /// - Returns: Container View that holds the login view and the tab bar, and acts as the base view for the whole app.
     static func getContainerView() -> ContainerView {
-        var appState = LinkwardenAppState.shared
+        let appState = LinkwardenAppState.shared
         let view = ContainerView(appState: appState)
         appState.containerView = view
         return view
