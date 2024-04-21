@@ -59,22 +59,32 @@ struct CellLabel: View {
     
     var labelType: CellLabelType
     
-    var imageValue: String {
+    var imageValue: Image {
         switch labelType {
         case .domain:
-            "link"
+            ImageConstants.domainIcon
         case .collection:
-            "folder.fill"
+            ImageConstants.folderIcon
         case .date:
-            "calendar"
+            ImageConstants.calendarIcon
         }
     }
     
     var body: some View {
-        HStack(spacing: 4) {
-            Image(systemName: imageValue)
-                .imageScale(.small)
-                .foregroundStyle(ThemeManager.secondaryLabel)
+        HStack(alignment: .center, spacing: 4) {
+            if labelType == .domain {
+                imageValue
+                    .renderingMode(.template)
+                    .resizable()
+                    .imageScale(.small)
+                    .foregroundStyle(ThemeManager.secondaryLabel)
+                    .frame(maxWidth: 18, maxHeight: 10)
+            } else {
+                imageValue
+                    .renderingMode(.template)
+                    .imageScale(.small)
+                    .foregroundStyle(ThemeManager.secondaryLabel)
+            }
             Text(labelText)
                 .truncationMode(.tail)
                 .lineLimit(1)

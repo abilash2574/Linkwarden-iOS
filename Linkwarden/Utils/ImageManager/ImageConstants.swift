@@ -23,6 +23,11 @@ enum ImageConstants {
     static let tagsIcon = Image(systemName: "tag")
     static let favouriteIcon = Image(systemName: "heart")
     
+    // MARK: - Bookmark List
+    static let domainIcon = Image("Link")
+    static let folderIcon = Image(systemName: "folder.fill")
+    static let calendarIcon = Image(systemName: "calendar")
+    
     // MARK: - Common
     static let offlineIcon = Image(systemName: "wifi.slash")
     static let bookmarkThumbnail = UIImage(named: "Website")
