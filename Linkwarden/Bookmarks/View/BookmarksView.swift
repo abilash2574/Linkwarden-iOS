@@ -22,10 +22,10 @@ struct BookmarksView: View {
                             .foregroundColor(.white)
                             .padding(
                                 EdgeInsets(
-                                    top: 2,
-                                    leading: 10,
-                                    bottom: 2,
-                                    trailing: 10
+                                    top: 5,
+                                    leading: 16,
+                                    bottom: 5,
+                                    trailing: 16
                                 )
                             )
                     )
@@ -33,6 +33,16 @@ struct BookmarksView: View {
             .listStyle(.plain)
             .background(.gray.opacity(0.2))
             .navigationTitle("Bookmarks")
+            .toolbar {
+                Button {
+                    print("ZVZV Save")
+                } label: {
+                    Label(
+                        title: { Text("Add") },
+                        icon: { Image(systemName: "plus") }
+                    )
+                }
+            }
         }.onAppear {
             viewState.viewOnAppearing()
         }

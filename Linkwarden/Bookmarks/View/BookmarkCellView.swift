@@ -43,7 +43,7 @@ struct BookmarkCellView: View {
                 }
             }
             
-        }
+        }.padding(.init(top: 6, leading: 12, bottom: 6, trailing: 12))
     }
 }
 
