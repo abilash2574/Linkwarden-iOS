@@ -25,13 +25,13 @@ struct BookmarkCellView: View {
                 .frame(maxWidth: 64, maxHeight: 64)
                 .clipShape(.rect(cornerRadius: 4))
 
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(bookmark.name.isEmpty ? bookmark.description : bookmark.name)
                     .font(.headline)
                     .lineLimit(1)
                 CellLabel(labelText: bookmark.URL.host() ?? "Link not found", labelType: .domain)
                 if sizeCategory > .xxLarge {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 4) {
                         CellLabel(labelText: bookmark.collectionID.description, labelType: .collection)
                         CellLabel(labelText: DateTimeManager.mediumDate.dateFormatter.string(from: bookmark.createdDate), labelType: .date)
                     }
