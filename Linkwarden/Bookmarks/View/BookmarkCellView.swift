@@ -21,9 +21,10 @@ struct BookmarkCellView: View {
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .foregroundStyle(.gray)
+                .foregroundStyle(ThemeManager.secondaryLabel)
                 .frame(maxWidth: 64, maxHeight: 64)
-            
+                .clipShape(.rect(cornerRadius: 4))
+
             VStack(alignment: .leading) {
                 Text(bookmark.name.isEmpty ? bookmark.description : bookmark.name)
                     .font(.headline)
@@ -73,20 +74,20 @@ struct CellLabel: View {
         HStack(spacing: 4) {
             Image(systemName: imageValue)
                 .imageScale(.small)
-                .foregroundStyle(.gray)
+                .foregroundStyle(ThemeManager.secondaryLabel)
             Text(labelText)
                 .truncationMode(.tail)
                 .lineLimit(1)
                 .font(.subheadline)
                 .fontWeight(.medium)
-                .foregroundStyle(.gray)
+                .foregroundStyle(ThemeManager.secondaryLabel)
         }
     }
 }
-// TODO: ZVZV Provide mock data
-//
-//#Preview {
-//    let model = BookmarkCellModel(linkName: "Google", domainText: "www.google.com", collectionText: "Search Engine", dateText: "23-11-2023", image: UIImage(systemName: "photo")!)
-//    
-//    return BookmarkCellView(cellModel: model)
-//}
+
+#Preview {
+    let model = Bookmark.getMockData()
+    
+    return BookmarkCellView(bookmark: model)
+        .background(.gray.opacity(0.20))
+}

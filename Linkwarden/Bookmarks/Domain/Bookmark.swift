@@ -16,7 +16,7 @@ class Bookmark: ObservableObject {
     var collectionID: Int64
     var URL: URL
     var previewURL: String
-    @Published var previewImage = ImageConstants.photoImage
+    @Published var previewImage = ImageConstants.bookmarkThumbnail
     var imageURL: String
     var pdfURL: String
     var readableURL: String
@@ -58,3 +58,9 @@ extension Bookmark: Hashable {
 }
 
 extension Bookmark: Identifiable { }
+
+extension Bookmark {
+    static func getMockData() -> Bookmark {
+        return .init(bookmarkID: 1, name: "Test Domain", type: "URL", description: "Example site", collectionID: 1, URL: .init(string: "www.example.com")!, previewURL: "", imageURL: "", pdfURL: "", readableURL: "", preservedDate: Date(), createdDate: Date(), updatedDate: Date(), tags: [])
+    }
+}

@@ -25,6 +25,6 @@ enum ImageConstants {
     
     // MARK: - Common
     static let offlineIcon = Image(systemName: "wifi.slash")
-    static let photoImage = UIImage(systemName: "photo")?.withTintColor(.gray, renderingMode: .alwaysTemplate)
+    static let bookmarkThumbnail = UIImage(named: "Website")
     
 }

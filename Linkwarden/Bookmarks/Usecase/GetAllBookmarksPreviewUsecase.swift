@@ -18,7 +18,7 @@ class GetAllBookmarksPreviewUsecase: Usecase<GetAllBookmarksPreviewUsecase.Reque
     override func run(request: Request) async -> UsecaseResult<Response, any Error> {
         var images = [(Int64, UIImage)]()
         for bookmark in request.bookmarks {
-            let request = GetBookmarkPreviewUsecase.Request(url: bookmark.URL.host()!)
+            let request = GetBookmarkPreviewUsecase.Request(url: bookmark.URL.host() ?? "")
             switch await usecase.execute(request: request) {
             case .success(let response):
                 images.append((bookmark.bookmarkID, response.image))
