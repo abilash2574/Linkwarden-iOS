@@ -46,6 +46,7 @@ struct BookmarksView: View {
         }.onAppear {
             viewState.viewOnAppearing()
         }
+        .environmentObject(viewState)
     }
 }
 

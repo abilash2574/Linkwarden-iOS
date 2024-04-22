@@ -16,7 +16,7 @@ class Bookmark: ObservableObject {
     var collectionID: Int64
     var URL: URL
     var previewURL: String
-    @Published var previewImage = ImageConstants.bookmarkThumbnail
+    @Published var previewImage: UIImage?
     var imageURL: String
     var pdfURL: String
     var readableURL: String

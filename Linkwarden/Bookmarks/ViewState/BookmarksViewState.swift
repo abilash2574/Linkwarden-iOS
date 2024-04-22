@@ -38,6 +38,10 @@ extension BookmarksViewState {
         presenter.viewOnAppearing()
     }
     
+    func imageViewOnAppear(_ bookmarkID: Int64) {
+        presenter.imageDidAppearFor(bookmarkID)
+    }
+    
 }
 
 extension BookmarksViewState {

@@ -11,19 +11,25 @@ struct BookmarkCellView: View {
     
     @Environment(\.dynamicTypeSize) var sizeCategory
     
+    @EnvironmentObject var viewState: BookmarksViewState
+    
     @ObservedObject
     var bookmark: Bookmark
     
     var body: some View {
         HStack(spacing: 16) {
             
-            Image(uiImage: bookmark.previewImage!)
+            Image(uiImage: bookmark.previewImage ?? ImageConstants.bookmarkThumbnail!)
                 .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .foregroundStyle(ThemeManager.secondaryLabel)
                 .frame(maxWidth: 64, maxHeight: 64)
                 .clipShape(.rect(cornerRadius: 4))
+                .onAppear {
+                    guard bookmark.previewImage == nil else { return }
+                    viewState.imageViewOnAppear(bookmark.bookmarkID)
+                }
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(bookmark.name.isEmpty ? bookmark.description : bookmark.name)

@@ -11,32 +11,44 @@ protocol BookmarksPresenterContract {
     
     func viewOnAppearing()
     
+    func imageDidAppearFor(_ bookmarkID: Int64)
+    
 }
 
 class BookmarksPresenter: BookmarksPresenterContract {
     
     let getBookmarksUsecase: GetBookmarksUsecase
     
-    let getAllBookmarksPreviewUsecase: GetAllBookmarksPreviewUsecase
+    let getBookmarkPreviewUsecase: GetBookmarkPreviewUsecase
     
     weak var viewState: BookmarksViewStateContract?
     
-    init(getBookmarksUsecase: GetBookmarksUsecase, getAllBookmarksPreviewUsecase: GetAllBookmarksPreviewUsecase, viewState: BookmarksViewStateContract? = nil) {
+    var viewDidLoadTheFirstTime: Bool = false
+    
+    init(getBookmarksUsecase: GetBookmarksUsecase, getBookmarkPreviewUsecase: GetBookmarkPreviewUsecase, viewState: BookmarksViewStateContract? = nil) {
         self.getBookmarksUsecase = getBookmarksUsecase
-        self.getAllBookmarksPreviewUsecase = getAllBookmarksPreviewUsecase
+        self.getBookmarkPreviewUsecase = getBookmarkPreviewUsecase
         self.viewState = viewState
     }
     
     func viewOnAppearing() {
-        guard checkAndHandleNetworkConnectivity() else { return }
+        guard checkAndHandleNetworkConnectivity(), !viewDidLoadTheFirstTime else { return }
         
         Task {
             let bookmarks = await getBookmarks()
-            getBookmarkPreview(bookmarks)
+            guard !bookmarks.isEmpty else {
+                // TODO: ZVZV Handle empty Bookmarks
+                return
+            }
             await MainActor.run {
                 viewState?.bookmarks = bookmarks
+                viewDidLoadTheFirstTime = true
             }
         }
+    }
+    
+    func imageDidAppearFor(_ bookmarkID: Int64) {
+        getBookmarkPreview(for: bookmarkID)
     }
     
 }
@@ -67,19 +79,25 @@ extension BookmarksPresenter {
         }
     }
     
-    private func getBookmarkPreview(_ bookmarks: [Bookmark]) {
+    private func getBookmarkPreview(for bookmarkID: Int64) {
         Task {
-            switch await getAllBookmarksPreviewUsecase.execute(request: .init(bookmarks: bookmarks)) {
-            case .success(let images):
-                await MainActor.run {
-                    for image in images.images {
-                        let bookmark = viewState?.bookmarks.first(where: {$0.bookmarkID == image.0 })
-                        bookmark?.previewImage = image.1
-                    }
-                }
-            case .failure(_):
-                break
+            guard let bookmark = viewState?.bookmarks.first(where: { $0.bookmarkID == bookmarkID } ) else {
+                // TODO: ZVZV Handle this
+                return
             }
+            let request = GetBookmarkPreviewUsecase.Request(url: bookmark.URL.host() ?? "")
+            switch await getBookmarkPreviewUsecase.execute(request: request) {
+            case .success(let response):
+                await MainActor.run {
+                    bookmark.previewImage = response.image
+                }
+            case .failure(let error):
+                await MainActor.run {
+                    bookmark.previewImage = ImageConstants.bookmarkThumbnail
+                }
+                LLogger.shared.error("Preview Image API failed.\nError: \(error)")
+            }
+            
         }
     }
 

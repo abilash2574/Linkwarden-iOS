@@ -34,9 +34,9 @@ struct BookmarksAssembler {
     
     static func getBookmarksView() -> BookmarksView {
         let usecase = Self.getBookmarksUsecase()
-        let previewUsecase = Self.getAllBookmarksPreviewUsecase()
+        let previewUsecase = Self.getBookmarkPreviewUsecase()
         
-        let presenter = BookmarksPresenter(getBookmarksUsecase: usecase, getAllBookmarksPreviewUsecase: previewUsecase)
+        let presenter = BookmarksPresenter(getBookmarksUsecase: usecase, getBookmarkPreviewUsecase: previewUsecase)
         
         let viewState = BookmarksViewState(presenter: presenter)
         presenter.viewState = viewState
