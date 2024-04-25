@@ -1,0 +1,24 @@
+{
+  "originHash" : "bda3919d8e645c5fed7c35bff55ec97a301784bdb01f02d65b0c8f89c458ea62",
+  "pins" : [
+    {
+      "identity" : "apimanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zeyrie/APIManager.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "bd233bbdfb530adb5ed06b0ca0d237594888af96"
+      }
+    },
+    {
+      "identity" : "toastmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/zeyrie/ToastManager",
+      "state" : {
+        "revision" : "86cb61901e359d5a0ed9d466bd635ad3bf0e6a32",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}

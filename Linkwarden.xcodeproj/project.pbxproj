@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822D3D5C2BDAD5110023FE8A /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 822D3D5B2BDAD5110023FE8A /* APIManager */; };
+		822D3D5F2BDAD51B0023FE8A /* ToastManager in Frameworks */ = {isa = PBXBuildFile; productRef = 822D3D5E2BDAD51B0023FE8A /* ToastManager */; };
 		822D4C7D2BCEEB590077EF49 /* BookmarkCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822D4C7C2BCEEB590077EF49 /* BookmarkCellView.swift */; };
 		824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824414F72B9C6D3400E0C624 /* ImageConstants.swift */; };
 		824414FA2B9C6EF100E0C624 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 824414F92B9C6EF100E0C624 /* Localizable.xcstrings */; };
@@ -66,8 +68,6 @@
 		82D1362B2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */; };
 		82D1362D2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */; };
 		82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3D4182BB9DBA9000722BF /* Validator.swift */; };
-		82DECC3E2BC3E6D2000ABBF2 /* ToastManager in Frameworks */ = {isa = PBXBuildFile; productRef = 82DECC3D2BC3E6D2000ABBF2 /* ToastManager */; };
-		82DECC412BC3E6DA000ABBF2 /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 82DECC402BC3E6DA000ABBF2 /* APIManager */; };
 		82EF04FE2BDAC9F000C3CD4A /* TagsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */; };
 		82EF05032BDACB9700C3CD4A /* GetTagsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05022BDACB9700C3CD4A /* GetTagsNetworkService.swift */; };
 		82EF05052BDACBE200C3CD4A /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05042BDACBE200C3CD4A /* Tags.swift */; };
@@ -175,8 +175,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82DECC3E2BC3E6D2000ABBF2 /* ToastManager in Frameworks */,
-				82DECC412BC3E6DA000ABBF2 /* APIManager in Frameworks */,
+				822D3D5F2BDAD51B0023FE8A /* ToastManager in Frameworks */,
+				822D3D5C2BDAD5110023FE8A /* APIManager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,9 +648,9 @@
 			isa = PBXGroup;
 			children = (
 				82EF050A2BDACF7500C3CD4A /* Convertor */,
-				82EF05012BDACB6700C3CD4A /* NetworkService */,
 				82EF05002BDACB5E00C3CD4A /* DataManager */,
 				82EF05082BDACF0200C3CD4A /* GetTagsUsecase.swift */,
+				82EF05012BDACB6700C3CD4A /* NetworkService */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -682,10 +682,10 @@
 		82F78E8C2BBB1BB8000E73D3 /* TabView */ = {
 			isa = PBXGroup;
 			children = (
-				82F78E932BBB304D000E73D3 /* ViewState */,
+				82F78E902BBB1CA7000E73D3 /* Assembler */,
 				82F78E922BBB2F45000E73D3 /* Presenter */,
 				82F78E912BBB1CB4000E73D3 /* View */,
-				82F78E902BBB1CA7000E73D3 /* Assembler */,
+				82F78E932BBB304D000E73D3 /* ViewState */,
 			);
 			path = TabView;
 			sourceTree = "<group>";
@@ -749,10 +749,10 @@
 		82F78E9F2BBB385C000E73D3 /* Tags */ = {
 			isa = PBXGroup;
 			children = (
-				82EF04FF2BDACB5200C3CD4A /* Usecase */,
 				82EF04F92BDAC9B200C3CD4A /* Assembler */,
 				82D1361C2BD28C1100A48CD2 /* Domain */,
 				82EF04FA2BDAC9B700C3CD4A /* Presenter */,
+				82EF04FF2BDACB5200C3CD4A /* Usecase */,
 				82EF04FB2BDAC9BE00C3CD4A /* View */,
 				82EF04FC2BDAC9C400C3CD4A /* ViewState */,
 			);
@@ -797,8 +797,8 @@
 			);
 			name = Linkwarden;
 			packageProductDependencies = (
-				82DECC3D2BC3E6D2000ABBF2 /* ToastManager */,
-				82DECC402BC3E6DA000ABBF2 /* APIManager */,
+				822D3D5B2BDAD5110023FE8A /* APIManager */,
+				822D3D5E2BDAD51B0023FE8A /* ToastManager */,
 			);
 			productName = Linkwarden;
 			productReference = 82C3591B2B9C371A009A3294 /* Linkwarden.app */;
@@ -829,8 +829,8 @@
 			);
 			mainGroup = 82C359122B9C371A009A3294;
 			packageReferences = (
-				82DECC3C2BC3E6D2000ABBF2 /* XCRemoteSwiftPackageReference "ToastManager" */,
-				82DECC3F2BC3E6DA000ABBF2 /* XCRemoteSwiftPackageReference "APIManager" */,
+				822D3D5A2BDAD5110023FE8A /* XCRemoteSwiftPackageReference "APIManager" */,
+				822D3D5D2BDAD51B0023FE8A /* XCRemoteSwiftPackageReference "ToastManager" */,
 			);
 			productRefGroup = 82C3591C2B9C371A009A3294 /* Products */;
 			projectDirPath = "";
@@ -1148,15 +1148,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		82DECC3C2BC3E6D2000ABBF2 /* XCRemoteSwiftPackageReference "ToastManager" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/zeyrie/ToastManager";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.1;
-			};
-		};
-		82DECC3F2BC3E6DA000ABBF2 /* XCRemoteSwiftPackageReference "APIManager" */ = {
+		822D3D5A2BDAD5110023FE8A /* XCRemoteSwiftPackageReference "APIManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/zeyrie/APIManager.git";
 			requirement = {
@@ -1164,18 +1156,26 @@
 				kind = branch;
 			};
 		};
+		822D3D5D2BDAD51B0023FE8A /* XCRemoteSwiftPackageReference "ToastManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zeyrie/ToastManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		82DECC3D2BC3E6D2000ABBF2 /* ToastManager */ = {
+		822D3D5B2BDAD5110023FE8A /* APIManager */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 82DECC3C2BC3E6D2000ABBF2 /* XCRemoteSwiftPackageReference "ToastManager" */;
-			productName = ToastManager;
-		};
-		82DECC402BC3E6DA000ABBF2 /* APIManager */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82DECC3F2BC3E6DA000ABBF2 /* XCRemoteSwiftPackageReference "APIManager" */;
+			package = 822D3D5A2BDAD5110023FE8A /* XCRemoteSwiftPackageReference "APIManager" */;
 			productName = APIManager;
+		};
+		822D3D5E2BDAD51B0023FE8A /* ToastManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 822D3D5D2BDAD51B0023FE8A /* XCRemoteSwiftPackageReference "ToastManager" */;
+			productName = ToastManager;
 		};
 /* End XCSwiftPackageProductDependency section */
 

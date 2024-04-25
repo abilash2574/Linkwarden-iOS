@@ -34,7 +34,7 @@ struct TabBarView: View {
                                 Text(module.displayName)
                         }
                 case .Tags:
-                    TagsView()
+                    TagsAssembler.getTagsView()
                         .tabItem {
                                 module.tabIcon
                                 Text(module.displayName)

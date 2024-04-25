@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TagsView: View {
     
-    
+    @ObservedObject var viewState: TagsViewState
     
     var body: some View {
         Text("Tags Page")
@@ -17,5 +17,6 @@ struct TagsView: View {
 }
 
 #Preview {
-    TagsView()
+    let view = TagsAssembler.getTagsView()
+    return view
 }

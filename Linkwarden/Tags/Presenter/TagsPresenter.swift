@@ -6,3 +6,19 @@
 //
 
 import Foundation
+
+protocol TagsPresenterContract {
+    
+}
+
+class TagsPresenter: TagsPresenterContract {
+    
+    let getTags: GetTagsUsecase
+    
+    weak var viewState: TagsViewStateContract?
+    
+    init(getTags: GetTagsUsecase) {
+        self.getTags = getTags
+    }
+    
+}
