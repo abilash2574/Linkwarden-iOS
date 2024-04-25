@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TagsView: View {
+    
+    
+    
     var body: some View {
         Text("Tags Page")
     }
