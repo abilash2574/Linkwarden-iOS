@@ -17,7 +17,7 @@ struct BookmarksView: View {
                 BookmarkCellView(bookmark: bookmark.wrappedValue)
                     .listRowSeparator(.hidden)
                     .listRowBackground(
-                        RoundedRectangle(cornerRadius: 5)
+                        RoundedRectangle(cornerRadius: 12)
                             .background(.clear)
                             .foregroundColor(.white)
                             .padding(

@@ -25,7 +25,7 @@ struct BookmarkCellView: View {
                 .aspectRatio(contentMode: .fit)
                 .foregroundStyle(ThemeManager.secondaryLabel)
                 .frame(maxWidth: 64, maxHeight: 64)
-                .clipShape(.rect(cornerRadius: 4))
+                .clipShape(.rect(cornerRadius: 8))
                 .onAppear {
                     guard bookmark.previewImage == nil else { return }
                     viewState.imageViewOnAppear(bookmark.bookmarkID)
