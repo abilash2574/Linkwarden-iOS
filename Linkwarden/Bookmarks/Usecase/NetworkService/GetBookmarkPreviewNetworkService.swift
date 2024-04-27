@@ -16,8 +16,8 @@ protocol GetBookmarkPreviewNetworkServiceContract: NetworkServiceContract {
 
 class GetBookmarkPreviewNetworkService: GetBookmarkPreviewNetworkServiceContract {
     
-    var urlString: String { "https://icons.duckduckgo.com/ip3" }
-    
+    var urlString: String { "https://logo.clearbit.com/" }
+
     func getBookmarkPreview(from previewURL: String) async -> UsecaseResult<UIImage, any Error> {
         
         let cacheKey = NSString(string: previewURL)
@@ -27,7 +27,7 @@ class GetBookmarkPreviewNetworkService: GetBookmarkPreviewNetworkServiceContract
             return .success(image)
         }
         
-        let iconURL = "\(urlString)/\(previewURL).ico"
+        let iconURL = "\(urlString)/\(previewURL)"
         
         guard isOnline() else {
             return .failure(No_Network_API_Error)
