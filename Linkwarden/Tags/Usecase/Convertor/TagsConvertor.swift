@@ -9,8 +9,8 @@ import Foundation
 
 class TagsConvertor {
     
-    func convertTagsModelToTags(_ models: [TagsModel]) -> [Tags] {
-        var tags = [Tags]()
+    func convertTagsModelToTags(_ models: [TagsModel]) -> [Tag] {
+        var tags = [Tag]()
         
         models.forEach { model in
             guard let createdDate = DateTimeManager.defaultDateFormatter.dateFormatter.date(from: model.createdDate), let updatedDate = DateTimeManager.defaultDateFormatter.dateFormatter.date(from: model.updatedDate) else { return }
@@ -20,7 +20,7 @@ class TagsConvertor {
                 linkCount = count.links
             }
             
-            let tag = Tags(tagsID: model.tagID, name: model.name, ownerID: model.ownerID, createdDate: createdDate, updatedDate: updatedDate, linkCount: linkCount)
+            let tag = Tag(tagID: model.tagID, name: model.name, ownerID: model.ownerID, createdDate: createdDate, updatedDate: updatedDate, linkCount: linkCount)
             
             tags.append(tag)
         }

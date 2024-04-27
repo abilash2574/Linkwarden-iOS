@@ -27,6 +27,7 @@ enum ImageConstants {
     static let domainIcon = Image("Link")
     static let folderIcon = Image(systemName: "folder.fill")
     static let calendarIcon = Image(systemName: "calendar")
+    static let numberIcon = Image(systemName: "number")
     
     // MARK: - Common
     static let offlineIcon = Image(systemName: "wifi.slash")

@@ -32,9 +32,9 @@ class GetTagsUsecase: Usecase<GetTagsUsecase.Request, GetTagsUsecase.Response> {
     }
     
     class Response: UsecaseResponse {
-        let tags: [Tags]
+        let tags: [Tag]
         
-        init(tags: [Tags]) {
+        init(tags: [Tag]) {
             self.tags = tags
         }
     }

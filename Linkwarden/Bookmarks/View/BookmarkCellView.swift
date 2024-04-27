@@ -59,6 +59,7 @@ struct CellLabel: View {
         case domain
         case collection
         case date
+        case number
     }
     
     var labelText: String
@@ -73,6 +74,8 @@ struct CellLabel: View {
             ImageConstants.folderIcon
         case .date:
             ImageConstants.calendarIcon
+        case .number:
+            ImageConstants.numberIcon
         }
     }
     

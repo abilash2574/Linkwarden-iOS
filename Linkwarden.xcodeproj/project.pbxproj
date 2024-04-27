@@ -68,9 +68,10 @@
 		82D1362B2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */; };
 		82D1362D2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */; };
 		82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3D4182BB9DBA9000722BF /* Validator.swift */; };
+		82D3FB5B2BDD060A008EF8CE /* TagsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB5A2BDD060A008EF8CE /* TagsCellView.swift */; };
 		82EF04FE2BDAC9F000C3CD4A /* TagsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */; };
 		82EF05032BDACB9700C3CD4A /* GetTagsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05022BDACB9700C3CD4A /* GetTagsNetworkService.swift */; };
-		82EF05052BDACBE200C3CD4A /* Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05042BDACBE200C3CD4A /* Tags.swift */; };
+		82EF05052BDACBE200C3CD4A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05042BDACBE200C3CD4A /* Tag.swift */; };
 		82EF05072BDACE8900C3CD4A /* GetTagsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05062BDACE8900C3CD4A /* GetTagsDataManager.swift */; };
 		82EF05092BDACF0200C3CD4A /* GetTagsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05082BDACF0200C3CD4A /* GetTagsUsecase.swift */; };
 		82EF050C2BDACF8100C3CD4A /* TagsConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF050B2BDACF8100C3CD4A /* TagsConvertor.swift */; };
@@ -150,9 +151,10 @@
 		82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewDataManager.swift; sourceTree = "<group>"; };
 		82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewUsecase.swift; sourceTree = "<group>"; };
 		82D3D4182BB9DBA9000722BF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		82D3FB5A2BDD060A008EF8CE /* TagsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCellView.swift; sourceTree = "<group>"; };
 		82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsAssembler.swift; sourceTree = "<group>"; };
 		82EF05022BDACB9700C3CD4A /* GetTagsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTagsNetworkService.swift; sourceTree = "<group>"; };
-		82EF05042BDACBE200C3CD4A /* Tags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tags.swift; sourceTree = "<group>"; };
+		82EF05042BDACBE200C3CD4A /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		82EF05062BDACE8900C3CD4A /* GetTagsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTagsDataManager.swift; sourceTree = "<group>"; };
 		82EF05082BDACF0200C3CD4A /* GetTagsUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTagsUsecase.swift; sourceTree = "<group>"; };
 		82EF050B2BDACF8100C3CD4A /* TagsConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsConvertor.swift; sourceTree = "<group>"; };
@@ -583,7 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				82D1361D2BD28C2100A48CD2 /* TagsModel.swift */,
-				82EF05042BDACBE200C3CD4A /* Tags.swift */,
+				82EF05042BDACBE200C3CD4A /* Tag.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -632,6 +634,7 @@
 			isa = PBXGroup;
 			children = (
 				82F78EA62BBB38A2000E73D3 /* TagsView.swift */,
+				82D3FB5A2BDD060A008EF8CE /* TagsCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				8244152B2B9DCC3300E0C624 /* NetworkManager.swift in Sources */,
 				824415302B9DD24D00E0C624 /* UserDefaultsKeys.swift in Sources */,
 				8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */,
+				82D3FB5B2BDD060A008EF8CE /* TagsCellView.swift in Sources */,
 				824415322B9DD98F00E0C624 /* APIResponseConstants.swift in Sources */,
 				824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */,
 				82F78EA92BBB38AA000E73D3 /* FavouritesView.swift in Sources */,
@@ -880,7 +884,7 @@
 				82F78EAB2BBB38B1000E73D3 /* SettingsView.swift in Sources */,
 				82F78E9C2BBB31FC000E73D3 /* Module.swift in Sources */,
 				82D1361E2BD28C2100A48CD2 /* TagsModel.swift in Sources */,
-				82EF05052BDACBE200C3CD4A /* Tags.swift in Sources */,
+				82EF05052BDACBE200C3CD4A /* Tag.swift in Sources */,
 				82EF05072BDACE8900C3CD4A /* GetTagsDataManager.swift in Sources */,
 				82EF050C2BDACF8100C3CD4A /* TagsConvertor.swift in Sources */,
 				82D136162BD2898000A48CD2 /* GetBookmarksNetworkService.swift in Sources */,
