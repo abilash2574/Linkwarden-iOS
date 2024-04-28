@@ -19,19 +19,13 @@ struct TagsCellView: View {
                 Image(systemName: "tag")
                 Text(tag.name)
                     .font(.headline)
-            }
-            .padding(.bottom, 4)
-
-            HStack() {
                 
-                CellLabelView(labelText: DateTimeManager.mediumDate.dateFormatter.string(from: tag.createdDate), labelType: .date)
-                
-                Spacer(minLength: 8)
+                Spacer()
                 
                 CellLabelView(labelText: "\(tag.linkCount)", labelType: .number)
             }
+            
         }
-        .padding([.leading, .trailing], 8)
         .padding([.top, .bottom], 2)
         
     }
