@@ -17,6 +17,12 @@ struct TagsView: View {
             List($viewState.tags, id: \.tagID ) { tag in
                 
                 TagsCellView(tag: tag)
+                    .alignmentGuide(.listRowSeparatorLeading, computeValue: { dimension in
+                        return 0
+                    })
+                    .alignmentGuide(.listRowSeparatorTrailing, computeValue: { dimension in
+                        return dimension[.trailing]
+                    })
                 
             }
             .listStyle(.plain)
