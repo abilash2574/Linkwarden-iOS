@@ -40,7 +40,7 @@ struct TabBarView: View {
                                 Text(module.displayName)
                         }
                 case .Settings:
-                    SettingsView()
+                    SettingsAssembler.getSettingsView()
                         .tabItem {
                                 module.tabIcon
                                 Text(module.displayName)

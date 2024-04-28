@@ -24,7 +24,9 @@ class AppState {
         }
     }
     
-    static var userID: Int?
+    static var userID: Int64?
+    
+    static var user: User?
     
     static var sessionExpiryDate: Date?
     

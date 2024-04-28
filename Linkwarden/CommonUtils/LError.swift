@@ -15,6 +15,9 @@ enum LError: Error {
     
     // Datamanager
     case NoLocalDataManager
+    
+    // Convertor
+    case UnableToConvertModel
 }
 
 extension LError {
@@ -28,6 +31,10 @@ extension LError {
             // Datamanager
         case .NoLocalDataManager:
             "Local Datamanager is not available"
+            
+            // Convertor
+        case .UnableToConvertModel:
+            "Model was not convertible to Data"
             
         }
     }

@@ -33,4 +33,8 @@ enum ImageConstants {
     static let offlineIcon = Image(systemName: "wifi.slash")
     static let bookmarkThumbnail = UIImage(named: "Website")
     
+    // MARK: - Settings
+    static let logoutIcon = Image("Logout")
+    static let profileIcon = Image(systemName: "person.circle.fill")
+    
 }

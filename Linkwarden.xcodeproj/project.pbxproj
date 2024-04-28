@@ -80,6 +80,16 @@
 		82D3FB772BDD633D008EF8CE /* CollectionsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB762BDD633D008EF8CE /* CollectionsAssembler.swift */; };
 		82D3FB792BDD67AD008EF8CE /* CollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB782BDD67AD008EF8CE /* CollectionCellView.swift */; };
 		82D3FB7B2BDD67D4008EF8CE /* CellLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB7A2BDD67D4008EF8CE /* CellLabelView.swift */; };
+		82D3FB842BDE9634008EF8CE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB832BDE9634008EF8CE /* User.swift */; };
+		82D3FB862BDE9669008EF8CE /* GetUserUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB852BDE9669008EF8CE /* GetUserUsecase.swift */; };
+		82D3FB882BDE9680008EF8CE /* GetUserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB872BDE9680008EF8CE /* GetUserDataManager.swift */; };
+		82D3FB8A2BDE968A008EF8CE /* GetUserNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB892BDE968A008EF8CE /* GetUserNetworkService.swift */; };
+		82D3FB8C2BDE9855008EF8CE /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB8B2BDE9855008EF8CE /* UserModel.swift */; };
+		82D3FB8F2BDE9D37008EF8CE /* UserConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB8E2BDE9D37008EF8CE /* UserConvertor.swift */; };
+		82D3FB962BDEB295008EF8CE /* SettingsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB952BDEB295008EF8CE /* SettingsViewState.swift */; };
+		82D3FB982BDEB32F008EF8CE /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB972BDEB32F008EF8CE /* SettingsPresenter.swift */; };
+		82D3FB9A2BDEB437008EF8CE /* SettingsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB992BDEB437008EF8CE /* SettingsAssembler.swift */; };
+		82D3FB9C2BDEB593008EF8CE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB9B2BDEB593008EF8CE /* ProfileView.swift */; };
 		82EF04FE2BDAC9F000C3CD4A /* TagsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */; };
 		82EF05032BDACB9700C3CD4A /* GetTagsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05022BDACB9700C3CD4A /* GetTagsNetworkService.swift */; };
 		82EF05052BDACBE200C3CD4A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05042BDACBE200C3CD4A /* Tag.swift */; };
@@ -174,6 +184,16 @@
 		82D3FB762BDD633D008EF8CE /* CollectionsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsAssembler.swift; sourceTree = "<group>"; };
 		82D3FB782BDD67AD008EF8CE /* CollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellView.swift; sourceTree = "<group>"; };
 		82D3FB7A2BDD67D4008EF8CE /* CellLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLabelView.swift; sourceTree = "<group>"; };
+		82D3FB832BDE9634008EF8CE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		82D3FB852BDE9669008EF8CE /* GetUserUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserUsecase.swift; sourceTree = "<group>"; };
+		82D3FB872BDE9680008EF8CE /* GetUserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserDataManager.swift; sourceTree = "<group>"; };
+		82D3FB892BDE968A008EF8CE /* GetUserNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserNetworkService.swift; sourceTree = "<group>"; };
+		82D3FB8B2BDE9855008EF8CE /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		82D3FB8E2BDE9D37008EF8CE /* UserConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConvertor.swift; sourceTree = "<group>"; };
+		82D3FB952BDEB295008EF8CE /* SettingsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewState.swift; sourceTree = "<group>"; };
+		82D3FB972BDEB32F008EF8CE /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		82D3FB992BDEB437008EF8CE /* SettingsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAssembler.swift; sourceTree = "<group>"; };
+		82D3FB9B2BDEB593008EF8CE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsAssembler.swift; sourceTree = "<group>"; };
 		82EF05022BDACB9700C3CD4A /* GetTagsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTagsNetworkService.swift; sourceTree = "<group>"; };
 		82EF05042BDACBE200C3CD4A /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -370,9 +390,11 @@
 		829581292BB04270003162CE /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				82D3FB8D2BDE9D2F008EF8CE /* Convertor */,
 				8295812B2BB0427E003162CE /* NetworkService */,
 				8295812A2BB04278003162CE /* DataManager */,
 				829581332BB045D7003162CE /* GetSessionDetailUsecase.swift */,
+				82D3FB852BDE9669008EF8CE /* GetUserUsecase.swift */,
 			);
 			path = Usecase;
 			sourceTree = "<group>";
@@ -381,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				829581312BB04544003162CE /* GetSessionDetailDataManager.swift */,
+				82D3FB872BDE9680008EF8CE /* GetUserDataManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -389,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				8295812C2BB042A0003162CE /* GetSessionDetailsNetworkService.swift */,
+				82D3FB892BDE968A008EF8CE /* GetUserNetworkService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -397,6 +421,8 @@
 			isa = PBXGroup;
 			children = (
 				8295812F2BB042FF003162CE /* SessionDetail.swift */,
+				82D3FB832BDE9634008EF8CE /* User.swift */,
+				82D3FB8B2BDE9855008EF8CE /* UserModel.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -705,6 +731,53 @@
 			path = Convertor;
 			sourceTree = "<group>";
 		};
+		82D3FB8D2BDE9D2F008EF8CE /* Convertor */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB8E2BDE9D37008EF8CE /* UserConvertor.swift */,
+			);
+			path = Convertor;
+			sourceTree = "<group>";
+		};
+		82D3FB902BDEB258008EF8CE /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		82D3FB912BDEB25D008EF8CE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB972BDEB32F008EF8CE /* SettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		82D3FB922BDEB264008EF8CE /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		82D3FB932BDEB26B008EF8CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F78EAA2BBB38B1000E73D3 /* SettingsView.swift */,
+				82D3FB9B2BDEB593008EF8CE /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82D3FB942BDEB271008EF8CE /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB952BDEB295008EF8CE /* SettingsViewState.swift */,
+			);
+			path = ViewState;
+			sourceTree = "<group>";
+		};
 		82DECC162BC173CA000ABBF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +791,7 @@
 			isa = PBXGroup;
 			children = (
 				82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */,
+				82D3FB992BDEB437008EF8CE /* SettingsAssembler.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -836,7 +910,11 @@
 		82F78E9D2BBB384B000E73D3 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				82F78EAA2BBB38B1000E73D3 /* SettingsView.swift */,
+				82D3FB942BDEB271008EF8CE /* ViewState */,
+				82D3FB932BDEB26B008EF8CE /* View */,
+				82D3FB922BDEB264008EF8CE /* Usecase */,
+				82D3FB912BDEB25D008EF8CE /* Presenter */,
+				82D3FB902BDEB258008EF8CE /* Assembler */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -970,11 +1048,15 @@
 				8244152B2B9DCC3300E0C624 /* NetworkManager.swift in Sources */,
 				824415302B9DD24D00E0C624 /* UserDefaultsKeys.swift in Sources */,
 				8244150E2B9D290100E0C624 /* NetworkUtils.swift in Sources */,
+				82D3FB962BDEB295008EF8CE /* SettingsViewState.swift in Sources */,
 				82D3FB5B2BDD060A008EF8CE /* TagsCellView.swift in Sources */,
 				824415322B9DD98F00E0C624 /* APIResponseConstants.swift in Sources */,
+				82D3FB9A2BDEB437008EF8CE /* SettingsAssembler.swift in Sources */,
 				824415102B9D29BA00E0C624 /* NetworkReachability.swift in Sources */,
 				82F78EA92BBB38AA000E73D3 /* FavouritesView.swift in Sources */,
 				8244151F2B9DC68200E0C624 /* GetCSRFTokenUsecase.swift in Sources */,
+				82D3FB982BDEB32F008EF8CE /* SettingsPresenter.swift in Sources */,
+				82D3FB842BDE9634008EF8CE /* User.swift in Sources */,
 				824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */,
 				8295812D2BB042A0003162CE /* GetSessionDetailsNetworkService.swift in Sources */,
 				8244151C2B9DC11C00E0C624 /* LError.swift in Sources */,
@@ -997,14 +1079,17 @@
 				82D3FB772BDD633D008EF8CE /* CollectionsAssembler.swift in Sources */,
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
 				82D136272BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift in Sources */,
+				82D3FB8F2BDE9D37008EF8CE /* UserConvertor.swift in Sources */,
 				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
 				82EF05032BDACB9700C3CD4A /* GetTagsNetworkService.swift in Sources */,
 				82D3FB6F2BDD5CD9008EF8CE /* GetCollectionsDataManager.swift in Sources */,
+				82D3FB882BDE9680008EF8CE /* GetUserDataManager.swift in Sources */,
 				82A85A742BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
 				82EF05102BDAD13F00C3CD4A /* TagsPresenter.swift in Sources */,
 				82D3FB7B2BDD67D4008EF8CE /* CellLabelView.swift in Sources */,
 				82D136112BD2886500A48CD2 /* BookmarksPresenter.swift in Sources */,
+				82D3FB862BDE9669008EF8CE /* GetUserUsecase.swift in Sources */,
 				82F78E972BBB3079000E73D3 /* TabViewPresenter.swift in Sources */,
 				82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
@@ -1021,6 +1106,7 @@
 				82D3FB732BDD5FC4008EF8CE /* CollectionsViewState.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
 				82D3FB662BDD12F0008EF8CE /* GetCollectionsUsecase.swift in Sources */,
+				82D3FB8C2BDE9855008EF8CE /* UserModel.swift in Sources */,
 				82D3FB752BDD6089008EF8CE /* CollectionsPresenter.swift in Sources */,
 				82F78EA32BBB3892000E73D3 /* CollectionsView.swift in Sources */,
 				82D136182BD2898C00A48CD2 /* GetBookmarksDataManager.swift in Sources */,
@@ -1044,8 +1130,10 @@
 				82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */,
 				82D1360F2BD2880500A48CD2 /* BookmarksViewState.swift in Sources */,
 				82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */,
+				82D3FB8A2BDE968A008EF8CE /* GetUserNetworkService.swift in Sources */,
 				82D3FB712BDD5D56008EF8CE /* CollectionsConvertor.swift in Sources */,
 				82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */,
+				82D3FB9C2BDEB593008EF8CE /* ProfileView.swift in Sources */,
 				82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift in Sources */,
 				82A85A762BB9756300F4FFA6 /* DataManager.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,

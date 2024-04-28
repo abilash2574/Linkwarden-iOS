@@ -11,16 +11,24 @@ class LinkwardenAppState: ToastSupport, ObservableObject {
     
     static let shared = LinkwardenAppState()
     
-    var containerView: ContainerView?
-    
     @Published var showLogin = false
-    @Published var showHomepage = false
+    @Published var showHomepage = false {
+        didSet {
+            Task {
+                if showHomepage {
+                    await fetchUser()
+                }
+            }
+        }
+    }
     @Published var showLoading = true
     
     @Published var showToast = false
     var toastMessage: LocalizedStringResource = ""
     
     var getSessionUsecase = LinkwardenAssembler.getSessionDetailUsecase()
+    
+    var getUserUsecaes = LinkwardenAssembler.getUserUsecase()
     
     /// Returns `true` if the session is valid and `false` if the session is invalid.
     var isSessionValid: Bool {
@@ -41,7 +49,7 @@ class LinkwardenAppState: ToastSupport, ObservableObject {
         let request = GetSessionDetailUsecase.Request()
         switch await getSessionUsecase.execute(request: request) {
         case .success(let session):
-            AppState.userID = Int(session.sessionDetail.user.id)
+            AppState.userID = session.sessionDetail.user.id
             // TODO: Verify if the session expiry date received from this API is the updated expiry date that we receive when logging in.
 
             AppState.sessionExpiryDate = DateTimeManager.defaultDateFormatter.dateFormatter.date(from: session.sessionDetail.expires)
@@ -55,6 +63,26 @@ class LinkwardenAppState: ToastSupport, ObservableObject {
             LLogger.shared.critical("message: Session in valid with missing userID or session expiry.\nerror: \(error)")
             return false
         }
+    }
+    
+    private func fetchUser() async {
+        guard let userID = AppState.userID else {
+            showToast(with: "Uh-oh! Something went wrong. Please contact the developer by sending feedback from the app.", replace: true)
+            LLogger.shared.critical("Couldn't load user ID for fetching User")
+            didLoginFailed()
+            return
+        }
+        let request = GetUserUsecase.Request(usedID: userID, type: .remote)
+        switch await getUserUsecaes.execute(request: request) {
+        case .success(let userObject):
+            let user = userObject.user
+            AppState.user = user
+        case .failure(let error):
+            showToast(with: "Uh-oh! Something went wrong. Please contact the developer by sending feedback from the app.", replace: true)
+            LLogger.shared.critical("Failed to get User from server.\nError: \(error)")
+            didLoginFailed()
+        }
+        
     }
     
 }

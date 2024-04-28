@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "@%@" : {
+
+    },
     "Add" : {
 
     },
@@ -20,6 +23,12 @@
 
     },
     "Favourites Page" : {
+
+    },
+    "Format" : {
+
+    },
+    "Hello" : {
 
     },
     "Hello, World!" : {
@@ -61,6 +70,9 @@
     "Please enter a valid domain/IP Address" : {
 
     },
+    "Profile" : {
+
+    },
     "Retry" : {
 
     },
@@ -74,9 +86,6 @@
 
     },
     "Settings" : {
-
-    },
-    "Settings Page" : {
 
     },
     "Tags" : {

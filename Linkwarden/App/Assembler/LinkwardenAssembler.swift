@@ -17,12 +17,19 @@ struct LinkwardenAssembler {
         return GetSessionDetailUsecase(dataManager: datamanager)
     }
     
+    static func getUserUsecase() -> GetUserUsecase {
+        let networkService = GetUserNetworkService()
+        let datamanager = GetUserDataManager(networkService: networkService)
+        let convertor = UserConvertor()
+        let usecase = GetUserUsecase(dataManager: datamanager, convertor: convertor)
+        return usecase
+    }
+    
     /// Returns the Container View for the app.
     /// - Returns: Container View that holds the login view and the tab bar, and acts as the base view for the whole app.
     static func getContainerView() -> ContainerView {
         let appState = LinkwardenAppState.shared
         let view = ContainerView(appState: appState)
-        appState.containerView = view
         return view
     }
     
