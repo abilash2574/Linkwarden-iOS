@@ -24,11 +24,11 @@ struct TagsCellView: View {
 
             HStack() {
                 
-                CellLabel(labelText: DateTimeManager.mediumDate.dateFormatter.string(from: tag.createdDate), labelType: .date)
+                CellLabelView(labelText: DateTimeManager.mediumDate.dateFormatter.string(from: tag.createdDate), labelType: .date)
                 
                 Spacer(minLength: 8)
                 
-                CellLabel(labelText: "\(tag.linkCount)", labelType: .number)
+                CellLabelView(labelText: "\(tag.linkCount)", labelType: .number)
             }
         }
         .padding([.leading, .trailing], 8)

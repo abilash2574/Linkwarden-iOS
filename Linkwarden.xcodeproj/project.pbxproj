@@ -69,6 +69,17 @@
 		82D1362D2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */; };
 		82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3D4182BB9DBA9000722BF /* Validator.swift */; };
 		82D3FB5B2BDD060A008EF8CE /* TagsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB5A2BDD060A008EF8CE /* TagsCellView.swift */; };
+		82D3FB662BDD12F0008EF8CE /* GetCollectionsUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB652BDD12F0008EF8CE /* GetCollectionsUsecase.swift */; };
+		82D3FB692BDD1346008EF8CE /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB682BDD1346008EF8CE /* CollectionModel.swift */; };
+		82D3FB6B2BDD1351008EF8CE /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB6A2BDD1351008EF8CE /* Collection.swift */; };
+		82D3FB6D2BDD5BE8008EF8CE /* GetCollectionsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB6C2BDD5BE8008EF8CE /* GetCollectionsNetworkService.swift */; };
+		82D3FB6F2BDD5CD9008EF8CE /* GetCollectionsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB6E2BDD5CD9008EF8CE /* GetCollectionsDataManager.swift */; };
+		82D3FB712BDD5D56008EF8CE /* CollectionsConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB702BDD5D56008EF8CE /* CollectionsConvertor.swift */; };
+		82D3FB732BDD5FC4008EF8CE /* CollectionsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB722BDD5FC4008EF8CE /* CollectionsViewState.swift */; };
+		82D3FB752BDD6089008EF8CE /* CollectionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB742BDD6089008EF8CE /* CollectionsPresenter.swift */; };
+		82D3FB772BDD633D008EF8CE /* CollectionsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB762BDD633D008EF8CE /* CollectionsAssembler.swift */; };
+		82D3FB792BDD67AD008EF8CE /* CollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB782BDD67AD008EF8CE /* CollectionCellView.swift */; };
+		82D3FB7B2BDD67D4008EF8CE /* CellLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D3FB7A2BDD67D4008EF8CE /* CellLabelView.swift */; };
 		82EF04FE2BDAC9F000C3CD4A /* TagsAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */; };
 		82EF05032BDACB9700C3CD4A /* GetTagsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05022BDACB9700C3CD4A /* GetTagsNetworkService.swift */; };
 		82EF05052BDACBE200C3CD4A /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EF05042BDACBE200C3CD4A /* Tag.swift */; };
@@ -152,6 +163,17 @@
 		82D1362C2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookmarkPreviewUsecase.swift; sourceTree = "<group>"; };
 		82D3D4182BB9DBA9000722BF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		82D3FB5A2BDD060A008EF8CE /* TagsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCellView.swift; sourceTree = "<group>"; };
+		82D3FB652BDD12F0008EF8CE /* GetCollectionsUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCollectionsUsecase.swift; sourceTree = "<group>"; };
+		82D3FB682BDD1346008EF8CE /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		82D3FB6A2BDD1351008EF8CE /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		82D3FB6C2BDD5BE8008EF8CE /* GetCollectionsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCollectionsNetworkService.swift; sourceTree = "<group>"; };
+		82D3FB6E2BDD5CD9008EF8CE /* GetCollectionsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCollectionsDataManager.swift; sourceTree = "<group>"; };
+		82D3FB702BDD5D56008EF8CE /* CollectionsConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsConvertor.swift; sourceTree = "<group>"; };
+		82D3FB722BDD5FC4008EF8CE /* CollectionsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsViewState.swift; sourceTree = "<group>"; };
+		82D3FB742BDD6089008EF8CE /* CollectionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsPresenter.swift; sourceTree = "<group>"; };
+		82D3FB762BDD633D008EF8CE /* CollectionsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsAssembler.swift; sourceTree = "<group>"; };
+		82D3FB782BDD67AD008EF8CE /* CollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCellView.swift; sourceTree = "<group>"; };
+		82D3FB7A2BDD67D4008EF8CE /* CellLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLabelView.swift; sourceTree = "<group>"; };
 		82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsAssembler.swift; sourceTree = "<group>"; };
 		82EF05022BDACB9700C3CD4A /* GetTagsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTagsNetworkService.swift; sourceTree = "<group>"; };
 		82EF05042BDACBE200C3CD4A /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
@@ -606,10 +628,88 @@
 			path = Validator;
 			sourceTree = "<group>";
 		};
+		82D3FB5C2BDD124D008EF8CE /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB762BDD633D008EF8CE /* CollectionsAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		82D3FB5D2BDD1251008EF8CE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB742BDD6089008EF8CE /* CollectionsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		82D3FB5E2BDD1256008EF8CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				82F78EA22BBB3892000E73D3 /* CollectionsView.swift */,
+				82D3FB782BDD67AD008EF8CE /* CollectionCellView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		82D3FB5F2BDD125B008EF8CE /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB722BDD5FC4008EF8CE /* CollectionsViewState.swift */,
+			);
+			path = ViewState;
+			sourceTree = "<group>";
+		};
+		82D3FB602BDD126D008EF8CE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB682BDD1346008EF8CE /* CollectionModel.swift */,
+				82D3FB6A2BDD1351008EF8CE /* Collection.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		82D3FB612BDD1271008EF8CE /* Usecase */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB642BDD1285008EF8CE /* Convertor */,
+				82D3FB632BDD1281008EF8CE /* DataManager */,
+				82D3FB622BDD1278008EF8CE /* NetworkService */,
+				82D3FB652BDD12F0008EF8CE /* GetCollectionsUsecase.swift */,
+			);
+			path = Usecase;
+			sourceTree = "<group>";
+		};
+		82D3FB622BDD1278008EF8CE /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB6C2BDD5BE8008EF8CE /* GetCollectionsNetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		82D3FB632BDD1281008EF8CE /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB6E2BDD5CD9008EF8CE /* GetCollectionsDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		82D3FB642BDD1285008EF8CE /* Convertor */ = {
+			isa = PBXGroup;
+			children = (
+				82D3FB702BDD5D56008EF8CE /* CollectionsConvertor.swift */,
+			);
+			path = Convertor;
+			sourceTree = "<group>";
+		};
 		82DECC162BC173CA000ABBF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				829101252BBDCD8000AA25F1 /* OfflineView.swift */,
+				82D3FB7A2BDD67D4008EF8CE /* CellLabelView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -778,7 +878,12 @@
 		82F78EA12BBB3881000E73D3 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				82F78EA22BBB3892000E73D3 /* CollectionsView.swift */,
+				82D3FB612BDD1271008EF8CE /* Usecase */,
+				82D3FB602BDD126D008EF8CE /* Domain */,
+				82D3FB5F2BDD125B008EF8CE /* ViewState */,
+				82D3FB5E2BDD1256008EF8CE /* View */,
+				82D3FB5D2BDD1251008EF8CE /* Presenter */,
+				82D3FB5C2BDD124D008EF8CE /* Assembler */,
 			);
 			path = Collections;
 			sourceTree = "<group>";
@@ -886,15 +991,19 @@
 				82D1361E2BD28C2100A48CD2 /* TagsModel.swift in Sources */,
 				82EF05052BDACBE200C3CD4A /* Tag.swift in Sources */,
 				82EF05072BDACE8900C3CD4A /* GetTagsDataManager.swift in Sources */,
+				82D3FB792BDD67AD008EF8CE /* CollectionCellView.swift in Sources */,
 				82EF050C2BDACF8100C3CD4A /* TagsConvertor.swift in Sources */,
 				82D136162BD2898000A48CD2 /* GetBookmarksNetworkService.swift in Sources */,
+				82D3FB772BDD633D008EF8CE /* CollectionsAssembler.swift in Sources */,
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
 				82D136272BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift in Sources */,
 				824415272B9DC8D900E0C624 /* GetCSRFTokenNetworkService.swift in Sources */,
 				82EF05032BDACB9700C3CD4A /* GetTagsNetworkService.swift in Sources */,
+				82D3FB6F2BDD5CD9008EF8CE /* GetCollectionsDataManager.swift in Sources */,
 				82A85A742BB9744F00F4FFA6 /* Linkwarden.xcdatamodeld in Sources */,
 				82C359212B9C371A009A3294 /* LoginPageView.swift in Sources */,
 				82EF05102BDAD13F00C3CD4A /* TagsPresenter.swift in Sources */,
+				82D3FB7B2BDD67D4008EF8CE /* CellLabelView.swift in Sources */,
 				82D136112BD2886500A48CD2 /* BookmarksPresenter.swift in Sources */,
 				82F78E972BBB3079000E73D3 /* TabViewPresenter.swift in Sources */,
 				82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */,
@@ -907,8 +1016,12 @@
 				822D4C7D2BCEEB590077EF49 /* BookmarkCellView.swift in Sources */,
 				82D1362B2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift in Sources */,
 				82D136252BD2989300A48CD2 /* BookmarksConvertor.swift in Sources */,
+				82D3FB6B2BDD1351008EF8CE /* Collection.swift in Sources */,
 				82EF04FE2BDAC9F000C3CD4A /* TagsAssembler.swift in Sources */,
+				82D3FB732BDD5FC4008EF8CE /* CollectionsViewState.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
+				82D3FB662BDD12F0008EF8CE /* GetCollectionsUsecase.swift in Sources */,
+				82D3FB752BDD6089008EF8CE /* CollectionsPresenter.swift in Sources */,
 				82F78EA32BBB3892000E73D3 /* CollectionsView.swift in Sources */,
 				82D136182BD2898C00A48CD2 /* GetBookmarksDataManager.swift in Sources */,
 				829581302BB042FF003162CE /* SessionDetail.swift in Sources */,
@@ -922,6 +1035,7 @@
 				82F78EA72BBB38A2000E73D3 /* TagsView.swift in Sources */,
 				829581342BB045D7003162CE /* GetSessionDetailUsecase.swift in Sources */,
 				82EF050E2BDAD12D00C3CD4A /* TagsViewState.swift in Sources */,
+				82D3FB6D2BDD5BE8008EF8CE /* GetCollectionsNetworkService.swift in Sources */,
 				8244151A2B9DB9A800E0C624 /* Usecase.swift in Sources */,
 				8295811B2BAF6FF7003162CE /* SessionToken.swift in Sources */,
 				82D1362D2BD2E1BA00A48CD2 /* GetBookmarkPreviewUsecase.swift in Sources */,
@@ -930,10 +1044,12 @@
 				82D3D4192BB9DBA9000722BF /* Validator.swift in Sources */,
 				82D1360F2BD2880500A48CD2 /* BookmarksViewState.swift in Sources */,
 				82A85A6E2BB96BDA00F4FFA6 /* DateTimeManager.swift in Sources */,
+				82D3FB712BDD5D56008EF8CE /* CollectionsConvertor.swift in Sources */,
 				82C23E242BA0E03C00280ADC /* AuthenticateUserCredentialsDataManager.swift in Sources */,
 				82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift in Sources */,
 				82A85A762BB9756300F4FFA6 /* DataManager.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
+				82D3FB692BDD1346008EF8CE /* CollectionModel.swift in Sources */,
 				829581282BB02DF6003162CE /* HomepageView.swift in Sources */,
 				824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */,
 				829581322BB04544003162CE /* GetSessionDetailDataManager.swift in Sources */,

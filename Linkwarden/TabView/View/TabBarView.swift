@@ -22,7 +22,7 @@ struct TabBarView: View {
                                 Text(module.displayName)
                         }
                 case .Collections:
-                    CollectionsView()
+                    CollectionsAssembler.getCollectionsView()
                         .tabItem {
                                 module.tabIcon
                                 Text(module.displayName)
@@ -30,8 +30,8 @@ struct TabBarView: View {
                 case .Favourites:
                     FavouritesView()
                         .tabItem {
-                                module.tabIcon
-                                Text(module.displayName)
+                            module.tabIcon
+                            Text(module.displayName)
                         }
                 case .Tags:
                     TagsAssembler.getTagsView()
