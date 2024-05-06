@@ -10,6 +10,9 @@
     "Add" : {
 
     },
+    "Allow Duplicate Links" : {
+
+    },
     "Bookmarks" : {
 
     },
@@ -19,6 +22,9 @@
     "Create Account" : {
 
     },
+    "Default Link Action" : {
+
+    },
     "Favourites" : {
 
     },
@@ -26,9 +32,6 @@
 
     },
     "Format" : {
-
-    },
-    "Hello" : {
 
     },
     "Hello, World!" : {

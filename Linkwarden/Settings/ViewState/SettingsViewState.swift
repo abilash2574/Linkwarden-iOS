@@ -16,6 +16,18 @@ protocol SettingsViewStateContract: ToastSupport, AnyObject {
 
 class SettingsViewState: SettingsViewStateContract, ObservableObject {
     
+    @Published var selectedFormats = Set<SettingsArchiveFormats>() {
+        didSet {
+            print("\(selectedFormats)")
+        }
+    }
+    @Published var allowDuplicateLink: Bool = false
+    @Published var selectedLinkAction: SettingsDefaultLinkAction = .openLink {
+        didSet {
+            print("\(selectedLinkAction)")
+        }
+    }
+    
     @Published var user: User?
     
     @Published var isOnline: Bool = true

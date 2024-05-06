@@ -23,6 +23,35 @@ struct SettingsView: View {
                     .padding([.top, .bottom], 16)
                     .padding([.leading, .trailing], 16)
                 
+                Form {
+                    Section("Format") {
+                        ForEach(SettingsArchiveFormats.allCases, id: \.self) { format in
+                            MultiSelectionCell(isSelected: viewState.selectedFormats.contains(format), text: format.rawValue) { isSelected in
+                                if isSelected {
+                                    viewState.selectedFormats.insert(format)
+                                } else {
+                                    viewState.selectedFormats.remove(format)
+                                }
+                            }
+                        }
+                    }
+                    Section {
+                        HStack {
+                            Text("Allow Duplicate Links")
+                                .lineLimit(2)
+                            Toggle("", isOn: $viewState.allowDuplicateLink)
+                        }
+                    }
+                    Section("Default Link Action") {
+                        ForEach(SettingsDefaultLinkAction.allCases, id: \.self) { action in
+                            SingleSelectionCell(isSelected: viewState.selectedLinkAction == action, text: action.rawValue) {
+                                guard viewState.selectedLinkAction != action else { return }
+                                viewState.selectedLinkAction = action
+                            }
+                        }
+                    }
+                }
+                .formStyle(.grouped)
             }
             .navigationTitle("Profile")
             .background(.gray.opacity(0.2))
@@ -33,13 +62,9 @@ struct SettingsView: View {
                         appState.showHomepage = false
                         appState.showLogin = true
                     } label: {
-                        Label(
-                            title: { Text("Logout") },
-                            icon: {
-                                ImageConstants.logoutIcon
-                                    .renderingMode(.original)
-                            }
-                        )
+                        Image(systemName: "power")
+                            .renderingMode(.template)
+                            .foregroundStyle(.red)
                     }
                 }
             }
