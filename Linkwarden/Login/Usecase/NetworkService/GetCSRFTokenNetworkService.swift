@@ -34,7 +34,7 @@ class GetCSRFTokenNetworkService: NSObject, GetCSRFTokenNetworkServiceContract {
                 
                 let responseCookies = HTTPCookie.cookies(withResponseHeaderFields: response.allHeaderFields as! [String: String], for: url)
                 
-                guard let key = responseCookies.first?.name, key == "__Host-next-auth.csrf-token" else {
+                guard let key = responseCookies.first?.name, key == "__Host-next-auth.csrf-token" || key == "next-auth.csrf-token" else {
                     return .failure(APINetworkError.apiManagerError(status: APIErrorStatus.internalError, message: "Cookie Not found", info: nil))
                 }
                 
