@@ -18,7 +18,13 @@ class GetBookmarksUsecase: Usecase<GetBookmarksUsecase.Request, GetBookmarksUsec
     }
     
     override func run(request: Request) async -> UsecaseResult<Response, any Error> {
-        switch await dataManager.getBookmarks(request.type, sortID: request.sortID, tagID: request.tagID) {
+        switch await dataManager
+            .getBookmarks(
+                request.type,
+                sortID: request.sortID,
+                tagID: request.tagID,
+                collectionID: request.collectionID
+            ) {
         case .success(let bookmarkObject):
             let bookmarks = convertor.convertBookmarksModelToBookmarks(bookmarkObject.response)
             return .success(.init(bookmarks: bookmarks))
@@ -32,10 +38,12 @@ class GetBookmarksUsecase: Usecase<GetBookmarksUsecase.Request, GetBookmarksUsec
         let type: UsecaseRequestMethod = .remote
         let sortID: Int64
         let tagID: Int64?
+        let collectionID: Int64?
         
-        init(sortID: Int64, tagID: Int64? = nil) {
+        init(sortID: Int64, tagID: Int64? = nil, collectionID: Int64? = nil) {
             self.sortID = sortID
             self.tagID = tagID
+            self.collectionID = collectionID
         }
     }
     

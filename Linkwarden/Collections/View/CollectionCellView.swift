@@ -13,7 +13,7 @@ struct CollectionCellView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 8) {
             HStack {
                 Image(systemName: "person.circle")
                     .resizable()
@@ -34,7 +34,6 @@ struct CollectionCellView: View {
                 Spacer()
             }
         }
-        .padding(8)
         
     }
 }

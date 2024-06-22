@@ -9,7 +9,7 @@ import Foundation
 
 protocol GetBookmarksDataManagerContract {
     
-    func getBookmarks(_ method: UsecaseRequestMethod, sortID: Int64, tagID: Int64?) async -> UsecaseResult<BookmarksJsonBody, Error>
+    func getBookmarks(_ method: UsecaseRequestMethod, sortID: Int64, tagID: Int64?, collectionID: Int64?) async -> UsecaseResult<BookmarksJsonBody, Error>
     
 }
 
@@ -21,12 +21,12 @@ class GetBookmarksDataManager: GetBookmarksDataManagerContract {
         self.networkService = networkService
     }
     
-    func getBookmarks(_ method: UsecaseRequestMethod, sortID: Int64, tagID: Int64?) async -> UsecaseResult<BookmarksJsonBody, any Error> {
+    func getBookmarks(_ method: UsecaseRequestMethod, sortID: Int64, tagID: Int64?, collectionID: Int64?) async -> UsecaseResult<BookmarksJsonBody, any Error> {
         switch method {
             case .local:
                 return .failure(LError.NoLocalDataManager)
             case .remote:
-                return await networkService.getBookmarks(sortID: sortID, tagID: tagID)
+                return await networkService.getBookmarks(sortID: sortID, tagID: tagID, collectionID: collectionID)
         }
     }
     

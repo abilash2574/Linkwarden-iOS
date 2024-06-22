@@ -22,7 +22,8 @@ class BookmarksPresenter: BookmarksPresenterContract {
     let getBookmarkPreviewUsecase: GetBookmarkPreviewUsecase
     
     var tagID: Int64?
-    
+    var collectionID: Int64?
+
     weak var viewState: BookmarksViewStateContract?
     
     var viewDidLoadTheFirstTime: Bool = false
@@ -37,7 +38,7 @@ class BookmarksPresenter: BookmarksPresenterContract {
         guard checkAndHandleNetworkConnectivity(), !viewDidLoadTheFirstTime else { return }
         
         Task {
-            let bookmarks = await getBookmarks(tagID: tagID)
+            let bookmarks = await getBookmarks(tagID: tagID, collectionID: collectionID)
             guard !bookmarks.isEmpty else {
                 // TODO: ZVZV Handle empty Bookmarks
                 return
@@ -69,8 +70,8 @@ extension BookmarksPresenter {
         return true
     }
     
-    private func getBookmarks(tagID: Int64? = nil) async -> [Bookmark] {
-        let request = GetBookmarksUsecase.Request(sortID: 0, tagID: tagID)
+    private func getBookmarks(tagID: Int64? = nil, collectionID: Int64? = nil) async -> [Bookmark] {
+        let request = GetBookmarksUsecase.Request(sortID: 0, tagID: tagID, collectionID: collectionID)
         switch await getBookmarksUsecase.execute(request: request) {
         case .success(let response):
             return response.bookmarks
