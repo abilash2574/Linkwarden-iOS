@@ -10,7 +10,7 @@ import APIManager
 
 protocol GetBookmarksNetworkServiceContract: NetworkServiceContract {
     
-    func getBookmarks(sortID: Int) async -> UsecaseResult<BookmarksJsonBody, Error>
+    func getBookmarks(sortID: Int64, tagID: Int64?) async -> UsecaseResult<BookmarksJsonBody, Error>
     
 }
 
@@ -19,12 +19,16 @@ class GetBookmarksNetworkService: NSObject, GetBookmarksNetworkServiceContract {
     var urlString: String { "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/links"}
     lazy var headers = ["Content-Type" : "application/json; charset=utf-8"]
     
-    func getBookmarks(sortID: Int) async -> UsecaseResult<BookmarksJsonBody, any Error> {
+    func getBookmarks(sortID: Int64, tagID: Int64?) async -> UsecaseResult<BookmarksJsonBody, any Error> {
         guard isOnline() else {
             return .failure(No_Network_API_Error)
         }
         
-        let sortedURL = "\(urlString)?sort=\(sortID)"
+        var sortedURL = "\(urlString)?sort=\(sortID)"
+        
+        if let tagID {
+            sortedURL += "&tagId=\(tagID)"
+        }
         
         guard let url = URL(string: sortedURL) else {
             return .failure(APINetworkError.apiManagerError(status: APIErrorStatus.invalidURLString, message: LErrorMessage.Invalid_URL_String, info: nil))

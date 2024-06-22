@@ -15,14 +15,22 @@ struct TagsView: View {
         
         NavigationStack {
             List($viewState.tags, id: \.tagID ) { tag in
+                NavigationLink(destination: {
+                    let view = BookmarksAssembler.getBookmarksView(tagID: tag.tagID.wrappedValue)
+                    view.viewState.title = tag.name.wrappedValue
+                    view.viewState.disableLargeTitle = true
+                    return view
+                }()) {
+                    TagsCellView(tag: tag)
+                        .alignmentGuide(.listRowSeparatorLeading, computeValue: { dimension in
+                            return 0
+                        })
+                        .alignmentGuide(.listRowSeparatorTrailing, computeValue: { dimension in
+                            return dimension[.trailing]
+                        })
+                }
                 
-                TagsCellView(tag: tag)
-                    .alignmentGuide(.listRowSeparatorLeading, computeValue: { dimension in
-                        return 0
-                    })
-                    .alignmentGuide(.listRowSeparatorTrailing, computeValue: { dimension in
-                        return dimension[.trailing]
-                    })
+                
                 
             }
             .listStyle(.plain)

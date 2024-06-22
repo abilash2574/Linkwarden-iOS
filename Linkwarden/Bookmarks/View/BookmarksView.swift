@@ -32,7 +32,8 @@ struct BookmarksView: View {
             })
             .listStyle(.plain)
             .background(.gray.opacity(0.2))
-            .navigationTitle("Bookmarks")
+            .navigationTitle(viewState.title)
+            .navigationBarTitleDisplayMode(viewState.disableLargeTitle ? .inline : .large)
             .toolbar {
                 Button {
                     print("ZVZV Save")

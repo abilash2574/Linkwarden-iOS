@@ -24,6 +24,10 @@ class BookmarksViewState: BookmarksViewStateContract, ObservableObject {
     @Published var showToast: Bool = false
     @Published var toastMessage: LocalizedStringResource = ""
     
+    @Published var title = Module.Bookmarks.displayName.key
+    
+    var disableLargeTitle: Bool = false 
+    
     var presenter: BookmarksPresenterContract
     
     init(presenter: BookmarksPresenterContract) {

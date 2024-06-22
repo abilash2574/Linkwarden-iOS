@@ -32,11 +32,12 @@ struct BookmarksAssembler {
         return GetBookmarksUsecase(dataManager: dataManager, convertor: convertor)
     }
     
-    static func getBookmarksView() -> BookmarksView {
+    static func getBookmarksView(tagID: Int64? = nil) -> BookmarksView {
         let usecase = Self.getBookmarksUsecase()
         let previewUsecase = Self.getBookmarkPreviewUsecase()
         
         let presenter = BookmarksPresenter(getBookmarksUsecase: usecase, getBookmarkPreviewUsecase: previewUsecase)
+        presenter.tagID = tagID
         
         let viewState = BookmarksViewState(presenter: presenter)
         presenter.viewState = viewState
