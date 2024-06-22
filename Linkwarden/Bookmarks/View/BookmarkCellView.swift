@@ -32,7 +32,10 @@ struct BookmarkCellView: View {
                 }
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(bookmark.name.isEmpty ? bookmark.description : bookmark.name)
+                Text(
+                    bookmark.name.isEmpty ? bookmark.description.isEmpty ? bookmark.URL
+                        .host() ?? "Link not found" : bookmark.description : bookmark.name
+                )
                     .font(.headline)
                     .lineLimit(1)
                 CellLabelView(labelText: bookmark.URL.host() ?? "Link not found", labelType: .domain)
