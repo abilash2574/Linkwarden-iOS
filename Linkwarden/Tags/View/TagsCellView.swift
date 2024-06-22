@@ -26,7 +26,6 @@ struct TagsCellView: View {
             }
             
         }
-        .padding([.top, .bottom], 2)
         
     }
 }

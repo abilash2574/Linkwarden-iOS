@@ -14,23 +14,13 @@ struct BookmarksView: View {
     var body: some View {
         NavigationStack {
             List($viewState.bookmarks, id: \.bookmarkID, rowContent: { bookmark in
-                BookmarkCellView(bookmark: bookmark.wrappedValue)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(
-                        RoundedRectangle(cornerRadius: 12)
-                            .background(.clear)
-                            .foregroundColor(.white)
-                            .padding(
-                                EdgeInsets(
-                                    top: 5,
-                                    leading: 16,
-                                    bottom: 5,
-                                    trailing: 16
-                                )
-                            )
-                    )
+                
+                Section {
+                    BookmarkCellView(bookmark: bookmark.wrappedValue)
+                }
             })
-            .listStyle(.plain)
+            .listStyle(.insetGrouped)
+            .listSectionSpacing(8)
             .background(.gray.opacity(0.2))
             .navigationTitle(viewState.title)
             .navigationBarTitleDisplayMode(viewState.disableLargeTitle ? .inline : .large)
