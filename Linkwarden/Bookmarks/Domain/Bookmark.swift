@@ -20,7 +20,7 @@ class Bookmark: ObservableObject {
     var imageURL: String
     var pdfURL: String
     var readableURL: String
-    var preservedDate: Date
+    var preservedDate: Date?
     var createdDate: Date
     var updatedDate: Date
     var tags: [Int64]

@@ -47,4 +47,20 @@ struct BookmarksAssembler {
         return bookmarksView
     }
     
+    static func getBookmarksAddFormView() -> BookmarksAddFormView {
+        let service = AddBookmarksNetworkService()
+        let datamanager = AddBookmarksDataManager(networkService: service)
+        let convertor = BookmarksConvertor()
+        let usecase = AddBookmarksUsecase(dataManager: datamanager, convertor: convertor)
+        
+        let presenter = BookmarksAddFormPresenter(addBookmarksUsecase: usecase)
+        
+        let viewState = BookmarksAddFormState(presenter: presenter)
+        presenter.viewState = viewState
+        
+        let view = BookmarksAddFormView(viewState: viewState)
+        
+        return view
+    }
+    
 }

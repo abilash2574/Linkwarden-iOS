@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct BookmarksJsonBody: Codable {
+struct BookmarksListJsonBody: Codable {
     
     var response: [BookmarksModel]
     
+}
+
+struct BookmarksJsonBody: Codable {
+    var response: BookmarksModel
 }
 
 struct BookmarksModel: Codable {
@@ -21,11 +25,11 @@ struct BookmarksModel: Codable {
     var description: String
     var collectionID: Int64
     var url: String
-    var previewURL: String
-    var imageURL: String
-    var pdfURL: String
-    var readableURL: String
-    var preservedDate: String
+    var previewURL: String?
+    var imageURL: String?
+    var pdfURL: String?
+    var readableURL: String?
+    var preservedDate: String?
     var createdDate: String
     var updatedDate: String
     var tags: [TagsModel]
@@ -72,14 +76,32 @@ struct BookmarksModel: Codable {
         self.description = try container.decode(String.self, forKey: .description)
         self.collectionID = try container.decode(Int64.self, forKey: .collectionID)
         self.url = try container.decode(String.self, forKey: .url)
-        self.previewURL = try container.decode(String.self, forKey: .previewURL)
-        self.imageURL = try container.decode(String.self, forKey: .imageURL)
-        self.pdfURL = try container.decode(String.self, forKey: .pdfURL)
-        self.readableURL = try container.decode(String.self, forKey: .readableURL)
-        self.preservedDate = try container.decode(String.self, forKey: .preservedDate)
+        self.previewURL = try container.decodeIfPresent(String.self, forKey: .previewURL)
+        self.imageURL = try container.decodeIfPresent(String.self, forKey: .imageURL)
+        self.pdfURL = try container.decodeIfPresent(String.self, forKey: .pdfURL)
+        self.readableURL = try container.decodeIfPresent(String.self, forKey: .readableURL)
+        self.preservedDate = try container.decodeIfPresent(String.self, forKey: .preservedDate)
         self.createdDate = try container.decode(String.self, forKey: .createdDate)
         self.updatedDate = try container.decode(String.self, forKey: .updatedDate)
         self.tags = try container.decode([TagsModel].self, forKey: .tags)
     }
     
 }
+
+struct BookmarkPostModel: Codable {
+    var name: String
+    var url: String
+    var description: String
+    var type: String = "url"
+    var tags: [Tags]
+    var collection: Collections
+        
+    struct Tags: Codable {
+        let name: String
+    }
+    
+    struct Collections: Codable {
+        let name: String
+    }
+}
+

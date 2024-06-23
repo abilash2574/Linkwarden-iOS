@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8206D60C2C2738960036FE85 /* BookmarksAddFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206D60B2C2738960036FE85 /* BookmarksAddFormView.swift */; };
+		8206D60E2C273A780036FE85 /* BookmarksAddFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206D60D2C273A5C0036FE85 /* BookmarksAddFormState.swift */; };
+		8206D6102C273C440036FE85 /* BookmarksAddFormPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206D60F2C273C3D0036FE85 /* BookmarksAddFormPresenter.swift */; };
+		8206D6122C273CAE0036FE85 /* AddBookmarksUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206D6112C273CA70036FE85 /* AddBookmarksUsecase.swift */; };
+		8206D6142C273D110036FE85 /* AddBookmarksDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206D6132C273D070036FE85 /* AddBookmarksDataManager.swift */; };
+		8206D6162C273D1C0036FE85 /* AddBookmarksNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206D6152C273D140036FE85 /* AddBookmarksNetworkService.swift */; };
+		8206D6182C277A5A0036FE85 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8206D6172C277A5A0036FE85 /* Test.swift */; };
 		820A9E502BE944AA00F62D92 /* SettingsFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A9E4F2BE944AA00F62D92 /* SettingsFormat.swift */; };
 		820A9E522BE94C2D00F62D92 /* MultiSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820A9E512BE94C2D00F62D92 /* MultiSelectionCell.swift */; };
 		822D3D5C2BDAD5110023FE8A /* APIManager in Frameworks */ = {isa = PBXBuildFile; productRef = 822D3D5B2BDAD5110023FE8A /* APIManager */; };
@@ -32,6 +39,7 @@
 		8244152E2B9DCC7F00E0C624 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */; };
 		824415302B9DD24D00E0C624 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */; };
 		824415322B9DD98F00E0C624 /* APIResponseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824415312B9DD98F00E0C624 /* APIResponseConstants.swift */; };
+		827663EA2C28865700E1CBAF /* BookmarksAddFormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827663E92C28864C00E1CBAF /* BookmarksAddFormFields.swift */; };
 		828648582BE951C7002168BB /* SingleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828648572BE951C7002168BB /* SingleSelectionCell.swift */; };
 		829101262BBDCD8000AA25F1 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 829101252BBDCD8000AA25F1 /* OfflineView.swift */; };
 		8295811B2BAF6FF7003162CE /* SessionToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8295811A2BAF6FF7003162CE /* SessionToken.swift */; };
@@ -114,6 +122,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8206D60B2C2738960036FE85 /* BookmarksAddFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksAddFormView.swift; sourceTree = "<group>"; };
+		8206D60D2C273A5C0036FE85 /* BookmarksAddFormState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksAddFormState.swift; sourceTree = "<group>"; };
+		8206D60F2C273C3D0036FE85 /* BookmarksAddFormPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksAddFormPresenter.swift; sourceTree = "<group>"; };
+		8206D6112C273CA70036FE85 /* AddBookmarksUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarksUsecase.swift; sourceTree = "<group>"; };
+		8206D6132C273D070036FE85 /* AddBookmarksDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarksDataManager.swift; sourceTree = "<group>"; };
+		8206D6152C273D140036FE85 /* AddBookmarksNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarksNetworkService.swift; sourceTree = "<group>"; };
+		8206D6172C277A5A0036FE85 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		820A9E4F2BE944AA00F62D92 /* SettingsFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFormat.swift; sourceTree = "<group>"; };
 		820A9E512BE94C2D00F62D92 /* MultiSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionCell.swift; sourceTree = "<group>"; };
 		822D4C7C2BCEEB590077EF49 /* BookmarkCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCellView.swift; sourceTree = "<group>"; };
@@ -137,6 +152,7 @@
 		8244152D2B9DCC7F00E0C624 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		8244152F2B9DD24D00E0C624 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		824415312B9DD98F00E0C624 /* APIResponseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponseConstants.swift; sourceTree = "<group>"; };
+		827663E92C28864C00E1CBAF /* BookmarksAddFormFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksAddFormFields.swift; sourceTree = "<group>"; };
 		828648572BE951C7002168BB /* SingleSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectionCell.swift; sourceTree = "<group>"; };
 		829101252BBDCD8000AA25F1 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		8295811A2BAF6FF7003162CE /* SessionToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionToken.swift; sourceTree = "<group>"; };
@@ -233,6 +249,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8206D60A2C2738860036FE85 /* AddForm */ = {
+			isa = PBXGroup;
+			children = (
+				8206D60B2C2738960036FE85 /* BookmarksAddFormView.swift */,
+			);
+			path = AddForm;
+			sourceTree = "<group>";
+		};
 		820A9E4E2BE9448B00F62D92 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +544,7 @@
 				82F78E8C2BBB1BB8000E73D3 /* TabView */,
 				82F78E9F2BBB385C000E73D3 /* Tags */,
 				8244150B2B9D28B900E0C624 /* Utils */,
+				8206D6172C277A5A0036FE85 /* Test.swift */,
 			);
 			path = Linkwarden;
 			sourceTree = "<group>";
@@ -581,6 +606,7 @@
 		82D136092BD2862900A48CD2 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				8206D6152C273D140036FE85 /* AddBookmarksNetworkService.swift */,
 				82D136152BD2898000A48CD2 /* GetBookmarksNetworkService.swift */,
 				82D136282BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift */,
 			);
@@ -590,6 +616,7 @@
 		82D1360A2BD2862E00A48CD2 /* Usecase */ = {
 			isa = PBXGroup;
 			children = (
+				8206D6112C273CA70036FE85 /* AddBookmarksUsecase.swift */,
 				82D136232BD2987C00A48CD2 /* Convertor */,
 				82D136122BD2895800A48CD2 /* DataManager */,
 				82D136262BD2D56B00A48CD2 /* GetAllBookmarksPreviewUsecase.swift */,
@@ -603,6 +630,7 @@
 		82D1360B2BD2864100A48CD2 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				8206D60F2C273C3D0036FE85 /* BookmarksAddFormPresenter.swift */,
 				82D136102BD2886500A48CD2 /* BookmarksPresenter.swift */,
 			);
 			path = Presenter;
@@ -611,6 +639,7 @@
 		82D1360C2BD286CB00A48CD2 /* ViewState */ = {
 			isa = PBXGroup;
 			children = (
+				8206D60D2C273A5C0036FE85 /* BookmarksAddFormState.swift */,
 				82D1360E2BD2880500A48CD2 /* BookmarksViewState.swift */,
 			);
 			path = ViewState;
@@ -628,6 +657,7 @@
 		82D136122BD2895800A48CD2 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				8206D6132C273D070036FE85 /* AddBookmarksDataManager.swift */,
 				82D136172BD2898C00A48CD2 /* GetBookmarksDataManager.swift */,
 				82D1362A2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift */,
 			);
@@ -637,6 +667,7 @@
 		82D136192BD28A0800A48CD2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				827663E92C28864C00E1CBAF /* BookmarksAddFormFields.swift */,
 				82D1361A2BD28A1900A48CD2 /* BookmarksModel.swift */,
 				82D1361F2BD2914F00A48CD2 /* Bookmark.swift */,
 			);
@@ -756,6 +787,7 @@
 		82D3FB902BDEB258008EF8CE /* Assembler */ = {
 			isa = PBXGroup;
 			children = (
+				82D3FB992BDEB437008EF8CE /* SettingsAssembler.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -807,7 +839,6 @@
 			isa = PBXGroup;
 			children = (
 				82EF04FD2BDAC9F000C3CD4A /* TagsAssembler.swift */,
-				82D3FB992BDEB437008EF8CE /* SettingsAssembler.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -966,6 +997,7 @@
 				82D1360A2BD2862E00A48CD2 /* Usecase */,
 				82D1360D2BD286D100A48CD2 /* View */,
 				82D1360C2BD286CB00A48CD2 /* ViewState */,
+				8206D60A2C2738860036FE85 /* AddForm */,
 			);
 			path = Bookmarks;
 			sourceTree = "<group>";
@@ -1076,6 +1108,7 @@
 				82D3FB842BDE9634008EF8CE /* User.swift in Sources */,
 				824415032B9C7A6C00E0C624 /* LoginPresenter.swift in Sources */,
 				8295812D2BB042A0003162CE /* GetSessionDetailsNetworkService.swift in Sources */,
+				8206D6162C273D1C0036FE85 /* AddBookmarksNetworkService.swift in Sources */,
 				8244151C2B9DC11C00E0C624 /* LError.swift in Sources */,
 				829101262BBDCD8000AA25F1 /* OfflineView.swift in Sources */,
 				82D136202BD2914F00A48CD2 /* Bookmark.swift in Sources */,
@@ -1089,9 +1122,11 @@
 				82F78E9C2BBB31FC000E73D3 /* Module.swift in Sources */,
 				82D1361E2BD28C2100A48CD2 /* TagsModel.swift in Sources */,
 				82EF05052BDACBE200C3CD4A /* Tag.swift in Sources */,
+				8206D60C2C2738960036FE85 /* BookmarksAddFormView.swift in Sources */,
 				82EF05072BDACE8900C3CD4A /* GetTagsDataManager.swift in Sources */,
 				82D3FB792BDD67AD008EF8CE /* CollectionCellView.swift in Sources */,
 				82EF050C2BDACF8100C3CD4A /* TagsConvertor.swift in Sources */,
+				8206D6142C273D110036FE85 /* AddBookmarksDataManager.swift in Sources */,
 				82D136162BD2898000A48CD2 /* GetBookmarksNetworkService.swift in Sources */,
 				82D3FB772BDD633D008EF8CE /* CollectionsAssembler.swift in Sources */,
 				824415292B9DC97700E0C624 /* NetworkServiceContract.swift in Sources */,
@@ -1108,6 +1143,7 @@
 				82D3FB7B2BDD67D4008EF8CE /* CellLabelView.swift in Sources */,
 				82D136112BD2886500A48CD2 /* BookmarksPresenter.swift in Sources */,
 				82D3FB862BDE9669008EF8CE /* GetUserUsecase.swift in Sources */,
+				8206D60E2C273A780036FE85 /* BookmarksAddFormState.swift in Sources */,
 				82F78E972BBB3079000E73D3 /* TabViewPresenter.swift in Sources */,
 				82C23E222BA0E02200280ADC /* AuthenticateUserCredentialsNetworkService.swift in Sources */,
 				82C3591F2B9C371A009A3294 /* LinkwardenApp.swift in Sources */,
@@ -1120,8 +1156,10 @@
 				820A9E522BE94C2D00F62D92 /* MultiSelectionCell.swift in Sources */,
 				82D1362B2BD2E09A00A48CD2 /* GetBookmarkPreviewDataManager.swift in Sources */,
 				82D136252BD2989300A48CD2 /* BookmarksConvertor.swift in Sources */,
+				8206D6102C273C440036FE85 /* BookmarksAddFormPresenter.swift in Sources */,
 				82D3FB6B2BDD1351008EF8CE /* Collection.swift in Sources */,
 				82EF04FE2BDAC9F000C3CD4A /* TagsAssembler.swift in Sources */,
+				8206D6182C277A5A0036FE85 /* Test.swift in Sources */,
 				82D3FB732BDD5FC4008EF8CE /* CollectionsViewState.swift in Sources */,
 				82C359302B9C3ADC009A3294 /* ThemeManager.swift in Sources */,
 				82D3FB662BDD12F0008EF8CE /* GetCollectionsUsecase.swift in Sources */,
@@ -1156,9 +1194,11 @@
 				82D136292BD2DC1800A48CD2 /* GetBookmarkPreviewNetworkService.swift in Sources */,
 				82A85A762BB9756300F4FFA6 /* DataManager.swift in Sources */,
 				824414F82B9C6D3400E0C624 /* ImageConstants.swift in Sources */,
+				827663EA2C28865700E1CBAF /* BookmarksAddFormFields.swift in Sources */,
 				82D3FB692BDD1346008EF8CE /* CollectionModel.swift in Sources */,
 				829581282BB02DF6003162CE /* HomepageView.swift in Sources */,
 				824415002B9C7A1800E0C624 /* LoginViewState.swift in Sources */,
+				8206D6122C273CAE0036FE85 /* AddBookmarksUsecase.swift in Sources */,
 				829581322BB04544003162CE /* GetSessionDetailDataManager.swift in Sources */,
 				820A9E502BE944AA00F62D92 /* SettingsFormat.swift in Sources */,
 			);

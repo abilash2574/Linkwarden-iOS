@@ -30,6 +30,9 @@ class AppState {
     
     static var sessionExpiryDate: Date?
     
+    static var collections: [Collection] = []
+    static var tags: [Tag] = []
+    
     @AppStorage(UserDefaultsKeys.appFirstOnboardingKey)
     static var appLaunchFirstTime: Bool = false
     

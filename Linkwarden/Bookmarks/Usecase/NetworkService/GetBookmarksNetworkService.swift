@@ -10,7 +10,7 @@ import APIManager
 
 protocol GetBookmarksNetworkServiceContract: NetworkServiceContract {
     
-    func getBookmarks(sortID: Int64, tagID: Int64?, collectionID: Int64?) async -> UsecaseResult<BookmarksJsonBody, Error>
+    func getBookmarks(sortID: Int64, tagID: Int64?, collectionID: Int64?) async -> UsecaseResult<BookmarksListJsonBody, Error>
     
 }
 
@@ -19,7 +19,7 @@ class GetBookmarksNetworkService: NSObject, GetBookmarksNetworkServiceContract {
     var urlString: String { "\(NetworkManager.getBaseURL())\(NetworkManager.APIPath)/links"}
     lazy var headers = ["Content-Type" : "application/json; charset=utf-8"]
     
-    func getBookmarks(sortID: Int64, tagID: Int64?, collectionID: Int64?) async -> UsecaseResult<BookmarksJsonBody, any Error> {
+    func getBookmarks(sortID: Int64, tagID: Int64?, collectionID: Int64?) async -> UsecaseResult<BookmarksListJsonBody, any Error> {
         guard isOnline() else {
             return .failure(No_Network_API_Error)
         }
@@ -48,7 +48,7 @@ class GetBookmarksNetworkService: NSObject, GetBookmarksNetworkServiceContract {
                 return .failure(APINetworkError.apiManagerError(status: APIErrorStatus.invalidResponseCode, message: LErrorMessage.Invalid_Response_Code, info: nil))
             }
             
-            guard let bookmarkJSON = try? JSONDecoder().decode(BookmarksJsonBody.self, from: data) else {
+            guard let bookmarkJSON = try? JSONDecoder().decode(BookmarksListJsonBody.self, from: data) else {
                 return .failure(APINetworkError.processingError(status: APIErrorStatus.invalidJSONResponse, message: LErrorMessage.Invalid_JSON_Process, info: nil))
             }
             

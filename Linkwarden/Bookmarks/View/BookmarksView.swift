@@ -14,7 +14,6 @@ struct BookmarksView: View {
     var body: some View {
         NavigationStack {
             List($viewState.bookmarks, id: \.bookmarkID, rowContent: { bookmark in
-                
                 Section {
                     BookmarkCellView(bookmark: bookmark.wrappedValue)
                 }
